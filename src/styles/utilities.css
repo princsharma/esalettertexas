@@ -1,0 +1,20 @@
+
+.bg-gradient-brand {
+  background: var(--gradient-brand);
+}
+
+.bg-gradient-brand-soft {
+  background: var(--gradient-brand-soft);
+}
+
+.bg-gradient-accent {
+  background: var(--gradient-accent);
+}
+
+.bg-gradient-hero {
+  background: var(--gradient-hero);
+}
+
+.bg-hero-mesh {
+  background: var(--gradient-hero-mesh);
+}

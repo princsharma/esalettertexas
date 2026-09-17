@@ -1,0 +1,31 @@
+
+
+.text-display {
+  font-size: 2.75rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .text-display {
+    font-size: 3.5rem;
+  }
+}
+
+.text-caption {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Slightly larger heading numerals (prices, stats) read better with tighter
+   tracking than body copy — keeps the "premium" scale distinct from text-display. */
+.text-stat {
+  font-size: 2.75rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}

@@ -1,0 +1,154 @@
+
+
+:root {
+  /* Brand — deep teal (clinical trust) */
+  --color-brand-50: #f0f9f8;
+  --color-brand-100: #d9efec;
+  --color-brand-200: #b3ded9;
+  --color-brand-300: #82c5bd;
+  --color-brand-400: #4fa79c;
+  --color-brand-500: #2f8a7e;
+  --color-brand-600: #216e65;
+  --color-brand-700: #1c5852;
+  --color-brand-800: #194642;
+  --color-brand-900: #163a37;
+  --color-brand-950: #0a201e;
+
+  /* Accent — brand orange #ff914d (logo color), CTAs */
+  --color-accent-50: #fff7ed;
+  --color-accent-100: #ffecd2;
+  --color-accent-200: #ffd6a8;
+  --color-accent-300: #ffb87a;
+  --color-accent-400: #ff9d5c;
+  --color-accent-500: #ff914d;
+  --color-accent-600: #f2711f;
+  --color-accent-700: #c85814;
+  --color-accent-800: #9f4515;
+  --color-accent-900: #803a17;
+
+  /* Neutrals — warm gray */
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #faf9f7;
+  --color-neutral-100: #f2f0ec;
+  --color-neutral-200: #e5e1d9;
+  --color-neutral-300: #d1cbbf;
+  --color-neutral-400: #a9a191;
+  --color-neutral-500: #837a6a;
+  --color-neutral-600: #635c4f;
+  --color-neutral-700: #4a453b;
+  --color-neutral-800: #332f28;
+  --color-neutral-900: #201d18;
+  --color-neutral-950: #12100d;
+
+  /* Semantic */
+  --color-success-500: #2f9155;
+  --color-success-600: #24763f;
+  --color-warning-500: #c98a11;
+  --color-warning-600: #a5700c;
+  --color-danger-500: #d5453a;
+  --color-danger-600: #b2352c;
+
+  --background: var(--color-neutral-0);
+  --foreground: var(--color-neutral-900);
+
+  /* Radius */
+  --radius-card: 1rem;
+  --radius-control: 0.625rem;
+
+  /* Shadow — layered: a crisp contact shadow, a soft ambient falloff, and a
+     faint long-throw layer for perceived elevation ("premium" depth over a flat blur). */
+  --shadow-card: 0 1px 1px rgba(18, 16, 13, 0.05), 0 6px 16px -8px rgba(18, 16, 13, 0.14),
+    0 20px 40px -24px rgba(18, 16, 13, 0.1);
+  --shadow-card-hover: 0 2px 3px rgba(18, 16, 13, 0.07), 0 12px 28px -10px rgba(18, 16, 13, 0.18),
+    0 32px 56px -20px rgba(18, 16, 13, 0.16);
+
+  /* Gradients — brand teal is the site's single gradient family;
+     accent terracotta appears only as a warm high-contrast variant (primary CTAs). */
+  --gradient-brand: linear-gradient(135deg, var(--color-brand-600) 0%, var(--color-brand-800) 100%);
+  --gradient-brand-soft: linear-gradient(135deg, var(--color-brand-500) 0%, var(--color-brand-700) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--color-accent-400) 0%, var(--color-accent-600) 100%);
+  --gradient-hero: radial-gradient(60% 60% at 80% 0%, var(--color-brand-400) 0%, transparent 60%),
+    radial-gradient(50% 50% at 0% 100%, var(--color-brand-800) 0%, transparent 65%),
+    linear-gradient(135deg, var(--color-brand-600) 0%, var(--color-brand-800) 100%);
+
+  /* Hero-only aurora mesh — richer, warmer, and unique to the top-of-page hero so it
+     doesn't read as the same background as the mid-page hero-toned sections. */
+  --gradient-hero-mesh: radial-gradient(45% 55% at 85% 10%, var(--color-accent-400) 0%, transparent 60%),
+    radial-gradient(55% 60% at 15% 15%, var(--color-brand-300) 0%, transparent 55%),
+    radial-gradient(70% 70% at 50% 100%, var(--color-brand-900) 0%, transparent 70%),
+    linear-gradient(160deg, var(--color-brand-700) 0%, var(--color-brand-950) 100%);
+
+  /* Spacing scale — page/section rhythm. Mobile-first, widens at --bp-md. */
+  --space-section-y: 4rem; /* py-16 */
+  --space-section-y-md: 5rem; /* py-20 */
+  --space-container-x: 1.25rem;
+  --space-container-x-md: 2rem;
+
+  /* Breakpoints — mirrors Tailwind's defaults; kept as tokens so
+     JS (matchMedia, resize hooks) can stay in sync with CSS. */
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-brand-50: var(--color-brand-50);
+  --color-brand-100: var(--color-brand-100);
+  --color-brand-200: var(--color-brand-200);
+  --color-brand-300: var(--color-brand-300);
+  --color-brand-400: var(--color-brand-400);
+  --color-brand-500: var(--color-brand-500);
+  --color-brand-600: var(--color-brand-600);
+  --color-brand-700: var(--color-brand-700);
+  --color-brand-800: var(--color-brand-800);
+  --color-brand-900: var(--color-brand-900);
+  --color-brand-950: var(--color-brand-950);
+
+  --color-accent-50: var(--color-accent-50);
+  --color-accent-100: var(--color-accent-100);
+  --color-accent-200: var(--color-accent-200);
+  --color-accent-300: var(--color-accent-300);
+  --color-accent-400: var(--color-accent-400);
+  --color-accent-500: var(--color-accent-500);
+  --color-accent-600: var(--color-accent-600);
+  --color-accent-700: var(--color-accent-700);
+  --color-accent-800: var(--color-accent-800);
+  --color-accent-900: var(--color-accent-900);
+
+  --color-neutral-0: var(--color-neutral-0);
+  --color-neutral-50: var(--color-neutral-50);
+  --color-neutral-100: var(--color-neutral-100);
+  --color-neutral-200: var(--color-neutral-200);
+  --color-neutral-300: var(--color-neutral-300);
+  --color-neutral-400: var(--color-neutral-400);
+  --color-neutral-500: var(--color-neutral-500);
+  --color-neutral-600: var(--color-neutral-600);
+  --color-neutral-700: var(--color-neutral-700);
+  --color-neutral-800: var(--color-neutral-800);
+  --color-neutral-900: var(--color-neutral-900);
+  --color-neutral-950: var(--color-neutral-950);
+
+  --color-success-500: var(--color-success-500);
+  --color-success-600: var(--color-success-600);
+  --color-warning-500: var(--color-warning-500);
+  --color-warning-600: var(--color-warning-600);
+  --color-danger-500: var(--color-danger-500);
+  --color-danger-600: var(--color-danger-600);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-geist-sans);
+
+  --radius-card: var(--radius-card);
+  --radius-control: var(--radius-control);
+
+  --shadow-card: var(--shadow-card);
+  --shadow-card-hover: var(--shadow-card-hover);
+
+  --spacing-section-y: var(--space-section-y);
+  --spacing-section-y-md: var(--space-section-y-md);
+}

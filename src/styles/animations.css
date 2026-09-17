@@ -1,0 +1,90 @@
+/* ============================================================
+   Animations — ambient hero glow drift, scroll-in fade-up used
+   for section content as it enters the viewport, and the small
+   flip-card avatar used on a couple of therapist photos.
+   ============================================================ */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up {
+    animation: none;
+  }
+}
+
+/* Slow ambient drift for the hero's glow orbs — gives the hero a living,
+   premium feel that the static glow blobs elsewhere on the page don't have. */
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(2%, -4%) scale(1.05);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 10s ease-in-out infinite;
+}
+
+.animate-float-slow-delayed {
+  animation: float-slow 12s ease-in-out infinite;
+  animation-delay: -4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-float-slow-delayed {
+    animation: none;
+  }
+}
+
+/* Small flip-card avatar (e.g. the reviewing therapist's photo on the CTA
+   band and the "What Is an ESA Letter?" letter card) — flips on hover/focus
+   to reveal a second face. */
+.flip-card {
+  perspective: 800px;
+}
+
+.flip-card-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card:focus-within .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-card-front {
+  position: relative;
+}
+
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+}
