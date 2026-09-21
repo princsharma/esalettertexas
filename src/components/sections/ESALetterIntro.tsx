@@ -15,7 +15,7 @@ export default function ESALetterIntro(){
           aria-hidden="true"
           className="pointer-events-none absolute -bottom-24 right-0 h-80 w-80 rounded-full bg-accent-200/30 blur-3xl"
         />
-        <Container className="relative grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <Container className="relative grid items-center gap-10 lg:grid-cols-2 lg:gap-16 text-neutral-950">
           <div>
             <SectionHeading
               eyebrow="Get started"

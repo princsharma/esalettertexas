@@ -13,17 +13,17 @@ const PIN_ICON = (
 
 function TeamCard({ member }: { member: TeamMember }) {
   return (
-    <div className="animate-fade-up group relative flex flex-col rounded-card border border-neutral-200 bg-white p-5 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-300 hover:shadow-card-hover">
+    <div className="animate-fade-up group relative flex flex-col rounded-card border border-neutral-400 bg-white p-5 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-300 hover:shadow-card-hover">
       {/* Photo — its own rounded div, inset within the card */}
-      <div className="relative aspect-[4/3] w-full flex-none overflow-hidden rounded-2xl border-2 border-neutral-100">
+      <div className="relative aspect-[4/3] w-full flex-none overflow-hidden rounded-2xl border-2 ">
         <Image
           src={member.image}
           alt={member.name}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-contain group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-950/70 via-transparent to-transparent" />
+        <div className="absolute " />
         <span className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-brand-700 shadow-sm backdrop-blur-sm">
           {member.credential}
         </span>
@@ -31,7 +31,7 @@ function TeamCard({ member }: { member: TeamMember }) {
 
       <div className="mt-5 flex flex-1 flex-col">
         <h3 className="text-lg font-bold text-neutral-900">{member.name}</h3>
-        <p className="mt-0.5 text-sm font-semibold text-accent-600">{member.tagline}</p>
+        <p className="mt-0.5 text-sm font-bold text-brand-600">{member.tagline}</p>
         <p className="mt-3 text-sm leading-relaxed text-neutral-600">{member.bio}</p>
 
         <div className="mt-5 flex items-start gap-2.5 border-t border-neutral-100 pt-4">
@@ -41,15 +41,15 @@ function TeamCard({ member }: { member: TeamMember }) {
             </svg>
           </span>
           <div className="min-w-0">
-            <p className="text-[11px] font-semibold uppercase tracking-wide text-neutral-400">Licensed In</p>
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-neutral-500">Licensed In</p>
             <p className="text-sm font-medium leading-snug text-neutral-700">{member.licensedIn}</p>
           </div>
         </div>
 
         <div className="mt-4">
-          <p className="text-[11px] font-semibold uppercase tracking-wide text-neutral-400">Focus Areas</p>
+          <p className="text-[11px] font-semibold uppercase tracking-wide text-neutral-500">Focus Areas</p>
           <ul className="mt-2 flex flex-wrap gap-1.5">
-            {member.focusAreas.map((area) => (
+            {member?.focusAreas?.map((area) => (
               <li
                 key={area}
                 className="rounded-full bg-brand-50 px-2.5 py-1 text-xs font-semibold text-brand-700 transition-colors duration-300 group-hover:bg-brand-100"

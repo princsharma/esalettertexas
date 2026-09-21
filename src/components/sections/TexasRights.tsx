@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { SectionHeading } from "../ui/SectionHeading"
 import { Container } from "../ui/Container"
+import Image from "next/image"
 
 export default function TexasRights (){
     return (
@@ -17,6 +18,7 @@ export default function TexasRights (){
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:44px_44px]"
         />
+    
 
         <Container className="relative max-w-5xl text-center">
           <SectionHeading
@@ -63,7 +65,7 @@ export default function TexasRights (){
               <Link
                 key={item.label}
                 href={item.href}
-                className={`group relative flex flex-col items-center gap-3 rounded-card border border-white/15 bg-white/10 p-7 text-center shadow-[0_20px_50px_-15px_rgba(10,32,30,0.55)] backdrop-blur-md transition-all duration-300 hover:z-10 hover:scale-110 hover:border-white/30 hover:bg-white/15 hover:shadow-[0_30px_65px_-15px_rgba(10,32,30,0.7)] ${item.tilt}`}
+                className={`group relative flex flex-col items-center gap-3 rounded-card border border-white/15 bg-white/10 p-7 text-center shadow-photo-dark backdrop-blur-md transition-all duration-300 hover:z-10 hover:scale-110 hover:border-white/30 hover:bg-white/15 hover:shadow-photo-dark-hover ${item.tilt}`}
               >
                 <span className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-accent text-white shadow-lg shadow-accent-900/30 transition-transform duration-300 group-hover:scale-110">
                   <svg className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">

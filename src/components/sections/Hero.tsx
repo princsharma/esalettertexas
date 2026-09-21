@@ -182,34 +182,45 @@ export function Hero({
             <div className="relative mx-auto w-full max-w-md lg:mx-0">
               <div
                 aria-hidden="true"
-                className="absolute -inset-4 -z-10 rounded-[2rem] bg-white/10 blur-2xl"
+                className="absolute -inset-4 -z-10 rounded-[2rem] bg-accent-600 blur-2xl"
               />
               {image ? (
-                <div className="relative aspect-[4/5] overflow-hidden rounded-card shadow-[0_25px_60px_-15px_rgba(10,32,30,0.5)] ring-1 ring-white/15">
-                  <Image src={image} alt="" fill priority className="object-cover" />
+                <div className="relative aspect-[4/5] overflow-hidden rounded-card shadow-photo-deep b">
+                  <Image src={image} alt="image of the team" fill priority className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-950/50 via-transparent to-transparent" />
                 </div>
               ) : (
-                <div className="relative flex aspect-[4/5] flex-col items-center justify-center gap-3 overflow-hidden rounded-card border-2 border-dashed border-white/25 bg-white/5 text-center backdrop-blur-sm">
-                  {/* Decorative corner circles */}
-                  <span aria-hidden="true" className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/10" />
-                  <span aria-hidden="true" className="absolute -bottom-12 -left-10 h-44 w-44 rounded-full bg-brand-300/20" />
-                  <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-white/10 text-white">
-                    <svg className="h-7 w-7" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path
-                        fillRule="evenodd"
-                        d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm10 2a2 2 0 11-4 0 2 2 0 014 0zM4 14l3.5-4.5a1 1 0 011.5-.1L11 11l2.5-3a1 1 0 011.5.1L16 12v2H4z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                  <p className="px-6 text-sm font-medium text-brand-100">
-                    Photo goes here
-                  </p>
-                  <p className="px-8 text-xs text-brand-200/80">
-                    Pass an <code className="rounded bg-white/10 px-1 py-0.5">image</code> prop to swap this frame for a real photo.
-                  </p>
-                </div>
+                <div
+                className="relative flex aspect-[4/5] flex-col items-center justify-center gap-3 overflow-hidden rounded-card border-2 ring-2 ring-accent-600 border-accent-600 text-center backdrop-blur-sm hover:scale-105 transition-all duration-300 bg-cover bg-center"
+                style={{
+                  backgroundImage: `url('/hero/ESA Letter Texas.webp')`,
+                }}
+              >
+                {/* Decorative corner circles
+                <span
+                  aria-hidden="true"
+                  className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/10"
+                />
+                <span
+                  aria-hidden="true"
+                  className="absolute -bottom-12 -left-10 h-44 w-44 rounded-full bg-brand-300/20"
+                />
+              
+                <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-white/10 text-white">
+                  <svg
+                    className="h-7 w-7"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm10 2a2 2 0 11-4 0 2 2 0 014 0zM4 14l3.5-4.5a1 1 0 011.5-.1L11 11l2.5-3a1 1 0 011.5.1L16 12v2H4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </span> */}
+              </div>
               )}
             </div>
           )}

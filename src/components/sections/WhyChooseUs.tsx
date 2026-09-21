@@ -115,7 +115,7 @@ function WhyCard({ item }: { item: WhyItem & { tone: Tone } }) {
       </span>
       <div>
         <h3 className="text-base font-bold text-neutral-900">{item.title}</h3>
-        <p className="mt-2 text-sm leading-relaxed text-neutral-600">{item.description}</p>
+        <p className="mt-2 text-sm leading-relaxed text-neutral-950">{item.description}</p>
       </div>
     </li>
   );

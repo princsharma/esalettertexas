@@ -47,25 +47,26 @@ export function ProcessSteps({
                 className="group relative flex items-start gap-5 md:flex-col md:items-center md:gap-0 md:text-center"
               >
                 <div className="relative flex-none">
-                  <div className="relative h-32 w-32 overflow-hidden rounded-full ring-4 ring-white/15 transition-all duration-300 group-hover:ring-accent-400/60 md:h-40 md:w-40">
+                  <div className="relative h-40 w-40 overflow-hidden rounded-full ring-4 ring-white/15 transition-all duration-300 group-hover:ring-accent-600 
+                  md:h-50 md:w-50">
                     {step.image && (
                       <Image
                         src={step.image}
                         alt={step.title}
                         fill
-                        sizes="160px"
+                        sizes="200px"
                         className="object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                     )}
                   </div>
-                  <span className="absolute -bottom-1.5 -right-1.5 flex h-8 w-8 items-center justify-center rounded-full bg-gradient-accent text-sm font-bold text-white shadow-md shadow-accent-900/40 ring-2 ring-white/20 transition-transform duration-300 group-hover:scale-110">
+                  <span className="absolute -bottom-1.5 -right-1.5 flex h-9 w-9 items-center justify-center rounded-full bg-accent-600 text-md font-bold text-white shadow-md shadow-accent-900/40 ring-2 ring-white/20 transition-transform duration-300 group-hover:scale-110">
                     {i + 1}
                   </span>
                 </div>
 
                 <div className="pt-1 md:mt-6 md:pt-0">
                   <h3 className="text-lg font-bold text-white">{step.title}</h3>
-                  <p className="mt-1.5 max-w-[16rem] text-sm leading-relaxed text-brand-100 md:mx-auto">
+                  <p className="mt-1.5 max-w-[16rem] text-sm leading-relaxed text-neutral-950 md:mx-auto">
                     {step.description}
                   </p>
                 </div>

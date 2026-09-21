@@ -69,7 +69,7 @@ export function BlogGrid({
             <Link
               key={index}
               href={post.href}
-              className="animate-fade-up group relative flex flex-col overflow-hidden rounded-card border border-neutral-200 bg-white shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:rotate-1 hover:border-brand-300 hover:shadow-[0_25px_45px_-15px_rgba(28,88,82,0.35)]"
+              className="animate-fade-up group relative flex flex-col overflow-hidden rounded-card border border-neutral-200 bg-white shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:rotate-1 hover:border-brand-300 hover:shadow-card-brand"
             >
               {/* Thumbnail banner — real photo when provided, icon fallback otherwise */}
               <div className="relative aspect-[4/3] flex-none overflow-hidden bg-gradient-brand">

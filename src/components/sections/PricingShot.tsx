@@ -347,10 +347,10 @@ export function PricingShot() {
     />
 
     {/* Image */}
-    <div className="group relative aspect-[4/5] overflow-hidden rounded-[1.75rem] shadow-[0_25px_60px_-15px_rgba(10,32,30,0.35)] ring-1 ring-black/5">
+    <div className="group relative aspect-[4/5] overflow-hidden rounded-[1.75rem] shadow-photo ring-1 ring-brand-950/5">
 
       <Image
-        src={PRICING_IMAGE.src}
+        src={"/images/Pricing.webp"}
         alt={PRICING_IMAGE.alt}
         fill
         sizes="(max-width: 1024px) 90vw, 420px"
@@ -381,7 +381,7 @@ export function PricingShot() {
 
 
     {/* Floating Guarantee Card */}
-    <div className="absolute -bottom-5 -left-3 flex items-center gap-3 rounded-2xl bg-white p-3.5 shadow-card-hover ring-1 ring-black/5 sm:-left-6 sm:p-4">
+    <div className="absolute -bottom-5 -left-3 flex items-center gap-3 rounded-2xl bg-white p-3.5 shadow-card-hover ring-1 ring-brand-950/5 sm:-left-6 sm:p-4">
 
       <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-gradient-brand-soft text-white shadow-sm">
         <CheckIcon />
@@ -401,7 +401,7 @@ export function PricingShot() {
 
 
     {/* Floating Rating */}
-    <div className="absolute -right-2 -top-5 flex items-center gap-1.5 rounded-full bg-white px-4 py-2.5 text-sm font-bold text-neutral-900 shadow-card-hover ring-1 ring-black/5 sm:-right-5">
+    <div className="absolute -right-2 -top-5 flex items-center gap-1.5 rounded-full bg-white px-4 py-2.5 text-sm font-bold text-neutral-900 shadow-card-hover ring-1 ring-brand-950/5 sm:-right-5">
 
       <StarIcon />
 

@@ -128,7 +128,7 @@ function StatCard({ stat }: { stat: Stat }) {
  *  from 0 the first time the strip scrolls into view. */
 export function StatsStrip({ stats = DEFAULT_STATS }: { stats?: Stat[] }) {
   return (
-    <section className="relative border-y border-neutral-200 bg-brand-50 py-10 md:py-12">
+    <section className="relative border-b border-neutral-200 bg-brand-50 py-10 md:py-12">
       <Container>
         <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 lg:gap-5">
           {stats.map((stat) => (

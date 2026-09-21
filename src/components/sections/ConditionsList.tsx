@@ -66,7 +66,7 @@ export default function ConditionsList (){
           className="pointer-events-none absolute inset-0 opacity-[0.4] [background-image:radial-gradient(var(--color-neutral-200)_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,black_40%,transparent_100%)]"
         />
 
-        <Container className="relative grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <Container className="relative grid items-center gap-10 lg:grid-cols-2 lg:gap-16 text-neutral-950">
           <div>
             <SectionHeading
               eyebrow="Do you qualify?"
@@ -141,9 +141,9 @@ export default function ConditionsList (){
               aria-hidden="true"
               className="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-br from-brand-200/50 via-white/0 to-accent-200/40 blur-2xl"
             />
-            <div className="group relative aspect-[4/5] overflow-hidden rounded-card shadow-[0_25px_60px_-15px_rgba(10,32,30,0.35)] ring-1 ring-black/5">
+            <div className="group relative aspect-[4/5] overflow-hidden rounded-card shadow-photo ring-1 ring-brand-950/5">
               <Image
-                src={HERO_IMAGES.catHug}
+                src="/images/Common Conditions That Qualify for an ESA.webp"
                 alt="A person cuddling their emotional support cat at home"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -154,7 +154,7 @@ export default function ConditionsList (){
             </div>
 
             {/* Floating reassurance card */}
-            <div className="absolute -bottom-6 -left-6 flex items-center gap-3 rounded-card bg-white p-4 shadow-card-hover ring-1 ring-black/5">
+            <div className="absolute -bottom-6 -left-6 flex items-center gap-3 rounded-card bg-white p-4 shadow-card-hover ring-1 ring-brand-950/5">
               <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-gradient-brand-soft text-white">
                 <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path

@@ -106,7 +106,8 @@ export default function Home() {
           title="Ready to Get Your ESA Letter?"
           subhead="Start your confidential assessment today — most clients qualify in minutes."
           showLetter
-        />
+         
+          />
       </div>
       {/* Cities served grid */}
         <SiloChildGrid
@@ -132,6 +133,7 @@ export default function Home() {
         ctaLabel="Apply Now"
         ctaHref="/#apply"
         showSteps
+    
       />
     </>
   );

@@ -47,7 +47,7 @@ function BandBackground() {
   );
 }
 
-/** M4 — Inline CTA band. Reusable, repeats mid-page and at page end. Full-bleed
+/** CTA Band. Reusable, repeats mid-page and at page end. Full-bleed
  *  dark background on every variant (matches the other dark sections like
  *  ProcessSteps/Your Rights) — no inset "card on white" look.
  *  `showLetter` renders a longer, richer layout with benefit bullets and a mock signed-letter graphic.
@@ -61,6 +61,7 @@ export function CtaBand({
   bullets = DEFAULT_BULLETS,
   showSteps = false,
   steps = DEFAULT_MINI_STEPS,
+ 
 }: {
   title: string;
   subhead?: string;
@@ -70,7 +71,8 @@ export function CtaBand({
   bullets?: string[];
   showSteps?: boolean;
   steps?: string[];
-}) {
+
+  }) {
   if (showLetter) {
     return (
       <section className="relative overflow-hidden bg-gradient-brand section-py">
@@ -125,7 +127,7 @@ export function CtaBand({
                 aria-hidden="true"
                 className="absolute -inset-4 -z-10 rounded-[1.75rem] bg-white/10 blur-2xl sm:-inset-6"
               />
-              <div className="group relative rotate-2 rounded-card bg-white p-6 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] transition-all duration-300 hover:-translate-y-1.5 hover:rotate-0 hover:shadow-[0_35px_65px_-12px_rgba(0,0,0,0.5)] sm:p-8">
+              <div className="group relative rotate-2 rounded-card bg-white p-6 shadow-letter transition-all duration-300 hover:-translate-y-1.5 hover:rotate-0 hover:shadow-letter-hover sm:p-8">
                 <div className="absolute inset-x-0 -top-px h-2 rounded-t-card bg-gradient-accent" />
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold uppercase tracking-wide text-brand-700 sm:text-sm">

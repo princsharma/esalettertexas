@@ -26,16 +26,17 @@
   --color-accent-800: #9f4515;
   --color-accent-900: #803a17;
 
-  /* Neutrals — warm gray */
+  /* Neutrals — warm gray. 400–700 are tuned for readable type on white
+     (body, captions, labels) without flattening the heading contrast. */
   --color-neutral-0: #ffffff;
   --color-neutral-50: #faf9f7;
   --color-neutral-100: #f2f0ec;
   --color-neutral-200: #e5e1d9;
   --color-neutral-300: #d1cbbf;
-  --color-neutral-400: #a9a191;
-  --color-neutral-500: #837a6a;
-  --color-neutral-600: #635c4f;
-  --color-neutral-700: #4a453b;
+  --color-neutral-400: #787266;
+  --color-neutral-500: #5e584d;
+  --color-neutral-600: #48443b;
+  --color-neutral-700: #3a362e;
   --color-neutral-800: #332f28;
   --color-neutral-900: #201d18;
   --color-neutral-950: #12100d;
@@ -56,11 +57,20 @@
   --radius-control: 0.625rem;
 
   /* Shadow — layered: a crisp contact shadow, a soft ambient falloff, and a
-     faint long-throw layer for perceived elevation ("premium" depth over a flat blur). */
+     faint long-throw layer for perceived elevation ("premium" depth over a flat blur).
+     Photo / letter shadows tint with brand-950 (#0a201e) so elevated surfaces
+     stay in the teal family instead of generic black. */
   --shadow-card: 0 1px 1px rgba(18, 16, 13, 0.05), 0 6px 16px -8px rgba(18, 16, 13, 0.14),
     0 20px 40px -24px rgba(18, 16, 13, 0.1);
   --shadow-card-hover: 0 2px 3px rgba(18, 16, 13, 0.07), 0 12px 28px -10px rgba(18, 16, 13, 0.18),
     0 32px 56px -20px rgba(18, 16, 13, 0.16);
+  --shadow-card-brand: 0 25px 45px -15px rgba(28, 88, 82, 0.35);
+  --shadow-photo: 0 25px 60px -15px rgba(10, 32, 30, 0.35);
+  --shadow-photo-deep: 0 25px 60px -15px rgba(10, 32, 30, 0.5);
+  --shadow-photo-dark: 0 20px 50px -15px rgba(10, 32, 30, 0.55);
+  --shadow-photo-dark-hover: 0 30px 65px -15px rgba(10, 32, 30, 0.7);
+  --shadow-letter: 0 25px 50px -12px rgba(10, 32, 30, 0.4);
+  --shadow-letter-hover: 0 35px 65px -12px rgba(10, 32, 30, 0.5);
 
   /* Gradients — brand teal is the site's single gradient family;
      accent terracotta appears only as a warm high-contrast variant (primary CTAs). */
@@ -95,6 +105,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-white: var(--color-neutral-0);
 
   --color-brand-50: var(--color-brand-50);
   --color-brand-100: var(--color-brand-100);
@@ -148,6 +159,13 @@
 
   --shadow-card: var(--shadow-card);
   --shadow-card-hover: var(--shadow-card-hover);
+  --shadow-card-brand: var(--shadow-card-brand);
+  --shadow-photo: var(--shadow-photo);
+  --shadow-photo-deep: var(--shadow-photo-deep);
+  --shadow-photo-dark: var(--shadow-photo-dark);
+  --shadow-photo-dark-hover: var(--shadow-photo-dark-hover);
+  --shadow-letter: var(--shadow-letter);
+  --shadow-letter-hover: var(--shadow-letter-hover);
 
   --spacing-section-y: var(--space-section-y);
   --spacing-section-y-md: var(--space-section-y-md);

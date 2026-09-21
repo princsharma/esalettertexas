@@ -103,7 +103,7 @@ function FooterLinkItem({ link }: { link: FooterLink }) {
 }
 
 /** Site footer — a concise 4-column link directory (Core, Your Rights, Qualifying
- *  Conditions, Company), on the same dark #0a201e background as the header, with
+ *  Conditions, Company), on brand-950 so it matches the other dark surfaces, with
  *  a row of social icons below the columns. */
 export function Footer() {
   const year = new Date().getFullYear();
