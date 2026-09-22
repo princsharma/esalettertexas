@@ -66,7 +66,7 @@ export function ProcessSteps({
 
                 <div className="pt-1 md:mt-6 md:pt-0">
                   <h3 className="text-lg font-bold text-white">{step.title}</h3>
-                  <p className="mt-1.5 max-w-[16rem] text-sm leading-relaxed text-neutral-950 md:mx-auto">
+                  <p className="mt-1.5 max-w-[16rem] text-md leading-relaxed text-brand-200 md:mx-auto">
                     {step.description}
                   </p>
                 </div>
