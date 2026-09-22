@@ -13,8 +13,8 @@ const DEFAULT_PIN_ICON = (
   />
 );
 
-/** M6 — Silo child-page grid. Auto-lists child pages of the current silo (e.g. conditions, cities).
- *  `variant="location"` swaps the badge for a map pin and adds a Texas tag — for city/location grids. */
+/** M6: Silo child-page grid. Auto-lists child pages of the current silo (e.g. conditions, cities).
+ *  `variant="location"` swaps the badge for a map pin and adds a Texas tag, for city/location grids. */
 export function SiloChildGrid({
   eyebrow,
   title,
@@ -36,7 +36,7 @@ export function SiloChildGrid({
   return (
        <div id="locations" className="scroll-mt-20">
     <section className={`relative overflow-hidden section-py ${isLocation ? "bg-brand-50" : "bg-white"}`}>
-      {/* Background effect — soft brand/accent glows, matching the pricing section for location grids */}
+      {/* Background effect: soft brand/accent glows, matching the pricing section for location grids */}
       <div
         aria-hidden="true"
         className={`pointer-events-none absolute -top-20 left-1/4 h-80 w-80 -translate-x-1/2 rounded-full blur-3xl ${
@@ -90,7 +90,7 @@ export function SiloChildGrid({
                 isLocation ? "hover:border-accent-300" : "hover:border-brand-300"
               }`}
             >
-              {/* Accent bar — sweeps in from the left on hover; orange for the location cards */}
+              {/* Accent bar: sweeps in from the left on hover; orange for the location cards */}
               <span
                 aria-hidden="true"
                 className={`absolute inset-x-0 top-0 h-1 origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100 ${

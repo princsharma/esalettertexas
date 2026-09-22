@@ -66,7 +66,7 @@ export default function Home() {
     <Hero
         eyebrow="Texas · Licensed Therapists"
         title="ESA Letter Texas"
-        subhead="Get a legitimate Emotional Support Animal letter, reviewed by a licensed Texas therapist — online, confidential, and ready in as little as 24 hours."
+        subhead="Get a legitimate Emotional Support Animal letter, reviewed by a licensed Texas therapist, online, confidential, and ready in as little as 24 hours."
         ctaLabel="Apply Now"
         ctaHref="/#apply"
         secondaryCtaLabel="See how it works"
@@ -104,7 +104,7 @@ export default function Home() {
       <div id="apply" className="scroll-mt-20">
         <CtaBand
           title="Ready to Get Your ESA Letter?"
-          subhead="Start your confidential assessment today — most clients qualify in minutes."
+          subhead="Start your confidential assessment today. Most clients qualify in minutes."
           showLetter
          
           />

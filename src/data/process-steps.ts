@@ -1,7 +1,7 @@
 export type ProcessStep = { title: string; description: string; image?: string };
 
 /**
- * Photos are direct Unsplash CDN links — each downloaded and visually
+ * Photos are direct Unsplash CDN links, each downloaded and visually
  * verified (on-topic, no third-party branding) before being added here.
  */
 export const DEFAULT_PROCESS_STEPS: ProcessStep[] = [
@@ -19,7 +19,7 @@ export const DEFAULT_PROCESS_STEPS: ProcessStep[] = [
   },
   {
     title: "Receive Your Letter",
-    description: "Get your signed, legitimate ESA letter by email — ready to use for housing.",
+    description: "Get your signed, legitimate ESA letter by email, ready to use for housing.",
     image: "/images/Receive Your Letter.webp",
   },
 ];

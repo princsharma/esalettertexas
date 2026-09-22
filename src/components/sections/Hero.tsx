@@ -40,12 +40,12 @@ export function Hero({
           <div aria-hidden="true" className="absolute inset-0">
             <Image src={backgroundImage} alt="" fill priority className="object-cover" />
           </div>
-          {/* Brand-tone wash over the photo — keeps the teal/accent mood and text legibility */}
+          {/* Brand-tone wash over the photo: keeps the teal/accent mood and text legibility */}
           <div aria-hidden="true" className="absolute inset-0 bg-hero-mesh opacity-90 mix-blend-multiply" />
           <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-brand-950/70 via-brand-950/20 to-transparent" />
         </>
       )}
-      {/* Ambient glow orbs — slow drifting float, unique to the hero (other
+      {/* Ambient glow orbs: slow drifting float, unique to the hero (other
           hero-toned sections use static blobs) so this reads as its own space */}
       <div
         aria-hidden="true"
@@ -59,7 +59,7 @@ export function Hero({
         aria-hidden="true"
         className="pointer-events-none absolute -bottom-32 left-1/3 h-96 w-96 -translate-x-1/2 rounded-full bg-brand-950/40 blur-3xl"
       />
-      {/* Soft dot-noise texture — distinct from the line-grid used elsewhere on the page */}
+      {/* Soft dot-noise texture: distinct from the line-grid used elsewhere on the page */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-[0.15] [background-image:radial-gradient(white_1px,transparent_1px)] [background-size:28px_28px] [mask-image:radial-gradient(ellipse_75%_75%_at_50%_20%,black_30%,transparent_100%)]"
@@ -147,7 +147,7 @@ export function Hero({
               </ul>
             )}
 
-            {/* Review strip — social proof, sits under the feature list */}
+            {/* Review strip: social proof, sits under the feature list */}
             <div className="mt-8 flex flex-col gap-4 rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm sm:flex-row sm:items-center sm:justify-between sm:p-5">
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-2">
@@ -177,7 +177,7 @@ export function Hero({
             </div>
           </div>
 
-          {/* Right column — real photo when provided, dashed placeholder frame otherwise */}
+          {/* Right column: real photo when provided, dashed placeholder frame otherwise */}
           {isFull && (
             <div className="relative mx-auto w-full max-w-md lg:mx-0">
               <div

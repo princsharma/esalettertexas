@@ -1,5 +1,5 @@
 /* ============================================================
-   Animations — ambient hero glow drift, scroll-in fade-up used
+   Animations: ambient hero glow drift, scroll-in fade-up used
    for section content as it enters the viewport, and the small
    flip-card avatar used on a couple of therapist photos.
    ============================================================ */
@@ -28,7 +28,7 @@
   }
 }
 
-/* Slow ambient drift for the hero's glow orbs — gives the hero a living,
+/* Slow ambient drift for the hero's glow orbs, gives the hero a living,
    premium feel that the static glow blobs elsewhere on the page don't have. */
 @keyframes float-slow {
   0%,
@@ -57,7 +57,7 @@
 }
 
 /* Small flip-card avatar (e.g. the reviewing therapist's photo on the CTA
-   band and the "What Is an ESA Letter?" letter card) — flips on hover/focus
+   band and the "What Is an ESA Letter?" letter card), flips on hover/focus
    to reveal a second face. */
 .flip-card {
   perspective: 800px;

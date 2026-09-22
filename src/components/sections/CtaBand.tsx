@@ -49,7 +49,7 @@ function BandBackground() {
 
 /** CTA Band. Reusable, repeats mid-page and at page end. Full-bleed
  *  dark background on every variant (matches the other dark sections like
- *  ProcessSteps/Your Rights) — no inset "card on white" look.
+ *  ProcessSteps/Your Rights); no inset "card on white" look.
  *  `showLetter` renders a longer, richer layout with benefit bullets and a mock signed-letter graphic.
  *  `showSteps` renders a mini interactive step tracker on the hero-gradient background. */
 export function CtaBand({
@@ -142,7 +142,7 @@ export function CtaBand({
                   </svg>
                 </div>
                 <p className="mt-1.5 text-xs leading-relaxed text-neutral-500 sm:text-sm">
-                  Reviewed and signed by S. Alvarez, LPC — licensed to practice in Texas.
+                  Reviewed and signed by S. Alvarez, LPC, licensed to practice in Texas.
                 </p>
 
                 <p className="mt-5 text-sm leading-relaxed text-neutral-600 sm:mt-7">
@@ -152,7 +152,7 @@ export function CtaBand({
                 </p>
 
                 <div className="mt-6 flex items-center gap-3 border-t border-neutral-100 pt-5 sm:mt-8 sm:pt-6">
-                  {/* Flip-card avatar — photo on the front, name + verified badge on the back */}
+                  {/* Flip-card avatar: photo on the front, name + verified badge on the back */}
                   <div className="flip-card h-20 w-20 flex-none sm:h-24 sm:w-24" tabIndex={0}>
                     <div className="flip-card-inner h-full w-full">
                       <div className="flip-card-face flip-card-front h-full w-full overflow-hidden rounded-full ring-2 ring-brand-100">
@@ -207,7 +207,7 @@ export function CtaBand({
             </h2>
             {subhead && <p className="mx-auto mt-2 max-w-xl text-brand-100">{subhead}</p>}
 
-            {/* Interactive step chips — each pill lifts, glows, and reveals its number on hover;
+            {/* Interactive step chips: each pill lifts, glows, and reveals its number on hover;
                 connector arrows echo the How-It-Works cards so both "3 steps" moments match. */}
             <ul className="mx-auto mt-8 flex max-w-xl flex-wrap items-center justify-center gap-3">
               {steps.map((step, i) => (

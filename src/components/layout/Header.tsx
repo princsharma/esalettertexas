@@ -21,7 +21,7 @@ function Logo() {
     <Link
       href="/"
       className="group relative -ml-1 flex items-center"
-      aria-label="My ESA Therapist — home"
+      aria-label="My ESA Therapist, home"
     >
       <div className="relative h-14 w-[190px] flex-none transition-transform duration-300 ease-out group-hover:scale-[1.02]">
         <Image
@@ -36,7 +36,7 @@ function Logo() {
     </Link>
   );
 }
-/** Site header — sticky, blurred, with an animated underline nav and a mobile slide-down menu. */
+/** Site header: sticky, blurred, with an animated underline nav and a mobile slide-down menu. */
 export function Header() {
   const [open, setOpen] = useState(false);
 
@@ -85,7 +85,7 @@ export function Header() {
             </Button>
           </div>
 
-          {/* Mobile hamburger — morphs into an X when open */}
+          {/* Mobile hamburger, morphs into an X when open */}
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -114,7 +114,7 @@ export function Header() {
         </div>
       </Container>
 
-      {/* Mobile menu — smooth height/opacity transition, no layout shift when closed */}
+      {/* Mobile menu: smooth height/opacity transition, no layout shift when closed */}
       <div
         className={`grid overflow-hidden border-t border-neutral-200/70 bg-white transition-all duration-300 ease-out lg:hidden ${
           open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] border-t-0 opacity-0"

@@ -13,7 +13,7 @@ export type BlogPost = {
 };
 
 /**
- * M7 — Latest from the Blog.
+ * M7: Latest from the Blog.
  * Auto-pulls the newest posts from a mapped blog category. Required on all 3 pillar pages.
  * `posts` is passed in for now; wire to a CMS/content query later.
  */
@@ -31,7 +31,7 @@ export function BlogGrid({
   return (
        <div id="blog" className="scroll-mt-20">
     <section className="relative overflow-hidden bg-brand-50 section-py">
-      {/* Background effect — soft brand/accent glows, matching the other mint sections */}
+      {/* Background effect: soft brand/accent glows, matching the other mint sections */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-20 right-1/4 h-80 w-80 translate-x-1/2 rounded-full bg-brand-200/50 blur-3xl"
@@ -71,7 +71,7 @@ export function BlogGrid({
               href={post.href}
               className="animate-fade-up group relative flex flex-col overflow-hidden rounded-card border border-neutral-200 bg-white shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:rotate-1 hover:border-brand-300 hover:shadow-card-brand"
             >
-              {/* Thumbnail banner — real photo when provided, icon fallback otherwise */}
+              {/* Thumbnail banner: real photo when provided, icon fallback otherwise */}
               <div className="relative aspect-[4/3] flex-none overflow-hidden bg-gradient-brand">
                 {post.image ? (
                   <>

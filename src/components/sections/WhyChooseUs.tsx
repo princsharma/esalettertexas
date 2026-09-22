@@ -4,16 +4,16 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 type WhyItem = { title: string; description: string; icon: ReactNode };
 
-/** Badge/medal — licensed & certified */
+/** Badge/medal: licensed & certified */
 const BADGE_ICON = (
   <>
     <circle cx="10" cy="7" r="4.25" />
     <path d="M7.1 10.3 5 18l5-2.6 5 2.6-2.1-7.7" />
   </>
 );
-/** Lightning bolt — fast turnaround */
+/** Lightning bolt: fast turnaround */
 const BOLT_ICON = <path d="M11.2 2 4.4 11.5h4.3l-1 6.5 7.9-10.4h-4.6l1.2-5.6z" />;
-/** Shield outline — confidential & secure */
+/** Shield outline: confidential & secure */
 const SHIELD_OUTLINE_ICON = (
   <path
     d="M10 2.2 3.8 4.6v4.9c0 4.6 2.7 8.3 6.2 9.8 3.5-1.5 6.2-5.2 6.2-9.8V4.6L10 2.2Z"
@@ -23,7 +23,7 @@ const SHIELD_OUTLINE_ICON = (
     strokeLinejoin="round"
   />
 );
-/** Clipboard with checkmark — compliant documentation */
+/** Clipboard with checkmark: compliant documentation */
 const CLIPBOARD_ICON = (
   <>
     <rect x="4.5" y="3.2" width="11" height="14.6" rx="1.6" fill="none" stroke="currentColor" strokeWidth="1.4" />
@@ -31,7 +31,7 @@ const CLIPBOARD_ICON = (
     <path d="M7.3 10.5 9 12.2l3.7-3.9" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
   </>
 );
-/** Coin with a dollar sign — moneyback guarantee */
+/** Coin with a dollar sign: moneyback guarantee */
 const COIN_ICON = (
   <>
     <circle cx="10" cy="10" r="7.3" fill="none" stroke="currentColor" strokeWidth="1.5" />
@@ -44,7 +44,7 @@ const COIN_ICON = (
     />
   </>
 );
-/** Headset — ongoing support */
+/** Headset: ongoing support */
 const HEADSET_ICON = (
   <>
     <path d="M10 3a5.5 5.5 0 00-5.5 5.5V13a2 2 0 002 2h.5v-5.5H5.5v-1a4.5 4.5 0 019 0v1h-1.5V15h.5a2 2 0 002-2V8.5A5.5 5.5 0 0010 3z" />
@@ -66,7 +66,7 @@ const WHY_ITEMS: (WhyItem & { tone: Tone })[] = [
   {
     title: "Fast, Simple Process",
     description:
-      "Complete your assessment online in minutes and get your reviewed letter in as little as 24-48 hours — no office visits required.",
+      "Complete your assessment online in minutes and get your reviewed letter in as little as 24-48 hours, no office visits required.",
     icon: BOLT_ICON,
     tone: "brand",
   },
@@ -87,7 +87,7 @@ const WHY_ITEMS: (WhyItem & { tone: Tone })[] = [
   {
     title: "Moneyback Guarantee",
     description:
-      "If you don't qualify after your evaluation, you get a full refund — no questions asked.",
+      "If you don't qualify after your evaluation, you get a full refund, no questions asked.",
     icon: COIN_ICON,
     tone: "accent",
   },
@@ -121,7 +121,7 @@ function WhyCard({ item }: { item: WhyItem & { tone: Tone } }) {
   );
 }
 
-/** Why Choose Us — six-card benefits grid. Sits just below the process
+/** Why Choose Us: six-card benefits grid. Sits just below the process
  *  timeline, on a plain white section to break up the dark section above
  *  and the mint "What Is an ESA Letter?" section below. Icon badges
  *  alternate the site's two theme colors (orange accent / teal brand). */
@@ -145,7 +145,7 @@ export function WhyChooseUs() {
         <SectionHeading
           eyebrow="Why Choose Us"
           title="Why Texans Choose ESA Letter Texas"
-          subhead="We make online ESA evaluations simple, secure, and fully compliant with Texas law — here's what sets us apart from other providers."
+          subhead="We make online ESA evaluations simple, secure, and fully compliant with Texas law; here's what sets us apart from other providers."
           align="center"
         />
 

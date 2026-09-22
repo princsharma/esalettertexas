@@ -123,7 +123,7 @@ function StatCard({ stat }: { stat: Stat }) {
   );
 }
 
-/** Stats strip — sits directly below the trust bar as a light buffer between the
+/** Stats strip: sits directly below the trust bar as a light buffer between the
  *  hero's dark photo background and the next dark section. Numbers count up
  *  from 0 the first time the strip scrolls into view. */
 export function StatsStrip({ stats = DEFAULT_STATS }: { stats?: Stat[] }) {

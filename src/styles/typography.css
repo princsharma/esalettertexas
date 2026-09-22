@@ -22,7 +22,7 @@
 }
 
 /* Slightly larger heading numerals (prices, stats) read better with tighter
-   tracking than body copy — keeps the "premium" scale distinct from text-display. */
+   tracking than body copy, keeps the "premium" scale distinct from text-display. */
 .text-stat {
   font-size: 2.75rem;
   line-height: 1;

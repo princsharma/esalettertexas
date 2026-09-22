@@ -102,7 +102,7 @@ function FooterLinkItem({ link }: { link: FooterLink }) {
   );
 }
 
-/** Site footer — a concise 4-column link directory (Core, Your Rights, Qualifying
+/** Site footer: a concise 4-column link directory (Core, Your Rights, Qualifying
  *  Conditions, Company), on brand-950 so it matches the other dark surfaces, with
  *  a row of social icons below the columns. */
 export function Footer() {
@@ -113,8 +113,8 @@ export function Footer() {
       <Container className="py-12 md:py-14">
         {/* Compact brand strip */}
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <Link href="/" className="relative -ml-1 flex items-center" aria-label="ESA Letter Texas — home">
-            {/* Dark-bg variant — the source logo file has a solid white background
+          <Link href="/" className="relative -ml-1 flex items-center" aria-label="ESA Letter Texas, home">
+            {/* Dark-bg variant: the source logo file has a solid white background
                 baked in, so this is a pre-processed cutout (white made transparent,
                 the navy "Texas" wordmark recolored white) made to sit directly on
                 the footer's dark background instead of behind a white card. */}
@@ -192,7 +192,7 @@ export function Footer() {
           </nav>
         </div>
 
-        {/* Social icons — below the link columns */}
+        {/* Social icons, below the link columns */}
         <div className="mt-10 flex items-center justify-center gap-3 md:justify-start">
           {SOCIAL_LINKS.map((social) => (
             <a
@@ -212,7 +212,7 @@ export function Footer() {
         <div className="mt-10 flex flex-col items-center gap-3 border-t border-white/10 pt-6 text-center text-sm text-brand-300 md:flex-row md:justify-between md:text-left">
           <p className="max-w-2xl leading-relaxed">
             ESA Letter Texas does not provide legal advice. Eligibility and letter validity are
-            determined solely by a licensed evaluating therapist — see our Terms of Service §7.4 for
+            determined solely by a licensed evaluating therapist. See our Terms of Service §7.4 for
             full limitations.
           </p>
           <p className="flex-none">&copy; {year} ESA Letter Texas. All rights reserved.</p>

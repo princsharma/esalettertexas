@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-/** M11 — Author / reviewer box. Name, credentials, license state, "Medically reviewed by" + date. */
+/** M11: Author / reviewer box. Name, credentials, license state, "Medically reviewed by" + date. */
 export function AuthorBox({
   name,
   credentials,

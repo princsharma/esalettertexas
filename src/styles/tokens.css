@@ -1,7 +1,7 @@
 
 
 :root {
-  /* Brand — deep teal (clinical trust) */
+  /* Brand: deep teal (clinical trust) */
   --color-brand-50: #f0f9f8;
   --color-brand-100: #d9efec;
   --color-brand-200: #b3ded9;
@@ -14,7 +14,7 @@
   --color-brand-900: #163a37;
   --color-brand-950: #0a201e;
 
-  /* Accent — brand orange #ff914d (logo color), CTAs */
+  /* Accent: brand orange #ff914d (logo color), CTAs */
   --color-accent-50: #fff7ed;
   --color-accent-100: #ffecd2;
   --color-accent-200: #ffd6a8;
@@ -26,7 +26,7 @@
   --color-accent-800: #9f4515;
   --color-accent-900: #803a17;
 
-  /* Neutrals — warm gray. 400–700 are tuned for readable type on white
+  /* Neutrals: warm gray. 400-700 are tuned for readable type on white
      (body, captions, labels) without flattening the heading contrast. */
   --color-neutral-0: #ffffff;
   --color-neutral-50: #faf9f7;
@@ -56,7 +56,7 @@
   --radius-card: 1rem;
   --radius-control: 0.625rem;
 
-  /* Shadow — layered: a crisp contact shadow, a soft ambient falloff, and a
+  /* Shadow, layered: a crisp contact shadow, a soft ambient falloff, and a
      faint long-throw layer for perceived elevation ("premium" depth over a flat blur).
      Photo / letter shadows tint with brand-950 (#0a201e) so elevated surfaces
      stay in the teal family instead of generic black. */
@@ -72,7 +72,7 @@
   --shadow-letter: 0 25px 50px -12px rgba(10, 32, 30, 0.4);
   --shadow-letter-hover: 0 35px 65px -12px rgba(10, 32, 30, 0.5);
 
-  /* Gradients — brand teal is the site's single gradient family;
+  /* Gradients: brand teal is the site's single gradient family;
      accent terracotta appears only as a warm high-contrast variant (primary CTAs). */
   --gradient-brand: linear-gradient(135deg, var(--color-brand-600) 0%, var(--color-brand-800) 100%);
   --gradient-brand-soft: linear-gradient(135deg, var(--color-brand-500) 0%, var(--color-brand-700) 100%);
@@ -81,20 +81,20 @@
     radial-gradient(50% 50% at 0% 100%, var(--color-brand-800) 0%, transparent 65%),
     linear-gradient(135deg, var(--color-brand-600) 0%, var(--color-brand-800) 100%);
 
-  /* Hero-only aurora mesh — richer, warmer, and unique to the top-of-page hero so it
+  /* Hero-only aurora mesh: richer, warmer, and unique to the top-of-page hero so it
      doesn't read as the same background as the mid-page hero-toned sections. */
   --gradient-hero-mesh: radial-gradient(45% 55% at 85% 10%, var(--color-accent-400) 0%, transparent 60%),
     radial-gradient(55% 60% at 15% 15%, var(--color-brand-300) 0%, transparent 55%),
     radial-gradient(70% 70% at 50% 100%, var(--color-brand-900) 0%, transparent 70%),
     linear-gradient(160deg, var(--color-brand-700) 0%, var(--color-brand-950) 100%);
 
-  /* Spacing scale — page/section rhythm. Mobile-first, widens at --bp-md. */
+  /* Spacing scale: page/section rhythm. Mobile-first, widens at --bp-md. */
   --space-section-y: 4rem; /* py-16 */
   --space-section-y-md: 5rem; /* py-20 */
   --space-container-x: 1.25rem;
   --space-container-x-md: 2rem;
 
-  /* Breakpoints — mirrors Tailwind's defaults; kept as tokens so
+  /* Breakpoints: mirrors Tailwind's defaults; kept as tokens so
      JS (matchMedia, resize hooks) can stay in sync with CSS. */
   --bp-sm: 640px;
   --bp-md: 768px;

@@ -3,7 +3,7 @@ import { HERO_IMAGES } from "@/data/hero-images";
 
 // NOTE: this is currently a single-page site with no dedicated sub-pages yet.
 // Every card below points at the in-page "#apply" quick-apply form as a
-// placeholder destination — swap these for real routes once those pages
+// placeholder destination, swap these for real routes once those pages
 // (or the onboarding link) exist.
 export const TOP_CONDITIONS: SiloCard[] = [
   {
@@ -86,7 +86,7 @@ export const FAQS: FaqItem[] = [
   },
   {
     question: "Can My Landlord Deny My ESA?",
-    answer: "Landlords can only deny an ESA in limited cases, such as a direct threat to safety or an undue financial burden — they can't deny it simply because of a no-pets policy."
+    answer: "Landlords can only deny an ESA in limited cases, such as a direct threat to safety or an undue financial burden. They can't deny it simply because of a no-pets policy."
   },
   {
     question: "What Pets Can Qualify as an ESA?",
@@ -105,7 +105,7 @@ export const FAQS: FaqItem[] = [
 export const BLOG_POSTS: BlogPost[] = [
   {
     title: "ESA vs. Service Animal: What's the Difference?",
-    excerpt: "Know the legal differences — and exactly where each one is protected under Texas law.",
+    excerpt: "Know the legal differences, and exactly where each one is protected under Texas law.",
     href: "/#apply",
     category: "Guides",
     date: "Sep 2, 2026",
@@ -122,7 +122,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
   {
     title: "How to Spot an ESA Letter Scam",
-    excerpt: "The red flags that separate a legitimate ESA letter from a scam — before you pay.",
+    excerpt: "The red flags that separate a legitimate ESA letter from a scam, before you pay.",
     href: "/#apply",
     category: "Guides",
     date: "Aug 14, 2026",
@@ -130,7 +130,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     title: "Fair Housing Act: Your Rights as an ESA Owner",
-    excerpt: "What landlords can legally ask for — and where the line gets crossed.",
+    excerpt: "What landlords can legally ask for, and where the line gets crossed.",
     href: "/#apply",
     category: "Texas Law",
     date: "Aug 5, 2026",

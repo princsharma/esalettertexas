@@ -13,17 +13,19 @@ const PIN_ICON = (
 
 function TeamCard({ member }: { member: TeamMember }) {
   return (
-    <div className="animate-fade-up group relative flex flex-col rounded-card border border-neutral-400 bg-white p-5 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-300 hover:shadow-card-hover">
-      {/* Photo — its own rounded div, inset within the card */}
-      <div className="relative aspect-[4/3] w-full flex-none overflow-hidden rounded-2xl border-2 ">
+     <div className="animate-fade-up group relative flex flex-col rounded-card border border-neutral-200 bg-white p-5 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-300 hover:shadow-card-hover">
+      {/* Photo: its own rounded div, inset within the card */}
+      <div className="relative aspect-[4/3] w-full flex-none overflow-hidden rounded-2xl border-2 border-neutral-100">
         <Image
           src={member.image}
           alt={member.name}
-          fill
+          // fill
+          height={1200}
+          width={1200}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-contain group-hover:scale-105"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute " />
+        <div className="absolute" />
         <span className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-brand-700 shadow-sm backdrop-blur-sm">
           {member.credential}
         </span>
@@ -64,7 +66,7 @@ function TeamCard({ member }: { member: TeamMember }) {
   );
 }
 
-/** Our Professionals — team grid. Sits between the stats strip and the
+/** Our Professionals: team grid. Sits between the stats strip and the
  *  process steps, introducing the licensed clinicians before explaining
  *  how the evaluation works. */
 export function TeamGrid({ members = TEAM }: { members?: TeamMember[] }) {

@@ -91,7 +91,7 @@ export default function ESALetterIntro(){
                 </span>
               </div>
               <p className="mt-1.5 text-xs leading-relaxed text-neutral-500 sm:text-sm">
-                Reviewed and signed by S. Alvarez, LPC — licensed to practice in Texas.
+                Reviewed and signed by S. Alvarez, LPC, licensed to practice in Texas.
               </p>
 
               <p className="mt-6 text-sm leading-relaxed text-neutral-600">

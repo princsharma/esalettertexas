@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export type RelatedLink = { label: string; href: string };
 
-/** M8 — Related pages block. Manually curated 3-5 internal links; sidebar or end-of-content. */
+/** M8: Related pages block. Manually curated 3-5 internal links; sidebar or end-of-content. */
 export function RelatedPages({
   title = "Related Pages",
   links,

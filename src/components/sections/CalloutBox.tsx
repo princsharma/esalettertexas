@@ -26,7 +26,7 @@ const TONES: Record<
   },
 };
 
-/** M9 — Callout / alert box. For legal warnings, scam alerts, key takeaways. */
+/** M9: Callout / alert box. For legal warnings, scam alerts, key takeaways. */
 export function CalloutBox({
   tone = "info",
   title,

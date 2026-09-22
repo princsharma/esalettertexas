@@ -6,6 +6,13 @@ import Image from "next/image"
 export default function TexasRights (){
     return (
       <section id="rights" className="scroll-mt-20 relative overflow-hidden bg-gradient-hero section-py">
+        {/* Right-side background photo, faded into the gradient so the line-grid overlay below still reads on top */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 right-0 w-full lg:w-1/2 opacity-40 mix-blend-luminosity [mask-image:linear-gradient(to_right,transparent_0%,black_45%)]"
+        >
+          <Image src="/images/your-rights-esa-bg.webp" alt="" fill className="object-cover" />
+        </div>
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -top-24 -left-20 h-80 w-80 rounded-full bg-accent-400/25 blur-3xl"

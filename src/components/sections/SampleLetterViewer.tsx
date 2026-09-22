@@ -6,7 +6,7 @@ export type LetterCallout = {
   label: string;
 };
 
-/** M12 — Sample letter viewer. Annotated document image with callout pins. */
+/** M12: Sample letter viewer. Annotated document image with callout pins. */
 export function SampleLetterViewer({
   imageSrc,
   imageAlt = "Sample ESA letter",

@@ -62,7 +62,7 @@ function FaqCard({
   );
 }
 
-/** M5 — FAQ accordion. Also emits FAQPage JSON-LD schema. */
+/** M5: FAQ accordion. Also emits FAQPage JSON-LD schema. */
 export function FaqAccordion({
   items,
   title = "Frequently Asked Questions",
@@ -72,7 +72,7 @@ export function FaqAccordion({
   title?: string;
   subhead?: string;
 }) {
-  // Each card's open/closed state is independent — opening a card in one
+  // Each card's open/closed state is independent; opening a card in one
   // column must never close a card in the other column.
   const [openIndexes, setOpenIndexes] = useState<Set<number>>(() => new Set([0]));
 
@@ -104,7 +104,7 @@ export function FaqAccordion({
   return (
      <div id="faq" className="scroll-mt-20">
     <section className="relative overflow-hidden bg-white section-py">
-      {/* Dotted texture — keeps this section visually distinct from the mint
+      {/* Dotted texture: keeps this section visually distinct from the mint
           sections (locations, pricing) directly above and below it */}
       <div
         aria-hidden="true"

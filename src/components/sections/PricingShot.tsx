@@ -197,7 +197,7 @@ export function PricingShot() {
 <div className="mx-auto mt-12 grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
 
   {/* =====================================================
-      PRICING CARD — LEFT
+      PRICING CARD - LEFT
   ====================================================== */}
   <div className="relative order-2 lg:order-1">
     {/* Card glow */}
@@ -335,7 +335,7 @@ export function PricingShot() {
 
 
   {/* =====================================================
-      CAT IMAGE — RIGHT
+      CAT IMAGE - RIGHT
   ====================================================== */}
   <div className="relative order-1 mx-auto w-full max-w-md lg:order-2 lg:mx-0">
 

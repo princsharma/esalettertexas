@@ -5,7 +5,7 @@ import { TOP_CONDITIONS } from "@/data/home";
 import Link from "next/link";
 import Image from "next/image";
 import { HERO_IMAGES } from "@/data/hero-images";
-/** One distinct icon per condition, keyed by title — keeps the list from
+/** One distinct icon per condition, keyed by title; keeps the list from
  *  reading as six repeats of the same glyph. */
 const CONDITION_ICONS: Record<string, ReactNode> = {
   Anxiety: (
@@ -135,7 +135,7 @@ export default function ConditionsList (){
             </Link>
           </div>
 
-          {/* Real photo — right side */}
+          {/* Real photo, right side */}
           <div className="relative mx-auto w-full max-w-md lg:mx-0">
             <div
               aria-hidden="true"
@@ -148,7 +148,7 @@ export default function ConditionsList (){
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              {/* Brand-teal tint — ties the photo's color into the site's palette */}
+              {/* Brand-teal tint, ties the photo's color into the site's palette */}
               <div className="absolute inset-0 bg-gradient-brand opacity-25 mix-blend-multiply" />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-950/50 via-transparent to-transparent" />
             </div>

@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 /* ============================================================
-   ESA Letter Texas — Design System
+   ESA Letter Texas: Design System
    Tone: trustworthy, clinical-but-warm, Texas-local.
 
    This file only wires up Tailwind + the reusable style modules
    and holds the base document reset. Tokens, typography, layout,
    utilities and animations each live in their own file under
-   src/styles/ — see that folder before adding new global CSS.
+   src/styles/, see that folder before adding new global CSS.
    ============================================================ */
 
 @import "../styles/tokens.css";
@@ -16,7 +16,7 @@
 @import "../styles/utilities.css";
 @import "../styles/animations.css";
 
-/* The site is designed as a single light theme — every section uses
+/* The site is designed as a single light theme, every section uses
    explicit light-surface colors (bg-white / neutral-50 / brand gradients),
    so we pin color-scheme instead of partially following OS dark mode. */
 

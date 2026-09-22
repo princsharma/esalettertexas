@@ -1,6 +1,6 @@
 export type ComparisonRow = { label: string; values: (string | boolean)[] };
 
-/** M10 — Comparison table. Two- or three-column responsive table (e.g. ESA vs Service Animal). */
+/** M10: Comparison table. Two- or three-column responsive table (e.g. ESA vs Service Animal). */
 export function ComparisonTable({
   columns,
   rows,

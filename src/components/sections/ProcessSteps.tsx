@@ -11,7 +11,7 @@ export function ProcessSteps({
   return (
     <div id="how-it-works" className="scroll-mt-20">
       <section className="relative overflow-hidden bg-gradient-hero section-py">
-        {/* Decorative ambient glow — echoes the Hero's treatment */}
+        {/* Decorative ambient glow: echoes the Hero's treatment */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -top-24 right-0 h-80 w-80 rounded-full bg-accent-400/25 blur-3xl"
@@ -29,13 +29,13 @@ export function ProcessSteps({
           <SectionHeading
             eyebrow="How It Works"
             title="How Our ESA Evaluation Process Works"
-            subhead="From assessment to signed letter — and beyond — here's exactly what to expect, step by step."
+            subhead="From assessment to signed letter, and beyond, here's exactly what to expect, step by step."
             align="center"
             tone="light"
           />
 
           <ol className="relative mt-16 grid gap-12 md:mt-20 md:grid-cols-3 md:gap-4">
-            {/* Connecting line — threads behind the avatars; vertical on mobile, horizontal on desktop */}
+            {/* Connecting line: threads behind the avatars; vertical on mobile, horizontal on desktop */}
             <div
               aria-hidden="true"
               className="absolute left-10 top-2 bottom-2 w-px bg-gradient-to-b from-white/0 via-white/25 to-white/0 md:left-[12.5%] md:right-[12.5%] md:top-10 md:bottom-auto md:h-px md:w-auto md:bg-gradient-to-r"
