@@ -47,11 +47,7 @@ function BandBackground() {
   );
 }
 
-/** CTA Band. Reusable, repeats mid-page and at page end. Full-bleed
- *  dark background on every variant (matches the other dark sections like
- *  ProcessSteps/Your Rights); no inset "card on white" look.
- *  `showLetter` renders a longer, richer layout with benefit bullets and a mock signed-letter graphic.
- *  `showSteps` renders a mini interactive step tracker on the hero-gradient background. */
+
 export function CtaBand({
   title,
   subhead,
@@ -61,7 +57,7 @@ export function CtaBand({
   bullets = DEFAULT_BULLETS,
   showSteps = false,
   steps = DEFAULT_MINI_STEPS,
- 
+  id,
 }: {
   title: string;
   subhead?: string;
@@ -71,21 +67,17 @@ export function CtaBand({
   bullets?: string[];
   showSteps?: boolean;
   steps?: string[];
-
+  id?: string;
   }) {
   if (showLetter) {
     return (
-      <section className="relative overflow-hidden bg-gradient-brand section-py">
+      <section id={id} className="relative overflow-hidden bg-gradient-brand section-py">
         <BandBackground />
 
         <Container className="relative">
           <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto] lg:gap-16">
             <div className="text-center lg:text-left">
-              <span className="mx-auto mb-4 hidden h-14 w-14 items-center justify-center rounded-full bg-white/10 text-white ring-1 ring-white/20 backdrop-blur-sm md:flex lg:mx-0">
-                <svg className="h-7 w-7" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path d="M10.5 3.5c-1.5-2-5-1.5-5 2 0 3 3 5 5 6.5 2-1.5 5-3.5 5-6.5 0-3.5-3.5-4-5-2z" />
-                </svg>
-              </span>
+              {/*  */}
 
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white [text-wrap:balance] md:text-[2.75rem]">
                 {title}
@@ -191,16 +183,16 @@ export function CtaBand({
 
   if (showSteps) {
     return (
-      <section className="relative overflow-hidden bg-gradient-hero section-py">
+      <section id={id} className="relative overflow-hidden bg-gradient-hero section-py">
         <BandBackground />
 
         <Container className="relative">
           <div className="relative mx-auto max-w-2xl text-center">
-            <span className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white/10 text-white ring-1 ring-white/20 backdrop-blur-sm">
+            {/* <span className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white/10 text-white ring-1 ring-white/20 backdrop-blur-sm">
               <svg className="h-7 w-7" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path d="M10.5 3.5c-1.5-2-5-1.5-5 2 0 3 3 5 5 6.5 2-1.5 5-3.5 5-6.5 0-3.5-3.5-4-5-2z" />
               </svg>
-            </span>
+            </span> */}
 
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white [text-wrap:balance] md:text-[2.75rem]">
               {title}
@@ -251,10 +243,10 @@ export function CtaBand({
   }
 
   return (
-    <section className="relative overflow-hidden bg-gradient-brand section-py">
+    <section id={id} className="relative isolate overflow-hidden rounded-card bg-gradient-brand shadow-card-brand ring-1 ring-brand-950/10">
       <BandBackground />
 
-      <Container className="relative flex flex-col items-center gap-7 text-center md:flex-row md:justify-between md:text-left">
+      <Container className="relative flex flex-col items-center gap-7 py-10 text-center sm:py-12 md:flex-row md:justify-between md:py-14 md:text-left">
         <div className="flex flex-col items-center gap-4 md:flex-row md:items-center md:gap-5 md:text-left">
           <span className="hidden h-14 w-14 flex-none items-center justify-center rounded-full bg-white/10 text-white ring-1 ring-white/20 backdrop-blur-sm md:flex">
             <svg className="h-7 w-7" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -262,7 +254,7 @@ export function CtaBand({
             </svg>
           </span>
           <div>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white [text-wrap:balance] md:text-[2.75rem]">
+            <h2 className="text-2xl font-bold tracking-tight text-white [text-wrap:balance] sm:text-3xl">
               {title}
             </h2>
             {subhead && (

@@ -1,17 +1,11 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-export type SiloCard = { title: string; description: string; href: string; icon?: ReactNode };
+export type SiloCard = { title: string; description: string; href: string; icon?: string };
 
-const DEFAULT_PIN_ICON = (
-  <path
-    fillRule="evenodd"
-    d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.062.029.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z"
-    clipRule="evenodd"
-  />
-);
+const DEFAULT_PIN_ICON = "/icons/Texas Counties Served_1.webp";
 
 /** M6: Silo child-page grid. Auto-lists child pages of the current silo (e.g. conditions, cities).
  *  `variant="location"` swaps the badge for a map pin and adds a Texas tag, for city/location grids. */
@@ -106,14 +100,20 @@ export function SiloChildGrid({
 
               <div className="flex flex-1 items-start gap-3.5">
                 <span
-                  className={`relative flex h-10 w-10 flex-none items-center justify-center rounded-full text-sm font-bold text-white shadow-sm transition-transform duration-300 group-hover:scale-110 ${
-                    isLocation ? "bg-gradient-brand-soft group-hover:-translate-y-0.5" : "bg-brand-600"
+                  className={`relative flex h-10 w-10 flex-none items-center justify-center rounded-full text-sm font-bold shadow-sm transition-transform duration-300 group-hover:scale-110 ${
+                    isLocation
+                      ? "bg-brand-600 ring-1 ring-neutral-200 group-hover:-translate-y-0.5"
+                      : "bg-brand-600 text-white"
                   }`}
                 >
                   {isLocation ? (
-                    <svg className="h-4.5 w-4.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      {item.icon ?? DEFAULT_PIN_ICON}
-                    </svg>
+                    <Image
+                      src={item.icon ?? DEFAULT_PIN_ICON}
+                      alt=""
+                      width={220}
+                      height={220}
+                      className="object-contain"
+                    />
                   ) : (
                     item.title.charAt(0)
                   )}

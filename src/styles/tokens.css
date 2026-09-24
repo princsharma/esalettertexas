@@ -88,6 +88,10 @@
     radial-gradient(70% 70% at 50% 100%, var(--color-brand-900) 0%, transparent 70%),
     linear-gradient(160deg, var(--color-brand-700) 0%, var(--color-brand-950) 100%);
 
+  /* Article layout wrapper: a light brand-to-accent wash (not the dark hero gradients)
+     since long-form copy sits directly on top and needs to stay readable. */
+  --gradient-article: linear-gradient(160deg, var(--color-brand-100) 0%, var(--color-brand-50) 50%, var(--color-accent-50) 100%);
+
   /* Spacing scale: page/section rhythm. Mobile-first, widens at --bp-md. */
   --space-section-y: 4rem; /* py-16 */
   --space-section-y-md: 5rem; /* py-20 */

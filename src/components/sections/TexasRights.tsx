@@ -38,35 +38,25 @@ export default function TexasRights (){
           <div className="mt-10 grid gap-7 sm:grid-cols-3">
             {[
               {
-                href: "/#apply",
+                href: "/requirements/",
                 label: "Your Rights Overview",
                 description: "A plain-language summary of what Texas law protects for ESA owners.",
                 tilt: "hover:-rotate-1",
-                icon: (
-                  <>
-                    <rect x="9.3" y="2" width="1.4" height="14" rx="0.7" />
-                    <rect x="3" y="5.3" width="14" height="1.4" rx="0.7" />
-                    <path d="M3 6.7 1.5 11h3Z" />
-                    <path d="M17 6.7 15.5 11h3Z" />
-                    <rect x="6.5" y="16.5" width="7" height="1.4" rx="0.7" />
-                  </>
-                ),
+                icon: "/icons/your right overview.webp",
               },
               {
-                href: "/#apply",
+                href: "/what-is-an-esa-letter/#legal-basis",
                 label: "Fair Housing Act",
                 description: "The federal law requiring landlords to make reasonable ESA accommodations.",
                 tilt: "hover:rotate-1",
-                icon: <path d="M10 2 3 8v9h4v-6h6v6h4V8Z" />,
+                icon: "/icons/fair house act.webp",
               },
               {
-                href: "/#apply",
+                href: "/requirements/#hb-4164-compliance",
                 label: "HB 4164 Explained",
                 description: "Texas's own law limiting what landlords can ask for and penalizing fake letters.",
                 tilt: "hover:-rotate-1",
-                icon: (
-                  <path d="M4 4a2 2 0 012-2h5.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm7 1V4l3 3h-2a1 1 0 01-1-1V5z" />
-                ),
+                icon: "/icons/hb 4146.webp",
               },
             ].map((item) => (
               <Link
@@ -74,14 +64,12 @@ export default function TexasRights (){
                 href={item.href}
                 className={`group relative flex flex-col items-center gap-3 rounded-card border border-white/15 bg-white/10 p-7 text-center shadow-photo-dark backdrop-blur-md transition-all duration-300 hover:z-10 hover:scale-110 hover:border-white/30 hover:bg-white/15 hover:shadow-photo-dark-hover ${item.tilt}`}
               >
-                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-accent text-white shadow-lg shadow-accent-900/30 transition-transform duration-300 group-hover:scale-110">
-                  <svg className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    {item.icon}
-                  </svg>
+                <span className="flex h-14 w-14 items-center justify-center rounded-full  shadow-lg transition-transform duration-300 group-hover:scale-110">
+                  <Image src={item.icon} alt="" width={232} height={232} className="object-contain" />
                 </span>
                 <h3 className="text-lg font-bold text-white">{item.label}</h3>
                 <p className="text-sm leading-relaxed text-brand-100">{item.description}</p>
-                <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-accent-300">
+                <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-200">
                   Learn more
                   <svg
                     className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"

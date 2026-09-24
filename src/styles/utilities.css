@@ -18,3 +18,7 @@
 .bg-hero-mesh {
   background: var(--gradient-hero-mesh);
 }
+
+.bg-gradient-article {
+  background: var(--gradient-article);
+}

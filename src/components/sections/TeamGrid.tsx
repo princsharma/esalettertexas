@@ -3,13 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TEAM, type TeamMember } from "@/data/team";
 
-const PIN_ICON = (
-  <path
-    fillRule="evenodd"
-    d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.062.029.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z"
-    clipRule="evenodd"
-  />
-);
+
 
 function TeamCard({ member }: { member: TeamMember }) {
   return (
@@ -37,10 +31,16 @@ function TeamCard({ member }: { member: TeamMember }) {
         <p className="mt-3 text-sm leading-relaxed text-neutral-600">{member.bio}</p>
 
         <div className="mt-5 flex items-start gap-2.5 border-t border-neutral-100 pt-4">
-          <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-brand-50 text-brand-600 transition-colors duration-300 group-hover:bg-brand-600 group-hover:text-white">
-            <svg className="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              {PIN_ICON}
-            </svg>
+          <span className="flex h-16 w-16 flex-none items-center justify-center rounded-full bg-brand-50 text-brand-600 transition-colors duration-30  group-hover:text-white">
+            <Image 
+            alt="location"
+            src={"/icons/esa-location-icon.webp"}
+            height={120}
+            width={120}
+            className="object-contain"
+            >
+
+            </Image>
           </span>
           <div className="min-w-0">
             <p className="text-[11px] font-semibold uppercase tracking-wide text-neutral-500">Licensed In</p>
@@ -66,9 +66,7 @@ function TeamCard({ member }: { member: TeamMember }) {
   );
 }
 
-/** Our Professionals: team grid. Sits between the stats strip and the
- *  process steps, introducing the licensed clinicians before explaining
- *  how the evaluation works. */
+
 export function TeamGrid({ members = TEAM }: { members?: TeamMember[] }) {
   return (
     <section className="relative overflow-hidden bg-white section-py">

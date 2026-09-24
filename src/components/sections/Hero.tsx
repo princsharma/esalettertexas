@@ -2,9 +2,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 
-type TrustBadge = { label: string ,
-   icon?: string | any
-  };
+type TrustBadge = { label: string; icon?: string };
 
 export function Hero({
   eyebrow,
@@ -132,14 +130,18 @@ export function Hero({
               <ul className="mt-9 grid gap-4 sm:grid-cols-3">
                 {trustBadges.map((b) => (
                   <li key={b.label} className="flex items-center gap-3">
-                    <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-white/10 text-accent-400 ring-1 ring-white/15 backdrop-blur-sm">
-                      <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                        <path
-                          fillRule="evenodd"
-                          d="M16.7 5.3a1 1 0 010 1.4l-7.4 7.4a1 1 0 01-1.4 0L3.3 9.5a1 1 0 111.4-1.4l3.9 3.9 6.7-6.7a1 1 0 011.4 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
+                    <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-white/90 ring-1 ring-white/15 backdrop-blur-sm">
+                      {b.icon ? (
+                        <Image src={b.icon} alt="" width={24} height={24} className="h-6 w-6 object-contain" />
+                      ) : (
+                        <svg className="h-5 w-5 text-accent-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path
+                            fillRule="evenodd"
+                            d="M16.7 5.3a1 1 0 010 1.4l-7.4 7.4a1 1 0 01-1.4 0L3.3 9.5a1 1 0 111.4-1.4l3.9 3.9 6.7-6.7a1 1 0 011.4 0z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      )}
                     </span>
                     <span className="text-sm font-bold text-white md:text-base">{b.label}</span>
                   </li>
