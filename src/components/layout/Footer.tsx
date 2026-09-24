@@ -6,20 +6,20 @@ import { Container } from "@/components/ui/Container";
 type FooterLink = { label: string; href: string };
 
 const CORE_LINKS: FooterLink[] = [
-  { label: "What Is an ESA Letter", href: "/#apply" },
-  { label: "How to Get One in Texas", href: "/#how-it-works" },
-  { label: "Requirements", href: "/#apply" },
-  { label: "Sample Letter", href: "/#apply" },
-  { label: "Cost", href: "/#pricing" },
-  { label: "Renewal", href: "/#faq" },
+  { label: "What Is an ESA Letter", href: "/what-is-an-esa-letter/" },
+  { label: "How to Get One in Texas", href: "/how-to-get-an-esa-letter-in-texas/" },
+  { label: "Requirements", href: "/requirements/" },
+  { label: "Sample Letter", href: "/sample-letter/" },
+  { label: "Cost", href: "/cost/" },
+  { label: "Renewal", href: "/renewal/" },
 ];
 
 const RIGHTS_LINKS: FooterLink[] = [
-  { label: "Fair Housing Act", href: "/#rights" },
-  { label: "HB 4164", href: "/#rights" },
-  { label: "ESA vs Service Animal", href: "/#blog" },
-  { label: "No-Pet Apartments", href: "/#apply" },
-  { label: "Landlord Denials", href: "/#faq" },
+  { label: "Fair Housing Act", href: "/what-is-an-esa-letter/#legal-basis" },
+  { label: "HB 4164", href: "/requirements/#hb-4164-compliance" },
+  { label: "ESA vs Service Animal", href: "/what-is-an-esa-letter/#what-it-is-not" },
+  { label: "No-Pet Apartments", href: "/what-is-an-esa-letter/#how-its-used" },
+  { label: "Landlord Denials", href: "/requirements/#red-flags" },
 ];
 
 const CONDITION_LINKS: FooterLink[] = [
@@ -114,10 +114,7 @@ export function Footer() {
         {/* Compact brand strip */}
         <div className="flex flex-wrap items-center justify-between gap-4">
           <Link href="/" className="relative -ml-1 flex items-center" aria-label="ESA Letter Texas, home">
-            {/* Dark-bg variant: the source logo file has a solid white background
-                baked in, so this is a pre-processed cutout (white made transparent,
-                the navy "Texas" wordmark recolored white) made to sit directly on
-                the footer's dark background instead of behind a white card. */}
+      
             <div className="relative h-14 w-[190px] flex-none">
               <Image
                 src="/hero/ESALetterLogo-dark.png"

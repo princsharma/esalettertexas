@@ -7,36 +7,9 @@ import { HERO_IMAGES } from "@/data/hero-images";
 
 
 const PRICING_FEATURES = [
-  {
-    label: "24–48 hour turnaround",
-    icon: (
-      <path
-        fillRule="evenodd"
-        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v5a1 1 0 00.293.707l3 3a1 1 0 001.414-1.414L11 9.586V5z"
-        clipRule="evenodd"
-      />
-    ),
-  },
-  {
-    label: "Licensed therapist review",
-    icon: (
-      <path
-        fillRule="evenodd"
-        d="M10 9a3 3 0 100-6 3 3 0 000 6zM3 17c0-3.314 3.134-6 7-6s7 2.686 7 6H3z"
-        clipRule="evenodd"
-      />
-    ),
-  },
-  {
-    label: "Money-back guarantee",
-    icon: (
-      <path
-        fillRule="evenodd"
-        d="M10 1a4 4 0 00-4 4v2H5a2 2 0 00-2 2v7a2 2 0 002 2h10a2 2 0 002-2V9a2 2 0 00-2-2h-1V5a4 4 0 00-4-4zm2 6V5a2 2 0 10-4 0v2h4z"
-        clipRule="evenodd"
-      />
-    ),
-  },
+  { label: "24-48 hour turnaround", icon: null },
+  { label: "Licensed therapist review", icon: "/icons/Licensed TX therapists_1.webp" },
+  { label: "Money-back guarantee", icon: "/icons/Moneyback guarantee_1.webp" },
 ];
 
 const ESA_PRICING = {
@@ -53,7 +26,7 @@ const ESA_PRICING = {
     "Personalized clinical assessment",
     "Signed and verifiable ESA letter when clinically appropriate",
     "Digital delivery",
-    "24–48 hour typical turnaround",
+    "24-48 hour typical turnaround",
     "Landlord verification support",
   ],
 
@@ -110,7 +83,7 @@ function ArrowIcon() {
 function LockIcon() {
   return (
     <svg
-      className="h-3.5 w-3.5 flex-none text-brand-500"
+      className="h-4 w-4 flex-none text-brand-500"
       viewBox="0 0 20 20"
       fill="currentColor"
       aria-hidden="true"
@@ -170,25 +143,33 @@ export function PricingShot() {
         </div>
 
         {/* Small feature strip */}
-        <div className="mx-auto mt-7 flex max-w-3xl flex-wrap justify-center gap-x-6 gap-y-3">
+        {/* <div className="mx-auto mt-7 flex max-w-3xl flex-wrap justify-center gap-x-6 gap-y-3">
           {PRICING_FEATURES.map((feature) => (
             <div
               key={feature.label}
-              className="flex items-center gap-1.5 text-xs font-semibold text-brand-700"
+              className="flex items-center gap-1.5 text-sm font-semibold text-brand-700"
             >
-              <svg
-                className="h-3.5 w-3.5 flex-none text-brand-500"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                {feature.icon}
-              </svg>
+              {feature.icon ? (
+                <Image src={feature.icon} alt="" width={50} height={50} className="flex-none object-contain" />
+              ) : (
+                <svg
+                  className="h-10 w-10 flex-none text-brand-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v5a1 1 0 00.293.707l3 3a1 1 0 001.414-1.414L11 9.586V5z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              )}
 
               {feature.label}
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Main pricing layout */}
         {/* =====================================================
@@ -275,7 +256,7 @@ export function PricingShot() {
       {/* Inclusions */}
       <div className="relative mt-6">
         <p className="mb-4 text-xs font-bold uppercase tracking-wider text-neutral-500">
-          What&apos;s included
+          What's included
         </p>
 
         <ul className="space-y-3">

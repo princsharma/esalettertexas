@@ -34,7 +34,7 @@ export function Button({
   return (
     <Link
       href={href}
-      className={`inline-flex items-center justify-center gap-2 rounded-control font-semibold transition-all duration-200 ease-out outline-offset-2 ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
+      className={`inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-control font-semibold transition-all duration-200 ease-out outline-offset-2 ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
     >
       {children}
     </Link>

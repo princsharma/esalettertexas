@@ -48,7 +48,7 @@ export default function ESALetterIntro(){
             </ul>
 
             <Link
-              href="/#how-it-works"
+              href="/what-is-an-esa-letter/"
               className="group mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 transition-colors hover:text-brand-800"
             >
               Learn more about ESA letters

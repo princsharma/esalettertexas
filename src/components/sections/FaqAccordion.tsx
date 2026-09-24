@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -62,15 +63,20 @@ function FaqCard({
   );
 }
 
-/** M5: FAQ accordion. Also emits FAQPage JSON-LD schema. */
+/** M5: FAQ accordion. Also emits FAQPage JSON-LD schema.
+ *  `railGutter` reserves an empty lg+ column matching ArticleLayout's aside width/gap, for pages
+ *  where the article's sticky sidebar rides down past its own section and over this one - without
+ *  it, the FAQ grid's own columns would run underneath the floating sidebar. */
 export function FaqAccordion({
   items,
   title = "Frequently Asked Questions",
   subhead,
+  railGutter = false,
 }: {
   items: FaqItem[];
   title?: string;
   subhead?: string;
+  railGutter?: boolean;
 }) {
   // Each card's open/closed state is independent; opening a card in one
   // column must never close a card in the other column.
@@ -115,34 +121,40 @@ export function FaqAccordion({
         className="pointer-events-none absolute -bottom-24 right-0 h-72 w-72 rounded-full bg-accent-100/40 blur-3xl"
       />
 
-      <Container className="relative max-w-5xl">
-        <span className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-brand-soft text-white shadow-sm">
-          <svg className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path
-              fillRule="evenodd"
-              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a1.5 1.5 0 112.28 1.93c-.31.35-.72.62-.94.85-.28.29-.28.66-.28.94v.09a.75.75 0 001.5 0v-.02c.02-.06.09-.14.24-.3.32-.33.9-.76 1.36-1.28A3 3 0 106.5 9.5a.75.75 0 001.5 0 1.5 1.5 0 01.94-1.56zM10 15a1 1 0 100-2 1 1 0 000 2z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </span>
-        <SectionHeading title={title} subhead={subhead} align="center" />
+      <Container className={`relative ${railGutter ? "" : "max-w-5xl"}`}>
+        <div className={railGutter ? "lg:grid lg:grid-cols-[1fr_18rem] lg:gap-12" : ""}>
+          <div className={railGutter ? "min-w-0 mx-auto max-w-5xl lg:mx-0 lg:max-w-none" : ""}>
+            <span className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-brand-500 shadow-sm ring-1 ring-neutral-200">
+              <Image
+                src="/icons/fraquency asked quetion.webp"
+                alt=""
+                width={30}
+                height={30}
+                className="h-[30px] w-[30px] object-contain"
+              />
+            </span>
+            <SectionHeading title={title} subhead={subhead} align="center" />
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2">
-          {[0, 1].map((column) => (
-            <div key={column} className="flex flex-col gap-4">
-              {items
-                .map((item, i) => ({ item, i }))
-                .filter((_, idx) => idx % 2 === column)
-                .map(({ item, i }) => (
-                  <FaqCard
-                    key={item.question}
-                    item={item}
-                    isOpen={openIndexes.has(i)}
-                    onToggle={() => toggle(i)}
-                  />
-                ))}
+            <div className="mt-10 grid gap-4 sm:grid-cols-2">
+              {[0, 1].map((column) => (
+                <div key={column} className="flex flex-col gap-4">
+                  {items
+                    .map((item, i) => ({ item, i }))
+                    .filter((_, idx) => idx % 2 === column)
+                    .map(({ item, i }) => (
+                      <FaqCard
+                        key={item.question}
+                        item={item}
+                        isOpen={openIndexes.has(i)}
+                        onToggle={() => toggle(i)}
+                      />
+                    ))}
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {railGutter && <div aria-hidden="true" className="hidden lg:block" />}
         </div>
       </Container>
       <script

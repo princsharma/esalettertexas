@@ -47,9 +47,9 @@ export function ComparisonTable({
                 <td key={j} className="px-4 py-3 text-neutral-700">
                   {typeof value === "boolean" ? (
                     value ? (
-                      <span className="text-success-600">✓</span>
+                      <span className="font-semibold text-green-950">✓</span>
                     ) : (
-                      <span className="text-neutral-300">✕</span>
+                      <span className=" font-semibold text-red-900">✕</span>
                     )
                   ) : (
                     value
