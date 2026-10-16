@@ -9,7 +9,7 @@ export function HeroPhotoBackdrop({ src }: { src: string }) {
   return (
     <>
       <div aria-hidden="true" className="absolute inset-0">
-        <Image src={src} alt="" fill priority className="object-cover" />
+        <Image src={src} alt="" fill sizes="100vw" className="object-cover" />
       </div>
       <div aria-hidden="true" className="absolute inset-0 bg-hero-mesh opacity-90 mix-blend-multiply" />
       <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-brand-950/70 via-brand-950/20 to-transparent" />
@@ -199,11 +199,16 @@ export function Hero({
                 </div>
               ) : (
                 <div
-                className="relative flex aspect-[4/5] flex-col items-center justify-center gap-3 overflow-hidden rounded-card border-2 ring-2 ring-accent-600 border-accent-600 text-center backdrop-blur-sm hover:scale-105 transition-all duration-300 bg-cover bg-center"
-                style={{
-                  backgroundImage: `url('/hero/ESA Letter Texas.webp')`,
-                }}
-              >
+                  className="relative aspect-[4/5] overflow-hidden rounded-card border-2 border-accent-600 ring-2 ring-accent-600 shadow-photo-deep transition-transform duration-300 hover:scale-[1.02]"
+                >
+                  <Image
+                    src="/hero/ESA Letter Texas.webp"
+                    alt="Sample ESA letter documentation"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 90vw, 28rem"
+                    className="object-cover object-center"
+                  />
                 {/* Decorative corner circles
                 <span
                   aria-hidden="true"
@@ -228,7 +233,7 @@ export function Hero({
                     />
                   </svg>
                 </span> */}
-              </div>
+                </div>
               )}
             </div>
           )}
