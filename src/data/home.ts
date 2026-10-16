@@ -1,5 +1,6 @@
 import type { FaqItem, SiloCard, BlogPost } from "@/components/sections";
 import { HERO_IMAGES } from "@/data/hero-images";
+import { getRecentPosts } from "@/lib/blog";
 
 // NOTE: this is currently a single-page site with no dedicated sub-pages yet.
 // Every card below points at the in-page "#apply" quick-apply form as a
@@ -8,53 +9,66 @@ import { HERO_IMAGES } from "@/data/hero-images";
 export const TOP_CONDITIONS: SiloCard[] = [
   {
     title: "Anxiety",
-    description: "How an ESA can support anxiety disorders.", href: "/#apply"
+    description: "How an ESA can support anxiety disorders.",
+    href: "/conditions/anxiety/",
   },
   {
     title: "Depression",
     description: "Qualifying for an ESA letter with depression.",
-    href: "/#apply"
+    href: "/conditions/depression/",
   },
-  { title: "PTSD",
-     description: "ESA support for post-traumatic stress disorder.", 
-     href: "/#apply" 
-    },
-  { title: "Panic Disorder", 
-    description: "Managing panic disorder with an emotional support animal.", href: "/#apply" },
-  { title: "Social Anxiety", description: "ESA letters for social anxiety disorder.", href: "/#apply" },
-  { title: "ADHD", description: "Do ADHD symptoms qualify for an ESA letter?", href: "/#apply" },
+  {
+    title: "PTSD",
+    description: "ESA support for post-traumatic stress disorder.",
+    href: "/conditions/ptsd/",
+  },
+  {
+    title: "Panic Disorder",
+    description: "Managing panic disorder with an emotional support animal.",
+    href: "/conditions/panic-disorder/",
+  },
+  {
+    title: "Social Anxiety",
+    description: "ESA letters for social anxiety disorder.",
+    href: "/conditions/social-anxiety/",
+  },
+  {
+    title: "ADHD",
+    description: "Do ADHD symptoms qualify for an ESA letter?",
+    href: "/conditions/adhd/",
+  },
 ];
 
 export const CITIES: SiloCard[] = [
   {
     title: "Austin",
     description: "ESA letter guidance and local housing rules for Austin renters.",
-    href: "/#apply"
+    href: "/locations/austin/",
   },
   {
     title: "Houston",
     description: "ESA letter guidance and local housing rules for Houston renters.",
-    href: "/#apply"
+    href: "/locations/houston/",
   },
   {
     title: "Dallas",
     description: "ESA letter guidance and local housing rules for Dallas renters.",
-    href: "/#apply"
+    href: "/locations/dallas/",
   },
   {
     title: "San Antonio",
     description: "ESA letter guidance and local housing rules for San Antonio renters.",
-    href: "/#apply"
+    href: "/locations/san-antonio/",
   },
   {
     title: "Fort Worth",
     description: "ESA letter guidance and local housing rules for Fort Worth renters.",
-    href: "/#apply"
+    href: "/locations/fort-worth/",
   },
   {
     title: "El Paso",
     description: "ESA letter guidance and local housing rules for El Paso renters.",
-    href: "/#apply"
+    href: "/locations/",
   },
 ];
 
@@ -102,38 +116,4 @@ export const FAQS: FaqItem[] = [
   },
 ];
 
-export const BLOG_POSTS: BlogPost[] = [
-  {
-    title: "ESA vs. Service Animal: What's the Difference?",
-    excerpt: "Know the legal differences, and exactly where each one is protected under Texas law.",
-    href: "/#apply",
-    category: "Guides",
-    date: "Sep 2, 2026",
-    image: "/images/esa vs servic animal.webp"
-  },
-  {
-    title: "HB 4164 Explained: What Texas Renters Need to Know",
-    excerpt: "A clear, plain-language breakdown of what HB 4164 actually means for Texas renters.",
-    href: "/#apply",
-    category: "Texas Law",
-    date: "Aug 26, 2026",
-    image: "/images/Hb 4164 expla.webp"
-  },
-
-  {
-    title: "How to Spot an ESA Letter Scam",
-    excerpt: "The red flags that separate a legitimate ESA letter from a scam, before you pay.",
-    href: "/#apply",
-    category: "Guides",
-    date: "Aug 14, 2026",
-    image: "/images/how to spot esa letter scam.webp"
-  },
-  {
-    title: "Fair Housing Act: Your Rights as an ESA Owner",
-    excerpt: "What landlords can legally ask for, and where the line gets crossed.",
-    href: "/#apply",
-    category: "Texas Law",
-    date: "Aug 5, 2026",
-    image: "/images/fair house act_1.webp"
-  },
-];
+export const BLOG_POSTS: BlogPost[] = getRecentPosts(4);

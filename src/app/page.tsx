@@ -16,7 +16,6 @@ import {
   PricingShot,
 } from "@/components/sections";
 import { TOP_CONDITIONS, CITIES, FAQS, BLOG_POSTS } from "@/data/home";
-import { HERO_IMAGES } from "@/data/hero-images";
 import ESALetterIntro from "@/components/sections/ESALetterIntro";
 import ConditionsList from "@/components/sections/ConditionsList";
 import TexasRights from "@/components/sections/TexasRights";
@@ -72,7 +71,7 @@ export default function Home() {
           title="ESA Letters Across Texas"
           subhead="Local ESA housing rules and resources for major Texas cities."
           items={CITIES.map((city) => ({ ...city, icon: CITY_ICONS[city.title] }))}
-          viewAllHref="/#locations"
+          viewAllHref="/locations/"
           viewAllLabel="View all cities"
           variant="location"
         />

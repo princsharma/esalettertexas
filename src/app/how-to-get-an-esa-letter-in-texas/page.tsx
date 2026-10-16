@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import Image from "next/image";
+import { JsonLd } from "@/components/seo/JsonLd";
 import {
   Hero,
   ArticleLayout,
@@ -13,12 +13,15 @@ import {
 } from "@/components/sections";
 import type { FaqItem, TocItem, RelatedLink } from "@/components/sections";
 import { DEFAULT_PROCESS_STEPS } from "@/data/process-steps";
+import { STATIC_PAGE_SEO } from "@/data/seo/static-pages";
+import { howToSchema } from "@/lib/schema";
+import { PAGE_HERO } from "@/data/page-heroes";
+import { absoluteUrl, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "How to Get an ESA Letter in Texas | ESA Letter Texas",
-  description:
-    "A step-by-step walkthrough for getting a legitimate, therapist-reviewed ESA letter in Texas: eligibility, process, timeline, and what you'll receive.",
-};
+const HOW_TO_PATH = "/how-to-get-an-esa-letter-in-texas/";
+const HOW_TO_SEO = STATIC_PAGE_SEO[HOW_TO_PATH];
+
+export const metadata = pageMetadata(HOW_TO_PATH);
 
 const TOC: TocItem[] = [
   { id: "eligibility-check", label: "Eligibility check" },
@@ -62,6 +65,14 @@ const RELATED: RelatedLink[] = [
 export default function HowToGetAnEsaLetterPage() {
   return (
     <>
+      <JsonLd
+        data={howToSchema(
+          HOW_TO_SEO.metaTitle,
+          HOW_TO_SEO.metaDescription,
+          DEFAULT_PROCESS_STEPS,
+          absoluteUrl(HOW_TO_PATH),
+        )}
+      />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "How to Get an ESA Letter in Texas" }]} />
 
       <Hero
@@ -73,6 +84,7 @@ export default function HowToGetAnEsaLetterPage() {
         ctaHref="/#apply"
         secondaryCtaLabel="Check requirements first"
         secondaryCtaHref="/requirements/"
+        backgroundImage={PAGE_HERO.howToGet}
       />
 
       <ArticleLayout
@@ -195,7 +207,7 @@ export default function HowToGetAnEsaLetterPage() {
         </ArticleSection>
       </ArticleLayout>
 
-      <FaqAccordion items={FAQS} title="Frequently Asked Questions About the Process" railGutter />
+      <FaqAccordion items={FAQS} title="Frequently Asked Questions About the Process" />
 
       <CtaBand
         id="final-cta"

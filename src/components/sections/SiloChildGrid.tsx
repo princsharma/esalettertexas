@@ -17,6 +17,7 @@ export function SiloChildGrid({
   viewAllHref,
   viewAllLabel = "View all",
   variant = "default",
+  scrollAnchorId = "locations",
 }: {
   eyebrow?: string;
   title: string;
@@ -25,10 +26,11 @@ export function SiloChildGrid({
   viewAllHref?: string;
   viewAllLabel?: string;
   variant?: "default" | "location";
+  scrollAnchorId?: string;
 }) {
   const isLocation = variant === "location";
   return (
-       <div id="locations" className="scroll-mt-20">
+       <div id={scrollAnchorId} className="scroll-mt-20">
     <section className={`relative overflow-hidden section-py ${isLocation ? "bg-brand-50" : "bg-white"}`}>
       {/* Background effect: soft brand/accent glows, matching the pricing section for location grids */}
       <div

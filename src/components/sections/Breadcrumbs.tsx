@@ -1,27 +1,26 @@
 import Link from "next/link";
+import { breadcrumbListSchema } from "@/lib/schema";
 
 export type BreadcrumbItem = { label: string; href?: string };
 
 /** Slim breadcrumb strip, sits between the header and the page hero. */
-export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: items.map((item, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      name: item.label,
-      ...(item.href ? { item: item.href } : {}),
-    })),
-  };
+export function Breadcrumbs({
+  items,
+  /** Canonical path of the current page (e.g. `/cost/`) for Rich Results when the last crumb has no link. */
+  pageUrl,
+}: {
+  items: BreadcrumbItem[];
+  pageUrl?: string;
+}) {
+  const schema = breadcrumbListSchema(items, pageUrl);
 
   return (
     <div className="border-b border-neutral-100 bg-neutral-50">
       <div className="container-page">
-        <nav aria-label="Breadcrumb" className="py-3">
-          <ol className="flex flex-wrap items-center gap-1.5 text-sm text-neutral-500">
+        <nav aria-label="Breadcrumb" className="py-2.5 sm:py-3">
+          <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs text-neutral-500 sm:text-sm">
             {items.map((item, i) => (
-              <li key={item.label} className="flex items-center gap-1.5">
+              <li key={item.label} className="flex min-w-0 max-w-full items-center gap-1.5">
                 {i > 0 && (
                   <svg
                     className="h-3.5 w-3.5 flex-none text-neutral-300"
@@ -44,7 +43,7 @@ export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
                     {item.label}
                   </Link>
                 ) : (
-                  <span className="font-semibold text-neutral-800">{item.label}</span>
+                  <span className="line-clamp-2 font-semibold text-neutral-800 sm:line-clamp-1">{item.label}</span>
                 )}
               </li>
             ))}

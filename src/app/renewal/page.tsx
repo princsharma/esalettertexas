@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import { PAGE_HERO } from "@/data/page-heroes";
+import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -13,11 +14,7 @@ import {
 } from "@/components/sections";
 import type { FaqItem, TocItem, RelatedLink } from "@/components/sections";
 
-export const metadata: Metadata = {
-  title: "ESA Letter Renewal | ESA Letter Texas",
-  description:
-    "When you need to renew your ESA letter, how the renewal process works, what it costs, and what changes on re-evaluation.",
-};
+export const metadata = pageMetadata("/renewal/");
 
 const TOC: TocItem[] = [
   { id: "when-renewal-is-needed", label: "When renewal is needed" },
@@ -71,6 +68,7 @@ export default function RenewalPage() {
         ctaHref="/#apply"
         secondaryCtaLabel="Check the requirements"
         secondaryCtaHref="/requirements/"
+        backgroundImage={PAGE_HERO.renewal}
       />
 
       <ArticleLayout
@@ -167,7 +165,7 @@ export default function RenewalPage() {
         </ArticleSection>
       </ArticleLayout>
 
-      <FaqAccordion items={FAQS} title="Frequently Asked Questions About Renewal" railGutter />
+      <FaqAccordion items={FAQS} title="Frequently Asked Questions About Renewal" />
 
       <CtaBand
         id="final-cta"

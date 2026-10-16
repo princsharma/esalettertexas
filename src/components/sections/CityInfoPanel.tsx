@@ -1,7 +1,7 @@
 export type CityStat = { label: string; value: string };
 export type CityResource = { label: string; href: string };
 
-/** M14: City info panel. Local housing stats, local rules, nearby resources. */
+/** M14: City info panel. CMS fields: `stats`, `localRules`, `resources` — one record per city in `locations-cities.ts`. */
 export function CityInfoPanel({
   cityName,
   stats,

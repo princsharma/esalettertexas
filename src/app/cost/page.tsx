@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import Image from "next/image";
+import { JsonLd } from "@/components/seo/JsonLd";
 import Link from "next/link";
 import {
   Hero,
@@ -14,11 +14,11 @@ import {
   PricingShot,
 } from "@/components/sections";
 import type { FaqItem, TocItem, RelatedLink } from "@/components/sections";
-export const metadata: Metadata = {
-  title: "ESA Letter Cost in Texas | ESA Letter Texas",
-  description:
-    "What an ESA letter costs in Texas, what's included, our refund policy, why free or cheap letters fail, and what renewal costs.",
-};
+import { esaLetterProductSchema } from "@/lib/schema";
+import { PAGE_HERO } from "@/data/page-heroes";
+import { absoluteUrl, pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata("/cost/");
 
 const TOC: TocItem[] = [
   { id: "pricing", label: "Pricing" },
@@ -62,6 +62,7 @@ const RELATED: RelatedLink[] = [
 export default function CostPage() {
   return (
     <>
+      <JsonLd data={esaLetterProductSchema(absoluteUrl("/cost/"))} />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "ESA Letter Cost in Texas" }]} />
 
       <Hero
@@ -73,6 +74,7 @@ export default function CostPage() {
         ctaHref="/#apply"
         secondaryCtaLabel="See what's included"
         secondaryCtaHref="#whats-included"
+        backgroundImage={PAGE_HERO.cost}
       />
 
       {/* M13: Pricing, full-bleed section (id="pricing" set internally) */}
@@ -165,7 +167,7 @@ export default function CostPage() {
         </ArticleSection>
       </ArticleLayout>
 
-      <FaqAccordion items={FAQS} title="Frequently Asked Questions About Cost" railGutter />
+      <FaqAccordion items={FAQS} title="Frequently Asked Questions About Cost" />
 
       <CtaBand
         id="final-cta"

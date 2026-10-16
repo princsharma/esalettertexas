@@ -29,7 +29,7 @@ export function SectionHeading({
         </p>
       )}
       <h2
-        className={`text-3xl sm:text-4xl md:text-[2.75rem] font-bold tracking-tight [text-wrap:balance] ${
+        className={`text-2xl font-bold tracking-tight [text-wrap:balance] sm:text-3xl md:text-4xl lg:text-[2.75rem] ${
           isLight ? "text-white" : "text-neutral-900"
         }`}
       >
@@ -37,7 +37,7 @@ export function SectionHeading({
       </h2>
       {subhead && (
         <p
-          className={`mt-4 text-base leading-relaxed sm:text-lg md:text-xl ${
+          className={`mt-3 text-sm leading-relaxed sm:mt-4 sm:text-base md:text-lg lg:text-xl ${
             isLight ? "text-brand-100" : "text-neutral-600"
           }`}
         >
