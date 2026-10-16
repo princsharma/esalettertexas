@@ -1,7 +1,10 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { MobileStickyCta } from "@/components/layout/MobileStickyCta";
+import { AnalyticsScripts } from "@/components/analytics/AnalyticsScripts";
+import { GlobalSiteSchema } from "@/components/seo/GlobalSiteSchema";
+import { rootLayoutMetadata } from "@/lib/seo";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,11 +17,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "ESA Letter Texas | Licensed Therapist-Reviewed ESA Letters",
-  description:
-    "Get a legitimate Emotional Support Animal letter in Texas, reviewed by a licensed therapist. HIPAA compliant, moneyback guarantee, 24-48hr turnaround.",
-};
+export const metadata = rootLayoutMetadata();
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
@@ -27,8 +26,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <GlobalSiteSchema />
+        <AnalyticsScripts />
         <Header />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 pb-20 md:pb-0">{children}</main>
+        <MobileStickyCta />
         <Footer />
       </body>
     </html>

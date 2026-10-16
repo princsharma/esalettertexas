@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TEAM, type TeamMember } from "@/data/team";
@@ -7,17 +8,15 @@ import { TEAM, type TeamMember } from "@/data/team";
 
 function TeamCard({ member }: { member: TeamMember }) {
   return (
-     <div className="animate-fade-up group relative flex flex-col rounded-card border border-neutral-200 bg-white p-5 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-300 hover:shadow-card-hover">
+     <div className="animate-fade-up group relative flex h-full flex-col rounded-card border border-neutral-200 bg-white p-4 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-300 hover:shadow-card-hover sm:p-5">
       {/* Photo: its own rounded div, inset within the card */}
-      <div className="relative aspect-[4/3] w-full flex-none overflow-hidden rounded-2xl border-2 border-neutral-100">
+      <div className="relative aspect-[5/6] w-full flex-none overflow-hidden rounded-2xl border-2 border-neutral-100 bg-white">
         <Image
           src={member.image}
           alt={member.name}
-          // fill
-          height={1200}
-          width={1200}
+          fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
         />
         <div className="absolute" />
         <span className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-brand-700 shadow-sm backdrop-blur-sm">
@@ -25,22 +24,20 @@ function TeamCard({ member }: { member: TeamMember }) {
         </span>
       </div>
 
-      <div className="mt-5 flex flex-1 flex-col">
-        <h3 className="text-lg font-bold text-neutral-900">{member.name}</h3>
+      <div className="mt-4 flex flex-1 flex-col sm:mt-5">
+        <h3 className="text-base font-bold text-neutral-900 sm:text-lg">{member.name}</h3>
         <p className="mt-0.5 text-sm font-bold text-brand-600">{member.tagline}</p>
-        <p className="mt-3 text-sm leading-relaxed text-neutral-600">{member.bio}</p>
+        <p className="mt-2 text-sm leading-relaxed text-neutral-600 sm:mt-3">{member.bio}</p>
 
-        <div className="mt-5 flex items-start gap-2.5 border-t border-neutral-100 pt-4">
-          <span className="flex h-16 w-16 flex-none items-center justify-center rounded-full bg-brand-50 text-brand-600 transition-colors duration-30  group-hover:text-white">
-            <Image 
-            alt="location"
-            src={"/icons/esa-location-icon.webp"}
-            height={120}
-            width={120}
-            className="object-contain"
-            >
-
-            </Image>
+        <div className="mt-4 flex items-start gap-2.5 border-t border-neutral-100 pt-4 sm:mt-5">
+          <span className="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-brand-50 text-brand-600 sm:h-14 sm:w-14">
+            <Image
+              alt=""
+              src="/icons/esa-location-icon.webp"
+              width={48}
+              height={48}
+              className="h-8 w-8 object-contain sm:h-9 sm:w-9"
+            />
           </span>
           <div className="min-w-0">
             <p className="text-[11px] font-semibold uppercase tracking-wide text-neutral-500">Licensed In</p>
@@ -60,6 +57,16 @@ function TeamCard({ member }: { member: TeamMember }) {
               </li>
             ))}
           </ul>
+        </div>
+
+        <div className="mt-auto pt-6">
+          <Link
+            href={`/about-our-therapists/${member.slug}/`}
+            className="flex w-full items-center justify-center gap-2 rounded-control bg-brand-700 px-4 py-3 text-center text-sm font-bold text-white shadow-sm transition-colors hover:bg-brand-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
+          >
+            View profile
+            <span aria-hidden="true">→</span>
+          </Link>
         </div>
       </div>
     </div>
@@ -95,7 +102,7 @@ export function TeamGrid({ members = TEAM }: { members?: TeamMember[] }) {
           align="center"
         />
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid items-stretch gap-5 sm:mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {members.map((member) => (
             <TeamCard key={member.name} member={member} />
           ))}

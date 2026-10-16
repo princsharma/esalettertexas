@@ -85,7 +85,7 @@ export default function ConditionsList (){
             </ul>
 
             <Link
-              href="/#conditions"
+              href="/conditions/"
               className="group mt-7 inline-flex items-center gap-1.5 text-md font-semibold text-brand-700 transition-colors hover:text-brand-800"
             >
               View all conditions

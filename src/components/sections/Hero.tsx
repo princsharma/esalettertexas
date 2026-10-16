@@ -4,6 +4,19 @@ import { Container } from "@/components/ui/Container";
 
 type TrustBadge = { label: string; icon?: string };
 
+/** Full-bleed photo + brand mesh wash (shared by Hero and custom hero sections). */
+export function HeroPhotoBackdrop({ src }: { src: string }) {
+  return (
+    <>
+      <div aria-hidden="true" className="absolute inset-0">
+        <Image src={src} alt="" fill priority className="object-cover" />
+      </div>
+      <div aria-hidden="true" className="absolute inset-0 bg-hero-mesh opacity-90 mix-blend-multiply" />
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-brand-950/70 via-brand-950/20 to-transparent" />
+    </>
+  );
+}
+
 export function Hero({
   eyebrow,
   title,
@@ -33,16 +46,7 @@ export function Hero({
 
   return (
     <section className="relative overflow-hidden bg-hero-mesh">
-      {backgroundImage && (
-        <>
-          <div aria-hidden="true" className="absolute inset-0">
-            <Image src={backgroundImage} alt="" fill priority className="object-cover" />
-          </div>
-          {/* Brand-tone wash over the photo: keeps the teal/accent mood and text legibility */}
-          <div aria-hidden="true" className="absolute inset-0 bg-hero-mesh opacity-90 mix-blend-multiply" />
-          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-brand-950/70 via-brand-950/20 to-transparent" />
-        </>
-      )}
+      {backgroundImage && <HeroPhotoBackdrop src={backgroundImage} />}
       {/* Ambient glow orbs: slow drifting float, unique to the hero (other
           hero-toned sections use static blobs) so this reads as its own space */}
       <div
@@ -64,41 +68,41 @@ export function Hero({
       />
 
       <Container
-        className={`relative ${isFull ? "py-16 md:py-24" : "py-14 md:py-16"}`}
+        className={`relative ${isFull ? "py-12 sm:py-16 md:py-24" : "py-10 sm:py-12 md:py-16"}`}
       >
-        <div className={isFull ? "grid gap-12 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-16" : undefined}>
-          <div className={isFull ? "" : "max-w-2xl"}>
+        <div className={isFull ? "grid gap-8 sm:gap-12 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-16" : undefined}>
+          <div className={isFull ? "min-w-0" : "min-w-0 max-w-2xl"}>
             {eyebrow && (
-              <p className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-sm">
-                <span className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-gradient-accent text-white">
+              <p className="mb-4 inline-flex max-w-full items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 backdrop-blur-sm sm:mb-6 sm:gap-3 sm:px-4 sm:py-2">
+                <span className="flex h-7 w-7 flex-none items-center justify-center rounded-full bg-gradient-accent text-white sm:h-8 sm:w-8">
                   <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                     <circle cx="12" cy="7" r="4" />
                   </svg>
                 </span>
-                <span className="text-sm font-bold text-white sm:text-base">{eyebrow}</span>
+                <span className="text-xs font-bold text-white sm:text-sm md:text-base">{eyebrow}</span>
               </p>
             )}
             <h1
               className={`${
-                isFull ? "text-display" : "text-4xl md:text-5xl font-bold leading-tight tracking-tight"
-              } text-white [text-wrap:balance]`}
+                isFull ? "text-display" : "text-hero-compact"
+              } text-white [text-wrap:balance] [overflow-wrap:anywhere]`}
             >
               {title}
             </h1>
             <p
-              className={`mt-5 text-brand-100 ${
-                isFull ? "text-lg md:text-xl max-w-xl" : "text-base md:text-lg max-w-xl"
-              } leading-relaxed`}
+              className={`mt-4 text-brand-100 sm:mt-5 ${
+                isFull ? "text-body-lg max-w-xl" : "text-body-lg max-w-xl"
+              }`}
             >
               {subhead}
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <Button
                 href={ctaHref}
                 size="lg"
-                className="group shadow-lg shadow-accent-900/30 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent-900/40"
+                className="group w-full justify-center shadow-lg shadow-accent-900/30 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent-900/40 sm:w-auto"
               >
                 {ctaLabel}
                 <svg
@@ -119,7 +123,7 @@ export function Hero({
                   href={secondaryCtaHref}
                   size="lg"
                   variant="ghost"
-                  className="!text-white ring-1 ring-white/20 hover:!bg-white/10 hover:ring-white/40"
+                  className="w-full justify-center !text-white ring-1 ring-white/20 hover:!bg-white/10 hover:ring-white/40 sm:w-auto"
                 >
                   {secondaryCtaLabel}
                 </Button>
@@ -127,7 +131,7 @@ export function Hero({
             </div>
 
             {trustBadges.length > 0 && (
-              <ul className="mt-9 grid gap-4 sm:grid-cols-3">
+              <ul className="mt-7 grid gap-3 sm:mt-9 sm:grid-cols-3 sm:gap-4">
                 {trustBadges.map((b) => (
                   <li key={b.label} className="flex items-center gap-3">
                     <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-white/90 ring-1 ring-white/15 backdrop-blur-sm">
@@ -149,7 +153,8 @@ export function Hero({
               </ul>
             )}
 
-            {/* Review strip: social proof, sits under the feature list */}
+            {/* Review strip: home hero only */}
+            {isFull && (
             <div className="mt-8 flex flex-col gap-4 rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm sm:flex-row sm:items-center sm:justify-between sm:p-5">
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-2">
@@ -177,6 +182,7 @@ export function Hero({
                 4.9/5 <span className="font-medium text-brand-100">average client rating</span>
               </div>
             </div>
+            )}
           </div>
 
           {/* Right column: real photo when provided, dashed placeholder frame otherwise */}

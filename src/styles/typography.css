@@ -1,15 +1,67 @@
 
 
+/* Home / full-width hero headline */
 .text-display {
-  font-size: 2.75rem;
-  line-height: 1.1;
+  font-size: 2rem;
+  line-height: 1.12;
   letter-spacing: -0.02em;
   font-weight: 700;
 }
 
+@media (min-width: 640px) {
+  .text-display {
+    font-size: 2.5rem;
+  }
+}
+
 @media (min-width: 768px) {
   .text-display {
+    font-size: 3.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-display {
     font-size: 3.5rem;
+  }
+}
+
+/* Inner pages: compact hero titles (support, silos, blog) */
+.text-hero-compact {
+  font-size: 1.75rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+@media (min-width: 640px) {
+  .text-hero-compact {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .text-hero-compact {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-hero-compact {
+    font-size: 3rem;
+  }
+}
+
+/* Long-form / support copy rhythm */
+.text-body-lg {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+@media (min-width: 768px) {
+  .text-body-lg {
+    font-size: 1.125rem;
+    line-height: 1.7;
   }
 }
 

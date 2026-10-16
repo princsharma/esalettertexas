@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import { PAGE_HERO } from "@/data/page-heroes";
+import { pageMetadata } from "@/lib/seo";
 import {
   Hero,
   ArticleLayout,
@@ -12,11 +13,7 @@ import {
 } from "@/components/sections";
 import type { FaqItem, TocItem, RelatedLink } from "@/components/sections";
 
-export const metadata: Metadata = {
-  title: "ESA Letter Sample | ESA Letter Texas",
-  description:
-    "See an annotated sample ESA letter, broken down element by element, so you know exactly what landlords look for before you apply.",
-};
+export const metadata = pageMetadata("/sample-letter/");
 
 const TOC: TocItem[] = [
   { id: "annotated-sample", label: "Annotated sample" },
@@ -103,6 +100,7 @@ export default function SampleLetterPage() {
         ctaHref="/#apply"
         secondaryCtaLabel="Check requirements"
         secondaryCtaHref="/requirements/"
+        backgroundImage={PAGE_HERO.sampleLetter}
       />
 
       <ArticleLayout
@@ -190,7 +188,7 @@ export default function SampleLetterPage() {
         </ArticleSection>
       </ArticleLayout>
 
-      <FaqAccordion items={FAQS} title="Frequently Asked Questions About the Sample Letter" railGutter />
+      <FaqAccordion items={FAQS} title="Frequently Asked Questions About the Sample Letter" />
 
       <CtaBand
         id="final-cta"

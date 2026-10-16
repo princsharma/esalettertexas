@@ -38,21 +38,21 @@ export default function TexasRights (){
           <div className="mt-10 grid gap-7 sm:grid-cols-3">
             {[
               {
-                href: "/requirements/",
+                href: "/rights/",
                 label: "Your Rights Overview",
                 description: "A plain-language summary of what Texas law protects for ESA owners.",
                 tilt: "hover:-rotate-1",
                 icon: "/icons/your right overview.webp",
               },
               {
-                href: "/what-is-an-esa-letter/#legal-basis",
+                href: "/rights/fair-housing-act/",
                 label: "Fair Housing Act",
                 description: "The federal law requiring landlords to make reasonable ESA accommodations.",
                 tilt: "hover:rotate-1",
                 icon: "/icons/fair house act.webp",
               },
               {
-                href: "/requirements/#hb-4164-compliance",
+                href: "/rights/hb-4164-explained/",
                 label: "HB 4164 Explained",
                 description: "Texas's own law limiting what landlords can ask for and penalizing fake letters.",
                 tilt: "hover:-rotate-1",

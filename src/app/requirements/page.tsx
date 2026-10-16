@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import {
   Hero,
@@ -12,12 +12,9 @@ import {
   Breadcrumbs,
 } from "@/components/sections";
 import type { FaqItem, TocItem, RelatedLink } from "@/components/sections";
+import { PAGE_HERO } from "@/data/page-heroes";
 
-export const metadata: Metadata = {
-  title: "Texas ESA Letter Requirements | ESA Letter Texas",
-  description:
-    "What a legitimate ESA letter must include under Texas law: mandatory elements, licensed provider rules, HB 4164 compliance, validity, and red flags.",
-};
+export const metadata = pageMetadata("/requirements/");
 
 const TOC: TocItem[] = [
   { id: "mandatory-elements", label: "Mandatory elements checklist" },
@@ -72,6 +69,7 @@ export default function RequirementsPage() {
         ctaHref="/#apply"
         secondaryCtaLabel="See a compliant sample"
         secondaryCtaHref="/sample-letter/"
+        backgroundImage={PAGE_HERO.requirements}
       />
 
       <ArticleLayout
@@ -177,7 +175,7 @@ export default function RequirementsPage() {
         </ArticleSection>
       </ArticleLayout>
 
-      <FaqAccordion items={FAQS} title="Frequently Asked Questions About Requirements" railGutter />
+      <FaqAccordion items={FAQS} title="Frequently Asked Questions About Requirements" />
 
       <CtaBand
         id="final-cta"

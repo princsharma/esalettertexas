@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
+import { ESA_LETTER_OFFER } from "@/data/pricing";
 import { HERO_IMAGES } from "@/data/hero-images";
 
 
@@ -14,7 +15,7 @@ const PRICING_FEATURES = [
 
 const ESA_PRICING = {
   title: "ESA Letter",
-  price: "$149",
+  price: ESA_LETTER_OFFER.priceDisplay,
   billingNote: "one-time",
   badge: "Most Popular",
 

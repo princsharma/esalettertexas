@@ -85,9 +85,9 @@ function StatCard({ stat }: { stat: Stat }) {
     <li
       ref={ref}
       className="group flex flex-col items-center gap-2 rounded-card border border-neutral-200 bg-brand-300 p-5 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-300 hover:shadow-card-hover"
->
-        <Image src={ICON_PATHS[stat.icon]} alt="" width={90} height={90} className=" object-contain" />
-    
+    >
+      <Image src={ICON_PATHS[stat.icon]} alt="" width={90} height={90} className="object-contain" />
+
       <span className="tabular-nums text-2xl font-extrabold tracking-tight text-brand-700 md:text-3xl">
         {stat.prefix}
         {formatted}
@@ -97,7 +97,6 @@ function StatCard({ stat }: { stat: Stat }) {
     </li>
   );
 }
-
 
 export function StatsStrip({ stats = DEFAULT_STATS }: { stats?: Stat[] }) {
   return (

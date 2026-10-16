@@ -15,30 +15,30 @@ const CORE_LINKS: FooterLink[] = [
 ];
 
 const RIGHTS_LINKS: FooterLink[] = [
-  { label: "Fair Housing Act", href: "/what-is-an-esa-letter/#legal-basis" },
-  { label: "HB 4164", href: "/requirements/#hb-4164-compliance" },
-  { label: "ESA vs Service Animal", href: "/what-is-an-esa-letter/#what-it-is-not" },
-  { label: "No-Pet Apartments", href: "/what-is-an-esa-letter/#how-its-used" },
-  { label: "Landlord Denials", href: "/requirements/#red-flags" },
+  { label: "Housing Rights Overview", href: "/rights/" },
+  { label: "Fair Housing Act", href: "/rights/fair-housing-act/" },
+  { label: "HB 4164", href: "/rights/hb-4164-explained/" },
+  { label: "ESA vs Service Animal", href: "/rights/esa-vs-service-animal/" },
+  { label: "Landlord Denials", href: "/rights/landlord-denials/" },
 ];
 
 const CONDITION_LINKS: FooterLink[] = [
-  { label: "Anxiety", href: "/#conditions" },
-  { label: "Depression", href: "/#conditions" },
-  { label: "PTSD", href: "/#conditions" },
-  { label: "ADHD", href: "/#conditions" },
-  { label: "Autism", href: "/#conditions" },
+  { label: "Anxiety", href: "/conditions/anxiety/" },
+  { label: "Depression", href: "/conditions/depression/" },
+  { label: "PTSD", href: "/conditions/ptsd/" },
+  { label: "ADHD", href: "/conditions/adhd/" },
+  { label: "All Conditions", href: "/conditions/" },
 ];
 
 const COMPANY_LINKS: FooterLink[] = [
-  { label: "About Our Therapists", href: "/#apply" },
-  { label: "How It Works", href: "/#how-it-works" },
-  { label: "FAQ", href: "/#faq" },
-  { label: "Blog", href: "/#blog" },
-  { label: "Contact", href: "/#apply" },
-  { label: "Privacy Policy", href: "/#apply" },
-  { label: "Terms", href: "/#apply" },
-  { label: "Disclaimer", href: "/#apply" },
+  { label: "About Our Therapists", href: "/about-our-therapists/" },
+  { label: "How It Works", href: "/how-it-works/" },
+  { label: "FAQ", href: "/faq/" },
+  { label: "Blog", href: "/blog/" },
+  { label: "Contact", href: "/contact/" },
+  { label: "Privacy Policy", href: "/privacy-policy/" },
+  { label: "Terms", href: "/terms/" },
+  { label: "Disclaimer", href: "/disclaimer/" },
 ];
 
 const SOCIAL_LINKS: { label: string; href: string; icon: ReactNode }[] = [
@@ -158,7 +158,7 @@ export function Footer() {
               ))}
               <li>
                 <Link
-                  href="/#conditions"
+                  href="/conditions/"
                   className="group inline-flex items-center gap-1.5 text-base font-semibold text-accent-300 transition-colors duration-200 hover:text-accent-200"
                 >
                   See all conditions
@@ -190,15 +190,20 @@ export function Footer() {
         </div>
 
         {/* Social icons, below the link columns */}
-        <div className="mt-10 flex items-center justify-center gap-3 md:justify-start">
+        <div className="mt-10 flex items-center justify-center gap-3.5 md:justify-start md:gap-4">
           {SOCIAL_LINKS.map((social) => (
             <a
               key={social.label}
               href={social.href}
               aria-label={social.label}
-              className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-brand-100 ring-1 ring-white/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-500 hover:text-white"
+              className="group flex h-12 w-12 items-center justify-center rounded-full bg-white/15 text-white ring-1 ring-white/20 transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-accent-500 hover:text-white hover:ring-accent-300 hover:shadow-lg hover:shadow-accent-900/35 sm:h-[3.25rem] sm:w-[3.25rem]"
             >
-              <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <svg
+                className="h-6 w-6 transition-transform duration-300 group-hover:scale-110 sm:h-7 sm:w-7"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
                 {social.icon}
               </svg>
             </a>
@@ -208,9 +213,15 @@ export function Footer() {
         {/* Legal + copyright */}
         <div className="mt-10 flex flex-col items-center gap-3 border-t border-white/10 pt-6 text-center text-sm text-brand-300 md:flex-row md:justify-between md:text-left">
           <p className="max-w-2xl leading-relaxed">
-            ESA Letter Texas does not provide legal advice. Eligibility and letter validity are
-            determined solely by a licensed evaluating therapist. See our Terms of Service §7.4 for
-            full limitations.
+            <strong className="font-semibold text-brand-200">Medical &amp; legal disclaimer:</strong>{" "}
+            Content is educational only—not medical, psychiatric, or legal advice. ESA Letter Texas
+            does not provide legal counsel. Eligibility and letter validity are determined solely by
+            a licensed evaluating therapist after an individualized assessment. We do not sell ESA
+            “registration,” certification, or instant approval. See{" "}
+            <Link href="/disclaimer/" className="text-brand-100 underline hover:text-white">
+              Disclaimer
+            </Link>{" "}
+            and Terms §7.4.
           </p>
           <p className="flex-none">&copy; {year} ESA Letter Texas. All rights reserved.</p>
         </div>

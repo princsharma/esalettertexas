@@ -1,0 +1,34 @@
+import Script from "next/script";
+import { GA_MEASUREMENT_ID, GTM_CONTAINER_ID } from "@/lib/analytics";
+
+/** Loads GA4 and/or GTM only when env vars are set. */
+export function AnalyticsScripts() {
+  return (
+    <>
+      {GA_MEASUREMENT_ID && (
+        <>
+          <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} strategy="afterInteractive" />
+          <Script id="ga4-init" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: true });
+            `}
+          </Script>
+        </>
+      )}
+      {GTM_CONTAINER_ID && (
+        <Script id="gtm-init" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','${GTM_CONTAINER_ID}');
+          `}
+        </Script>
+      )}
+    </>
+  );
+}

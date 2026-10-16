@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { QuickAnswerBox } from "./QuickAnswerBox";
 import { Container } from "@/components/ui/Container";
 import { TableOfContents, type TocItem, type TocImage } from "./TableOfContents";
 import { RelatedPages, type RelatedLink } from "./RelatedPages";
@@ -19,17 +20,29 @@ export function ArticleLayout({
   related,
   author,
   children,
+  sidebarBoundarySelector = "#faq",
+  sidebarStickToColumn = true,
+  quickAnswer,
+  afterQuickAnswer,
 }: {
   toc: TocItem[];
   tocImage?: TocImage;
   related: RelatedLink[];
-  author: Author;
+  author?: Author;
   children: ReactNode;
+  /** Element the sticky rail stops above (extended mode only). Default `#faq`. */
+  sidebarBoundarySelector?: string;
+  /** When true (default), sidebar scrolls away with the article—never over FAQ or sections below. */
+  sidebarStickToColumn?: boolean;
+  /** T4 cluster: featured-snippet answer placed before the table of contents. */
+  quickAnswer?: string;
+  /** T6 city: M14 panel or other lead block before TOC. */
+  afterQuickAnswer?: ReactNode;
 }) {
   const sidebar = (
     <>
       <RelatedPages links={related} />
-      <AuthorBox {...author} />
+      {author && <AuthorBox {...author} />}
     </>
   );
 
@@ -45,16 +58,27 @@ export function ArticleLayout({
       </div>
 
       <Container className="relative">
-        <div className="grid gap-10 lg:grid-cols-[1fr_18rem] lg:gap-12">
-          <div className="min-w-0 overflow-hidden rounded-card border border-neutral-200 bg-white p-6 shadow-card sm:p-10 lg:p-12">
-            <div className="space-y-10">
+        <div className="grid gap-8 sm:gap-10 lg:grid-cols-[1fr_18rem] lg:gap-12">
+          <div className="min-w-0 overflow-hidden rounded-card border border-neutral-200 bg-white p-4 shadow-card sm:p-8 md:p-10 lg:p-12">
+            <div className="space-y-8 sm:space-y-10">
+              {quickAnswer && (
+                <div className="not-prose">
+                  <QuickAnswerBox>{quickAnswer}</QuickAnswerBox>
+                </div>
+              )}
+              {afterQuickAnswer && <div className="not-prose">{afterQuickAnswer}</div>}
               <TableOfContents items={toc} image={tocImage} />
               {children}
             </div>
           </div>
 
           <aside className="hidden lg:block">
-            <StickySidebar boundarySelector="#final-cta">{sidebar}</StickySidebar>
+            <StickySidebar
+              boundarySelector={sidebarBoundarySelector}
+              variant={sidebarStickToColumn ? "column" : "extended"}
+            >
+              {sidebar}
+            </StickySidebar>
           </aside>
         </div>
 

@@ -2,21 +2,54 @@
 
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 
-/** Keeps its children pinned to the viewport while scrolling, the same way a plain
- *  `position: sticky` column would - but the floor isn't the end of this column's own
- *  grid row (which stops right after the article body). Instead it tracks a boundary
- *  element elsewhere on the page (the final CTA band) and stops just above it, so the
- *  sidebar rides alongside the FAQ section too instead of disappearing before it. */
+/** Keeps sidebar content in view while scrolling.
+ *  - `extended`: fixed rail until `boundarySelector` (default `#faq` on ArticleLayout).
+ *  - `column`: plain sticky within the aside column only—scrolls away before sections below the article. */
 export function StickySidebar({
   children,
   boundarySelector,
   topOffset = 96,
   gap = 24,
+  variant = "extended",
 }: {
   children: ReactNode;
   boundarySelector: string;
   topOffset?: number;
   gap?: number;
+  variant?: "extended" | "column";
+}) {
+  if (variant === "column") {
+    return (
+      <div
+        className="sticky z-40 space-y-6"
+        style={{ top: topOffset }}
+      >
+        {children}
+      </div>
+    );
+  }
+
+  return (
+    <ExtendedStickySidebar
+      boundarySelector={boundarySelector}
+      topOffset={topOffset}
+      gap={gap}
+    >
+      {children}
+    </ExtendedStickySidebar>
+  );
+}
+
+function ExtendedStickySidebar({
+  children,
+  boundarySelector,
+  topOffset,
+  gap,
+}: {
+  children: ReactNode;
+  boundarySelector: string;
+  topOffset: number;
+  gap: number;
 }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const railRef = useRef<HTMLDivElement>(null);

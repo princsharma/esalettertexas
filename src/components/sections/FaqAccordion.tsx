@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export type FaqItem = { question: string; answer: string };
-function FaqCard({
+export function FaqCard({
   item,
   isOpen,
   onToggle,
@@ -23,7 +23,7 @@ function FaqCard({
     >
       <button
         type="button"
-        className="group flex w-full items-center gap-4 px-5 py-4 text-left"
+        className="group flex w-full items-center gap-4 px-5 py-4 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
         aria-expanded={isOpen}
         onClick={onToggle}
       >
@@ -64,9 +64,7 @@ function FaqCard({
 }
 
 /** M5: FAQ accordion. Also emits FAQPage JSON-LD schema.
- *  `railGutter` reserves an empty lg+ column matching ArticleLayout's aside width/gap, for pages
- *  where the article's sticky sidebar rides down past its own section and over this one - without
- *  it, the FAQ grid's own columns would run underneath the floating sidebar. */
+ *  `railGutter` is legacy: only use if extended sidebar must overlap (prefer ArticleLayout column sticky + `#faq`). */
 export function FaqAccordion({
   items,
   title = "Frequently Asked Questions",

@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import { PAGE_HERO } from "@/data/page-heroes";
+import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import {
   Hero,
@@ -14,11 +15,7 @@ import {
 } from "@/components/sections";
 import type { FaqItem, TocItem, RelatedLink, ComparisonRow } from "@/components/sections";
 
-export const metadata: Metadata = {
-  title: "What Is an ESA Letter? | ESA Letter Texas",
-  description:
-    "Learn exactly what an ESA letter is, the federal law behind it, what it isn't, who can legally write one, and how Texas renters use it.",
-};
+export const metadata = pageMetadata("/what-is-an-esa-letter/");
 
 const TOC: TocItem[] = [
   { id: "definition", label: "Definition" },
@@ -87,6 +84,7 @@ export default function WhatIsAnEsaLetterPage() {
         ctaHref="/#apply"
         secondaryCtaLabel="See a sample letter"
         secondaryCtaHref="/sample-letter/"
+        backgroundImage={PAGE_HERO.whatIsEsa}
       />
 
       <ArticleLayout
@@ -220,7 +218,7 @@ export default function WhatIsAnEsaLetterPage() {
         </ArticleSection>
       </ArticleLayout>
 
-      <FaqAccordion items={FAQS} title="Frequently Asked Questions About ESA Letters" railGutter />
+      <FaqAccordion items={FAQS} title="Frequently Asked Questions About ESA Letters" />
 
       <CtaBand
         id="final-cta"
