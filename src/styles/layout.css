@@ -1,42 +1,64 @@
 
-
+/* Centered page container: 20 / 32 / 80px side margins, 1200px max content width */
 .container-page {
   width: 100%;
-  max-width: 72rem;
+  max-width: var(--layout-max-width);
   margin-inline: auto;
-  padding-inline: max(1rem, var(--space-container-x));
-}
-
-@media (min-width: 640px) {
-  .container-page {
-    padding-inline: var(--space-container-x);
-  }
+  padding-inline: var(--layout-margin-mobile);
 }
 
 @media (min-width: 768px) {
   .container-page {
-    padding-inline: var(--space-container-x-md);
+    padding-inline: var(--layout-margin-tablet);
   }
 }
 
+@media (min-width: 1024px) {
+  .container-page {
+    padding-inline: var(--layout-margin-desktop);
+  }
+}
+
+/* Full-bleed shell on large screens (1440px frame) while inner content stays capped */
+.container-frame {
+  width: 100%;
+  max-width: var(--layout-frame-width);
+  margin-inline: auto;
+}
+
+/* Section rhythm: 48 / 64 / 88px vertical padding */
 .section-py {
-  padding-block: 3rem;
-}
-
-@media (min-width: 640px) {
-  .section-py {
-    padding-block: 3.5rem;
-  }
+  padding-block: var(--space-section-y-mobile);
 }
 
 @media (min-width: 768px) {
   .section-py {
-    padding-block: var(--space-section-y);
+    padding-block: var(--space-section-y-tablet);
   }
 }
 
 @media (min-width: 1024px) {
   .section-py {
-    padding-block: var(--space-section-y-md);
+    padding-block: var(--space-section-y-desktop);
+  }
+}
+
+/* Responsive page grid: 4 / 8 / 12 columns, 24px gutter */
+.page-grid {
+  display: grid;
+  column-gap: var(--layout-column-gap);
+  row-gap: var(--layout-column-gap);
+  grid-template-columns: repeat(var(--layout-columns-mobile), minmax(0, 1fr));
+}
+
+@media (min-width: 768px) {
+  .page-grid {
+    grid-template-columns: repeat(var(--layout-columns-tablet), minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-grid {
+    grid-template-columns: repeat(var(--layout-columns-desktop), minmax(0, 1fr));
   }
 }

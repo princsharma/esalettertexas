@@ -16,7 +16,7 @@ export function MobileStickyCta() {
     >
       <Link
         href={HEADER_CTA_HREF}
-        className="pointer-events-auto flex w-full items-center justify-center rounded-control bg-gradient-brand px-4 py-3 text-center text-sm font-bold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
+        className="btn btn-primary pointer-events-auto w-full"
       >
         {HEADER_CTA_LABEL}
       </Link>

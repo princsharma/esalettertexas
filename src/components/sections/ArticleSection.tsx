@@ -22,10 +22,10 @@ export function ArticleSection({
           {String(index).padStart(2, "0")}
         </span>
         <div className="min-w-0 flex-1">
-          <h2 className="text-3xl font-bold tracking-tight text-neutral-900 [text-wrap:balance] sm:text-4xl">
+          <h2 className="text-h2 text-neutral-900 [text-wrap:balance]">
             {title}
           </h2>
-          <div className="prose-article mt-4 space-y-4 text-sm leading-relaxed text-neutral-700 sm:text-base md:text-lg">
+          <div className="prose-article mt-4 space-y-4">
             {children}
           </div>
         </div>
@@ -44,7 +44,7 @@ export function ArticleSubsection({
 }) {
   return (
     <div>
-      <h3 className="text-xl font-bold text-neutral-900 sm:text-2xl">{title}</h3>
+      <h3 className="text-h3 text-neutral-900">{title}</h3>
       <div className="mt-2 space-y-3">{children}</div>
     </div>
   );

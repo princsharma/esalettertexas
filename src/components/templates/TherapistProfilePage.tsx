@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Breadcrumbs, CtaBand, HeroPhotoBackdrop } from "@/components/sections";
 import { PAGE_HERO } from "@/data/page-heroes";
+import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import type { TeamMember } from "@/data/team";
@@ -8,7 +9,7 @@ import type { TeamMember } from "@/data/team";
 function StatCell({ value, label }: { value: string; label: string }) {
   return (
     <div className="px-4 py-5 text-center sm:px-6">
-      <p className="text-2xl font-bold text-brand-800 sm:text-3xl">{value}</p>
+      <p className="text-stat text-brand-800">{value}</p>
       <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-brand-600 sm:text-sm">{label}</p>
     </div>
   );
@@ -27,7 +28,7 @@ function SectionIntro({
     <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
       <div>
         <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-500">{eyebrow}</p>
-        <h2 className="mt-2 text-2xl font-bold text-brand-900 sm:text-3xl lg:text-[2rem]">{title}</h2>
+        <h2 className="mt-2 text-h2 text-brand-900">{title}</h2>
       </div>
       <p className="max-w-xl text-sm leading-relaxed text-neutral-600 lg:max-w-md lg:text-right">{description}</p>
     </div>
@@ -68,13 +69,13 @@ export function TherapistProfilePage({ member }: { member: TeamMember }) {
         <Container className="relative z-10 grid gap-8 py-10 sm:gap-10 sm:py-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-14 lg:py-16">
           <div className="order-2 min-w-0 lg:order-1">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-300">Therapist profile</p>
-            <h1 className="mt-3 text-2xl font-bold leading-tight text-white [text-wrap:balance] sm:text-3xl md:text-4xl lg:text-[2.65rem]">
+            <h1 className="mt-3 text-h1 text-white [text-wrap:balance]">
               {member.name}
               <span className="text-brand-200">, {member.credential}</span>
             </h1>
-            <span className="mt-4 inline-flex rounded-full bg-accent-500 px-4 py-1.5 text-sm font-bold text-brand-950 shadow-sm">
+            <Badge variant="licensed" className="mt-4">
               {member.roleTitle}
-            </span>
+            </Badge>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-brand-50/95 sm:mt-5 sm:text-base">{member.bio}</p>
 
             <div className="mt-6 grid grid-cols-3 gap-2 sm:max-w-md">
@@ -206,7 +207,7 @@ export function TherapistProfilePage({ member }: { member: TeamMember }) {
           />
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             <div className="rounded-card border border-neutral-200 bg-white p-6 shadow-card sm:p-8">
-              <h3 className="border-b-4 border-accent-500 pb-2 text-sm font-bold uppercase tracking-wide text-brand-800">
+              <h3 className="border-b-4 border-accent-500 pb-2 font-display text-sm font-semibold uppercase tracking-wide text-brand-800">
                 License information
               </h3>
               <div className="mt-2">
@@ -220,9 +221,9 @@ export function TherapistProfilePage({ member }: { member: TeamMember }) {
             <div className="rounded-card border border-neutral-200 bg-white p-6 shadow-card sm:p-8">
               <div className="flex items-start justify-between gap-3">
                 <h3 className="text-sm font-bold uppercase tracking-wide text-brand-800">States served</h3>
-                <span className="shrink-0 rounded-full bg-accent-500 px-3 py-1 text-xs font-bold text-brand-950">
+                <Badge variant="texas" className="shrink-0">
                   {statesBadge}
-                </span>
+                </Badge>
               </div>
               <ul className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-3">
                 {member.statesServed.map((state) => (

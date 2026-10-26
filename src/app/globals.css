@@ -2,7 +2,7 @@
 
 /* ============================================================
    ESA Letter Texas: Design System
-   Tone: trustworthy, clinical-but-warm, Texas-local.
+   Tone: Fraunces + DM Sans; WCAG AA contrast; 44px touch targets.
 
    This file only wires up Tailwind + the reusable style modules
    and holds the base document reset. Tokens, typography, layout,
@@ -13,7 +13,11 @@
 @import "../styles/tokens.css";
 @import "../styles/typography.css";
 @import "../styles/layout.css";
+@import "../styles/responsive.css";
 @import "../styles/utilities.css";
+@import "../styles/components.css";
+@import "../styles/imagery.css";
+@import "../styles/accessibility.css";
 @import "../styles/animations.css";
 
 /* The site is designed as a single light theme, every section uses
@@ -32,5 +36,8 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  font-weight: var(--text-body-weight);
 }

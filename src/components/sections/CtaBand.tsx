@@ -71,7 +71,7 @@ export function CtaBand({
   }) {
   if (showLetter) {
     return (
-      <section id={id} className="relative overflow-hidden bg-gradient-brand section-py">
+      <section id={id} className="relative mb-0 overflow-hidden bg-gradient-brand section-py">
         <BandBackground />
 
         <Container className="relative">
@@ -79,7 +79,7 @@ export function CtaBand({
             <div className="text-center lg:text-left">
               {/*  */}
 
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white [text-wrap:balance] md:text-[2.75rem]">
+              <h2 className="text-h2 text-white [text-wrap:balance]">
                 {title}
               </h2>
               {subhead && (
@@ -119,10 +119,10 @@ export function CtaBand({
                 aria-hidden="true"
                 className="absolute -inset-4 -z-10 rounded-[1.75rem] bg-white/10 blur-2xl sm:-inset-6"
               />
-              <div className="group relative rotate-2 rounded-card bg-white p-6 shadow-letter transition-all duration-300 hover:-translate-y-1.5 hover:rotate-0 hover:shadow-letter-hover sm:p-8">
-                <div className="absolute inset-x-0 -top-px h-2 rounded-t-card bg-gradient-accent" />
+              <div className="conversion-letter-shell letter-preview-adaptive group relative rotate-2 shadow-letter transition-all duration-300 hover:-translate-y-1.5 hover:rotate-0 hover:shadow-letter-hover">
+                <div className="conversion-letter-preview">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold uppercase tracking-wide text-brand-700 sm:text-sm">
+                  <span className="conversion-letter-kicker sm:text-sm">
                     Official ESA Letter
                   </span>
                   <svg className="h-5 w-5 text-brand-400 sm:h-6 sm:w-6" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -173,6 +173,11 @@ export function CtaBand({
                     <p className="mt-1.5 text-xs text-neutral-500">Licensed Therapist, LPC</p>
                   </div>
                 </div>
+
+                <p className="mt-6 text-center">
+                  <span className="conversion-sample-badge">Illustrative sample</span>
+                </p>
+                </div>
               </div>
             </div>
           </div>
@@ -183,7 +188,7 @@ export function CtaBand({
 
   if (showSteps) {
     return (
-      <section id={id} className="relative overflow-hidden bg-gradient-hero section-py">
+      <section id={id} className="relative mb-0 overflow-hidden bg-gradient-hero section-py">
         <BandBackground />
 
         <Container className="relative">
@@ -194,7 +199,7 @@ export function CtaBand({
               </svg>
             </span> */}
 
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white [text-wrap:balance] md:text-[2.75rem]">
+            <h2 className="text-h2 text-white [text-wrap:balance]">
               {title}
             </h2>
             {subhead && <p className="mx-auto mt-2 max-w-xl text-brand-100">{subhead}</p>}
@@ -243,34 +248,29 @@ export function CtaBand({
   }
 
   return (
-    <section id={id} className="relative isolate overflow-hidden rounded-card bg-gradient-brand shadow-card-brand ring-1 ring-brand-950/10">
+    <section
+      id={id}
+      className="relative isolate mb-0 overflow-hidden rounded-card bg-gradient-brand shadow-card-brand ring-1 ring-brand-950/10"
+    >
       <BandBackground />
 
-      <Container className="relative flex flex-col items-center gap-7 py-10 text-center sm:py-12 md:flex-row md:justify-between md:py-14 md:text-left">
-        <div className="flex flex-col items-center gap-4 md:flex-row md:items-center md:gap-5 md:text-left">
-          <span className="hidden h-14 w-14 flex-none items-center justify-center rounded-full bg-white/10 text-white ring-1 ring-white/20 backdrop-blur-sm md:flex">
-            <svg className="h-7 w-7" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path d="M10.5 3.5c-1.5-2-5-1.5-5 2 0 3 3 5 5 6.5 2-1.5 5-3.5 5-6.5 0-3.5-3.5-4-5-2z" />
-            </svg>
-          </span>
-          <div>
-            <h2 className="text-2xl font-bold tracking-tight text-white [text-wrap:balance] sm:text-3xl">
-              {title}
-            </h2>
-            {subhead && (
-              <p className="mt-2 max-w-xl text-brand-100">{subhead}</p>
-            )}
-          </div>
-        </div>
+      <Container className="relative py-8 text-center sm:py-10 lg:py-12 lg:text-left">
+        <div className="mx-auto min-w-0 max-w-2xl lg:mx-0">
+          <h2 className="cta-band-inline-title text-white [text-wrap:balance]">
+            {title}
+          </h2>
+          {subhead && (
+            <p className="cta-band-inline-subhead mt-2 text-brand-100">{subhead}</p>
+          )}
 
-        <Button
-          href={ctaHref}
-          size="lg"
-          className="group relative flex flex-none items-center gap-2 shadow-lg shadow-accent-900/30 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent-900/40"
-        >
-          {ctaLabel}
-          <ArrowIcon />
-        </Button>
+          <Button
+            href={ctaHref}
+            size="md"
+            className="btn-mobile-full relative mt-6 inline-flex w-full max-w-md items-center justify-center shadow-lg shadow-accent-900/30 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent-900/40 lg:w-auto"
+          >
+            {ctaLabel}
+          </Button>
+        </div>
       </Container>
     </section>
   );

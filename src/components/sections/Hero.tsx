@@ -1,15 +1,16 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { HERO_TRUST_ITEM_LINES } from "@/data/trust-bar";
 
-type TrustBadge = { label: string; icon?: string };
+type TrustBadge = { label: string; icon?: string; lines?: [string, string] };
 
 /** Full-bleed photo + brand mesh wash (shared by Hero and custom hero sections). */
 export function HeroPhotoBackdrop({ src }: { src: string }) {
   return (
     <>
       <div aria-hidden="true" className="absolute inset-0">
-        <Image src={src} alt="" fill sizes="100vw" className="object-cover" />
+        <Image src={src} alt="" fill sizes="100vw" className="media-photo" />
       </div>
       <div aria-hidden="true" className="absolute inset-0 bg-hero-mesh opacity-90 mix-blend-multiply" />
       <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-brand-950/70 via-brand-950/20 to-transparent" />
@@ -73,14 +74,21 @@ export function Hero({
         <div className={isFull ? "grid gap-8 sm:gap-12 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-16" : undefined}>
           <div className={isFull ? "min-w-0" : "min-w-0 max-w-2xl"}>
             {eyebrow && (
-              <p className="mb-4 inline-flex max-w-full items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 backdrop-blur-sm sm:mb-6 sm:gap-3 sm:px-4 sm:py-2">
-                <span className="flex h-7 w-7 flex-none items-center justify-center rounded-full bg-gradient-accent text-white sm:h-8 sm:w-8">
-                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
-                </span>
-                <span className="text-xs font-bold text-white sm:text-sm md:text-base">{eyebrow}</span>
+              <p
+                className="mb-4 inline-flex max-w-full items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-white backdrop-blur-sm sm:mb-6 sm:px-4 sm:py-2 sm:text-sm"
+              >
+                <svg
+                  className="h-4 w-4 flex-none text-accent-400"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  aria-hidden="true"
+                >
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+                {eyebrow}
               </p>
             )}
             <h1
@@ -98,11 +106,11 @@ export function Hero({
               {subhead}
             </p>
 
-            <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+            <div className="mt-6 flex flex-col gap-3 md:mt-8 md:flex-row md:flex-wrap md:items-center md:gap-4">
               <Button
                 href={ctaHref}
                 size="lg"
-                className="group w-full justify-center shadow-lg shadow-accent-900/30 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent-900/40 sm:w-auto"
+                className="btn-mobile-full group justify-center shadow-lg shadow-accent-900/30 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent-900/40 md:w-auto"
               >
                 {ctaLabel}
                 <svg
@@ -122,8 +130,8 @@ export function Hero({
                 <Button
                   href={secondaryCtaHref}
                   size="lg"
-                  variant="ghost"
-                  className="w-full justify-center !text-white ring-1 ring-white/20 hover:!bg-white/10 hover:ring-white/40 sm:w-auto"
+                  variant="secondary"
+                  className="btn-mobile-full justify-center md:w-auto"
                 >
                   {secondaryCtaLabel}
                 </Button>
@@ -131,14 +139,20 @@ export function Hero({
             </div>
 
             {trustBadges.length > 0 && (
-              <ul className="mt-7 grid gap-3 sm:mt-9 sm:grid-cols-3 sm:gap-4">
+              <ul className="mt-7 grid grid-cols-1 gap-4 sm:gap-5 md:mt-9 md:grid-cols-3 md:gap-x-8 md:gap-y-4 lg:gap-x-10">
                 {trustBadges.map((b) => (
-                  <li key={b.label} className="flex items-center gap-3">
-                    <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-white/90 ring-1 ring-white/15 backdrop-blur-sm">
+                  <li key={b.label} className="flex min-w-0 items-center gap-3 pr-1 md:pr-0">
+                    <span className="flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-white/90 ring-1 ring-white/15 backdrop-blur-sm md:h-14 md:w-14">
                       {b.icon ? (
-                        <Image src={b.icon} alt="" width={24} height={24} className="h-6 w-6 object-contain" />
+                        <Image
+                          src={b.icon}
+                          alt=""
+                          width={32}
+                          height={32}
+                          className="h-7 w-7 object-contain md:h-8 md:w-8"
+                        />
                       ) : (
-                        <svg className="h-5 w-5 text-accent-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <svg className="h-6 w-6 text-accent-500 md:h-7 md:w-7" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                           <path
                             fillRule="evenodd"
                             d="M16.7 5.3a1 1 0 010 1.4l-7.4 7.4a1 1 0 01-1.4 0L3.3 9.5a1 1 0 111.4-1.4l3.9 3.9 6.7-6.7a1 1 0 011.4 0z"
@@ -147,7 +161,22 @@ export function Hero({
                         </svg>
                       )}
                     </span>
-                    <span className="text-sm font-bold text-white md:text-base">{b.label}</span>
+                    {(() => {
+                      const lines = b.lines ?? HERO_TRUST_ITEM_LINES[b.label];
+                      return lines ? (
+                        <span
+                          className="text-sm font-bold leading-snug text-white md:text-base"
+                          aria-label={b.label}
+                        >
+                          <span className="block whitespace-nowrap">{lines[0]}</span>
+                          <span className="block whitespace-nowrap">{lines[1]}</span>
+                        </span>
+                      ) : (
+                        <span className="text-sm font-bold leading-tight text-white md:text-base">
+                          {b.label}
+                        </span>
+                      );
+                    })()}
                   </li>
                 ))}
               </ul>
@@ -193,8 +222,15 @@ export function Hero({
                 className="absolute -inset-4 -z-10 rounded-[2rem] bg-accent-600 blur-2xl"
               />
               {image ? (
-                <div className="relative aspect-[4/5] overflow-hidden rounded-card shadow-photo-deep b">
-                  <Image src={image} alt="image of the team" fill priority className="object-cover" />
+                <div className="relative aspect-[4/5] overflow-hidden rounded-card shadow-photo-deep ring-1 ring-white/10">
+                  <Image
+                    src={image}
+                    alt="Person with their emotional support animal at home in Texas"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 90vw, 28rem"
+                    className="object-cover object-center"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-950/50 via-transparent to-transparent" />
                 </div>
               ) : (

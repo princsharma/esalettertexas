@@ -1,83 +1,222 @@
 
+/*
+ * Typography: Fraunces (display / H1–H3) + DM Sans (body, H4, UI).
+ * H1 56px · H2 40px · H3 24px (see tokens --text-h*).
+ */
 
-/* Home / full-width hero headline */
-.text-display {
-  font-size: 2rem;
-  line-height: 1.12;
+/* —— Display / H1 — 56px Fraunces 700 —— */
+.text-display,
+.text-hero-compact,
+.text-h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-h1-size);
+  line-height: var(--text-h1-line);
+  font-weight: var(--text-h1-weight);
   letter-spacing: -0.02em;
-  font-weight: 700;
 }
 
-@media (min-width: 640px) {
-  .text-display {
-    font-size: 2.5rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .text-display {
-    font-size: 3.25rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .text-display {
-    font-size: 3.5rem;
-  }
-}
-
-/* Inner pages: compact hero titles (support, silos, blog) */
-.text-hero-compact {
-  font-size: 1.75rem;
-  line-height: 1.15;
+/* —— H2 — 40px Fraunces 700 —— */
+.text-h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-h2-size);
+  line-height: var(--text-h2-line);
+  font-weight: var(--text-h2-weight);
   letter-spacing: -0.02em;
-  font-weight: 700;
 }
 
-@media (min-width: 640px) {
-  .text-hero-compact {
-    font-size: 2.25rem;
-  }
+/* —— H3 — 24px Fraunces 600 —— */
+.text-h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-line);
+  font-weight: var(--text-h3-weight);
+  letter-spacing: -0.015em;
 }
 
-@media (min-width: 768px) {
-  .text-hero-compact {
-    font-size: 2.5rem;
-  }
+/* —— H4 — 22px DM Sans 700 —— */
+.text-h4 {
+  font-family: var(--font-sans);
+  font-size: var(--text-h4-size);
+  line-height: var(--text-h4-line);
+  font-weight: var(--text-h4-weight);
 }
 
-@media (min-width: 1024px) {
-  .text-hero-compact {
-    font-size: 3rem;
-  }
-}
-
-/* Long-form / support copy rhythm */
+/* —— Body large — 20px DM Sans 400 —— */
 .text-body-lg {
-  font-size: 1rem;
-  line-height: 1.65;
+  font-family: var(--font-sans);
+  font-size: var(--text-body-lg-size);
+  line-height: var(--text-body-lg-line);
+  font-weight: var(--text-body-lg-weight);
 }
 
-@media (min-width: 768px) {
-  .text-body-lg {
-    font-size: 1.125rem;
-    line-height: 1.7;
-  }
+/* —— Body — 16px DM Sans 400 —— */
+.text-body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  font-weight: var(--text-body-weight);
+}
+
+/* —— Small / label — 14px DM Sans 500–700 —— */
+.text-label,
+.text-caption {
+  font-family: var(--font-sans);
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-line);
+  font-weight: var(--text-label-weight);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .text-caption {
-  font-size: 0.75rem;
-  line-height: 1.4;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
 }
 
-/* Slightly larger heading numerals (prices, stats) read better with tighter
-   tracking than body copy, keeps the "premium" scale distinct from text-display. */
+/* Price / stat numerals: display face, tight tracking */
 .text-stat {
+  font-family: var(--font-display);
   font-size: 2.75rem;
   line-height: 1;
   letter-spacing: -0.03em;
-  font-weight: 800;
+  font-weight: 700;
+}
+
+/* Stats strip counters (smaller than hero / profile stat callouts) */
+.text-stat-strip {
+  font-family: var(--font-display);
+  font-size: 1.625rem; /* 26px */
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .text-stat-strip {
+    font-size: 1.875rem; /* 30px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-stat-strip {
+    font-size: 2rem; /* 32px */
+  }
+}
+
+.text-stat-strip-label {
+  font-size: 0.875rem;
+  line-height: 1.35;
+  font-weight: 600;
+  color: var(--color-neutral-400);
+}
+
+/* Semantic heading defaults (utility classes on the same element win) */
+h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-h1-size);
+  line-height: var(--text-h1-line);
+  font-weight: var(--text-h1-weight);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-h2-size);
+  line-height: var(--text-h2-line);
+  font-weight: var(--text-h2-weight);
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-line);
+  font-weight: var(--text-h3-weight);
+  letter-spacing: -0.015em;
+}
+
+h4 {
+  font-family: var(--font-sans);
+  font-size: var(--text-h4-size);
+  line-height: var(--text-h4-line);
+  font-weight: var(--text-h4-weight);
+}
+
+/* Long-form / legal / blog (.prose is not from @tailwindcss/typography) */
+.prose,
+.prose-article {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  font-weight: var(--text-body-weight);
+  color: var(--color-neutral-700);
+}
+
+.prose :where(h1):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+.prose-article :where(h1):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  margin-top: 2.5rem;
+  font-family: var(--font-display);
+  font-size: var(--text-h1-size);
+  line-height: var(--text-h1-line);
+  font-weight: var(--text-h1-weight);
+  color: var(--color-neutral-900);
+}
+
+.prose :where(h2):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+.prose-article :where(h2):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  margin-top: 2rem;
+  font-family: var(--font-display);
+  font-size: var(--text-h2-size);
+  line-height: var(--text-h2-line);
+  font-weight: var(--text-h2-weight);
+  color: var(--color-neutral-900);
+}
+
+.prose :where(h3):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+.prose-article :where(h3):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  margin-top: 1.5rem;
+  font-family: var(--font-display);
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-line);
+  font-weight: var(--text-h3-weight);
+  color: var(--color-neutral-900);
+}
+
+.prose :where(h4):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+.prose-article :where(h4):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  margin-top: 1.25rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-h4-size);
+  line-height: var(--text-h4-line);
+  font-weight: var(--text-h4-weight);
+  color: var(--color-neutral-900);
+}
+
+.prose :where(p):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+.prose-article :where(p):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  margin-top: 1rem;
+}
+
+.prose :where(a):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+.prose-article :where(a):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  font-weight: 600;
+  color: var(--color-brand-700);
+  text-underline-offset: 2px;
+}
+
+.prose :where(a):hover:not(:where([class~="not-prose"], [class~="not-prose"] *)),
+.prose-article :where(a):hover:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  text-decoration: underline;
+}
+
+.prose :where(ul, ol):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+.prose-article :where(ul, ol):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  margin-top: 1rem;
+  padding-left: 1.25rem;
+}
+
+.prose :where(li):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+.prose-article :where(li):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  margin-top: 0.35rem;
 }

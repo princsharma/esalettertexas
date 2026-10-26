@@ -48,9 +48,7 @@ export function SupportPageShell({
               <AuthorBox {...reviewer} />
             </div>
           )}
-          <div
-            className="min-w-0 text-base leading-relaxed text-neutral-700 sm:text-lg [&_h2]:mt-8 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-neutral-900 sm:[&_h2]:text-2xl [&_h3]:mt-6 [&_h3]:text-lg [&_h3]:font-bold [&_h3]:text-neutral-900 sm:[&_h3]:text-xl [&_p]:mt-4 [&_a]:font-semibold [&_a]:text-brand-700 [&_a]:underline-offset-2 hover:[&_a]:underline"
-          >
+          <div className="min-w-0 [&_.prose]:max-w-none">
             {children}
           </div>
         </Container>

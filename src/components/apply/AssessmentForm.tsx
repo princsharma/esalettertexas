@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { FormEvent, useEffect, useRef } from "react";
+import { SubmitButton } from "@/components/ui/Button";
+import { Field, TextInput } from "@/components/ui/Field";
 import { APPLY_CONVERSION_EVENTS, GA_MEASUREMENT_ID } from "@/lib/analytics";
 
 declare global {
@@ -60,40 +62,16 @@ export function AssessmentForm() {
         Your answers are transmitted over encrypted HTTPS when this form is connected to our intake
         provider. We do not put personal or health information in URLs or marketing analytics.
       </p>
-      <label className="block">
-        <span className="text-sm font-semibold text-neutral-800">Full name</span>
-        <input
-          type="text"
-          name="name"
-          className="mt-1 w-full rounded-control border border-neutral-200 px-3 py-2.5 text-neutral-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
-          autoComplete="name"
-        />
-      </label>
-      <label className="block">
-        <span className="text-sm font-semibold text-neutral-800">Email</span>
-        <input
-          type="email"
-          name="email"
-          className="mt-1 w-full rounded-control border border-neutral-200 px-3 py-2.5 text-neutral-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
-          autoComplete="email"
-        />
-      </label>
-      <label className="block">
-        <span className="text-sm font-semibold text-neutral-800">State of residence</span>
-        <input
-          type="text"
-          name="state"
-          defaultValue="Texas"
-          className="mt-1 w-full rounded-control border border-neutral-200 px-3 py-2.5 text-neutral-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
-          autoComplete="address-level1"
-        />
-      </label>
-      <button
-        type="submit"
-        className="inline-flex w-full items-center justify-center rounded-control bg-gradient-brand px-5 py-3 text-base font-bold text-white shadow-sm transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
-      >
-        Continue to clinical questions
-      </button>
+      <Field label="Full name" htmlFor="assessment-name">
+        <TextInput id="assessment-name" type="text" name="name" autoComplete="name" />
+      </Field>
+      <Field label="Email" htmlFor="assessment-email">
+        <TextInput id="assessment-email" type="email" name="email" autoComplete="email" />
+      </Field>
+      <Field label="State of residence" htmlFor="assessment-state">
+        <TextInput id="assessment-state" type="text" name="state" defaultValue="Texas" autoComplete="address-level1" />
+      </Field>
+      <SubmitButton className="w-full">Continue to clinical questions</SubmitButton>
       <p className="text-center text-xs text-neutral-500">
         By continuing, you agree to our{" "}
         <Link href="/privacy-policy/" className="text-brand-700 hover:underline">

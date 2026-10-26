@@ -14,9 +14,9 @@ const PRICING_FEATURES = [
 ];
 
 const ESA_PRICING = {
-  title: "ESA Letter",
+  title: ESA_LETTER_OFFER.name,
   price: ESA_LETTER_OFFER.priceDisplay,
-  billingNote: "one-time",
+  billingNote: `${ESA_LETTER_OFFER.billingNote} fee · verify current price`,
   badge: "Most Popular",
 
   description:
@@ -43,6 +43,16 @@ const PRICING_IMAGE = {
   alt: "Emotional support animal relaxing comfortably at home",
 };
 
+const PRICING_ICONS = {
+  badge: "/icons/rating-thumbs-up-orange.webp",
+  title: "/icons/100_ Confidential & HIPAA Compliant.webp",
+  moneyBack: "/icons/Moneyback Guarantee.webp",
+  rating: "/icons/rating-thumbs-up-orange.webp",
+} as const;
+
+const PRICING_ICON_RING =
+  "flex flex-none items-center justify-center rounded-full bg-white ring-1 ring-brand-100";
+
 /* =========================================================
    ICONS
 ========================================================= */
@@ -50,7 +60,7 @@ const PRICING_IMAGE = {
 function CheckIcon() {
   return (
     <svg
-      className="h-3 w-3"
+      className="h-4 w-4"
       viewBox="0 0 20 20"
       fill="currentColor"
       aria-hidden="true"
@@ -98,19 +108,6 @@ function LockIcon() {
   );
 }
 
-function StarIcon() {
-  return (
-    <svg
-      className="h-4 w-4 text-accent-500"
-      viewBox="0 0 20 20"
-      fill="currentColor"
-      aria-hidden="true"
-    >
-      <path d="M10 2a1 1 0 01.894.553l1.382 2.76 3.046.443a1 1 0 01.555 1.706l-2.205 2.15.52 3.034a1 1 0 01-1.451 1.054L10 12.27l-2.741 1.43a1 1 0 01-1.451-1.054l.52-3.034-2.205-2.15a1 1 0 01.555-1.706l3.046-.443 1.382-2.76A1 1 0 0110 2z" />
-    </svg>
-  );
-}
-
 /* =========================================================
    MAIN COMPONENT
 ========================================================= */
@@ -137,7 +134,12 @@ export function PricingShot() {
         <div className="mx-auto max-w-2xl text-center">
           <SectionHeading
             eyebrow="Pricing"
-            title="Accessible &  Transparent Pricing"
+            title={
+              <>
+                Accessible &amp; Transparent{" "}
+                <span className="text-accent-600">Pricing</span>
+              </>
+            }
             subhead="Get a professional ESA assessment without complicated plans or hidden fees."
             align="center"
           />
@@ -188,24 +190,21 @@ export function PricingShot() {
       className="pointer-events-none absolute -inset-5 rounded-[2rem] bg-gradient-to-br from-brand-100/50 via-transparent to-accent-100/40 blur-2xl"
     />
 
-    <div className="group relative overflow-hidden rounded-[1.5rem] border border-brand-200 bg-white p-6 shadow-card-hover ring-1 ring-brand-100 transition-all duration-300 hover:-translate-y-1 sm:p-8 lg:p-9">
-
-      {/* Top gradient line */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-0 h-1.5 bg-gradient-accent"
-      />
-
-      {/* Ambient glow */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-accent-200/30 blur-3xl"
-      />
+    <div className="conversion-card relative p-6 shadow-card sm:p-8 lg:p-9">
 
       {/* Popular badge */}
       <div className="relative flex items-center justify-between gap-4">
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-accent px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-sm">
-          <StarIcon />
+        <span className="inline-flex items-center gap-2 rounded-full bg-gradient-accent px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-sm">
+          <span className={`${PRICING_ICON_RING} h-7 w-7 shadow-sm ring-white/40`}>
+            <Image
+              src={PRICING_ICONS.badge}
+              alt=""
+              width={28}
+              height={28}
+              unoptimized
+              className="h-5 w-5 object-contain"
+            />
+          </span>
           {ESA_PRICING.badge}
         </span>
       </div>
@@ -214,23 +213,22 @@ export function PricingShot() {
       <div className="relative mt-6">
         <div className="flex items-center gap-3">
 
-          <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-brand-soft text-white shadow-sm">
-            <svg
-              className="h-5 w-5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
-            </svg>
+          <span className="flex h-13 w-13 flex-none items-center justify-center rounded-full bg-white ring-1 ring-brand-100 shadow-sm">
+            <Image
+              src={PRICING_ICONS.title}
+              alt=""
+              width={50}
+              height={50}
+              className="h-10 w-10 object-contain"
+            />
           </span>
 
           <div>
-            <h3 className="text-xl font-bold text-neutral-900">
+            <h3 className="conversion-pricing-title">
               {ESA_PRICING.title}
             </h3>
 
-            <p className="mt-0.5 text-sm text-neutral-500">
+            <p className="content-card-meta mt-0.5">
               Professional evaluation
             </p>
           </div>
@@ -239,37 +237,29 @@ export function PricingShot() {
       </div>
 
       {/* Description */}
-      <p className="relative mt-5 text-sm leading-relaxed text-neutral-600">
+      <p className="content-card-body relative mt-5">
         {ESA_PRICING.description}
       </p>
 
       {/* Price */}
-      <div className="relative mt-6 flex items-end gap-2 border-b border-neutral-100 pb-6">
-        <span className="text-5xl font-extrabold tracking-tight text-brand-700">
-          {ESA_PRICING.price}
-        </span>
+      <div className="relative mt-6 flex flex-wrap items-end gap-x-2 gap-y-1">
+        <span className="conversion-price">{ESA_PRICING.price}</span>
 
-        <span className="mb-1 text-sm font-medium text-neutral-500">
-          {ESA_PRICING.billingNote}
-        </span>
+        <span className="content-card-meta mb-1">{ESA_PRICING.billingNote}</span>
       </div>
 
       {/* Inclusions */}
       <div className="relative mt-6">
-        <p className="mb-4 text-xs font-bold uppercase tracking-wider text-neutral-500">
-          What's included
+        <p className="content-card-meta mb-4 font-bold uppercase tracking-wider">
+          What&apos;s included
         </p>
 
-        <ul className="space-y-3">
+        <ul className="conversion-checklist space-y-3">
           {ESA_PRICING.inclusions.map((item) => (
-            <li
-              key={item}
-              className="flex items-start gap-3 text-sm leading-relaxed text-neutral-700"
-            >
-              <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-success-500/15 text-success-600">
+            <li key={item}>
+              <span className="conversion-check-icon" aria-hidden="true">
                 <CheckIcon />
               </span>
-
               <span>{item}</span>
             </li>
           ))}
@@ -280,11 +270,15 @@ export function PricingShot() {
       <Button
         href={ESA_PRICING.ctaHref}
         size="lg"
-        className="group/btn relative mt-8 flex w-full items-center justify-center gap-2 shadow-lg shadow-accent-900/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent-900/30"
+        className="btn-mobile-full group/btn relative mt-8 flex w-full items-center justify-center gap-2 shadow-lg shadow-accent-900/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent-900/30"
       >
         {ESA_PRICING.ctaLabel}
         <ArrowIcon />
       </Button>
+
+      <p className="conversion-disclaimer relative mt-3 text-center">
+        No guarantee of clinical approval.
+      </p>
 
       {/* Refund / privacy note */}
       <div className="relative mt-5 rounded-xl bg-brand-50 px-4 py-3">
@@ -343,17 +337,17 @@ export function PricingShot() {
       <div className="absolute inset-0 bg-gradient-to-t from-brand-950/70 via-brand-950/10 to-transparent" />
 
       {/* Image content */}
-      <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7">
+      <div className="absolute inset-x-0 bottom-0 p-6 pb-12 sm:p-7 sm:pb-16">
 
         <span className="inline-flex items-center rounded-full border border-white/20 bg-white/15 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white backdrop-blur-md">
           Professional ESA Support
         </span>
 
-        <h3 className="mt-3 max-w-xs text-xl font-bold leading-tight text-white sm:text-2xl">
+        <h3 className="text-h3 mt-3 max-w-xs text-white">
           Compassionate support, professional evaluation.
         </h3>
 
-        <p className="mt-2 max-w-sm text-sm leading-relaxed text-brand-100">
+        <p className="mb-0 max-w-sm text-sm leading-relaxed text-brand-100">
           Your assessment is handled confidentially by a qualified mental
           health professional.
         </p>
@@ -363,10 +357,16 @@ export function PricingShot() {
 
 
     {/* Floating Guarantee Card */}
-    <div className="absolute -bottom-5 -left-3 flex items-center gap-3 rounded-2xl bg-white p-3.5 shadow-card-hover ring-1 ring-brand-950/5 sm:-left-6 sm:p-4">
+    <div className="absolute -bottom-6 -left-3 flex items-center gap-3 rounded-2xl bg-white p-3.5 shadow-card-hover ring-1 ring-brand-950/5 sm:-bottom-7 sm:-left-6 sm:p-4">
 
-      <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-gradient-brand-soft text-white shadow-sm">
-        <CheckIcon />
+      <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-white ring-1 ring-brand-100">
+        <Image
+          src={PRICING_ICONS.moneyBack}
+          alt=""
+          width={40}
+          height={40}
+          className="h-8 w-8 object-contain"
+        />
       </span>
 
       <div>
@@ -383,9 +383,18 @@ export function PricingShot() {
 
 
     {/* Floating Rating */}
-    <div className="absolute -right-2 -top-5 flex items-center gap-1.5 rounded-full bg-white px-4 py-2.5 text-sm font-bold text-neutral-900 shadow-card-hover ring-1 ring-brand-950/5 sm:-right-5">
+    <div className="absolute -right-2 -top-5 flex items-center gap-2.5 rounded-full bg-white px-3.5 py-2.5 text-sm font-bold text-neutral-900 shadow-card-hover ring-1 ring-brand-950/5 sm:-right-5 sm:px-4">
 
-      <StarIcon />
+      <span className={`${PRICING_ICON_RING} h-11 w-11`}>
+        <Image
+          src={PRICING_ICONS.rating}
+          alt=""
+          width={40}
+          height={40}
+          unoptimized
+          className="h-8 w-8 object-contain"
+        />
+      </span>
 
       <span>4.9/5</span>
 

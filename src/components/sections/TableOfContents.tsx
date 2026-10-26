@@ -28,7 +28,7 @@ export function TableOfContents({
               <li key={item.id}>
                 <a
                   href={`#${item.id}`}
-                  className="group flex items-center gap-2.5 rounded-control px-2 py-1.5 -mx-2 text-md font-medium text-neutral-700 transition-colors duration-150 hover:bg-white hover:text-brand-700"
+                  className="text-body group flex items-center gap-2.5 rounded-control px-2 py-1.5 -mx-2 font-medium text-neutral-700 transition-colors duration-150 hover:bg-neutral-0 hover:text-brand-700"
                 >
                   <span className="flex h-5 w-5 flex-none items-center justify-center rounded-full bg-white text-[14px] font-bold text-brand-600 ring-1 ring-brand-200 transition-colors duration-150 group-hover:bg-brand-600 group-hover:text-white group-hover:ring-brand-600">
                     {i + 1}

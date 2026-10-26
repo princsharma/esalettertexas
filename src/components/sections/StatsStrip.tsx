@@ -20,11 +20,11 @@ const DEFAULT_STATS: Stat[] = [
 ];
 
 const ICON_PATHS: Record<StatIcon, string> = {
-  users: "/icons/Artboard 10.webp",
+  users: "/icons/Texas Counties Served.webp",
   star: "/icons/Verified Client Rating.webp",
   clock: "/icons/Supporting Texas Renters.webp",
-  tag: "/icons/Flat-Rate, All-Inclusive Pricing.webp",
-  pin: "/icons/Texas Counties Served.webp",
+  tag: "/icons/Flat-Rate, All-Inclusive Pricing_1.webp",
+  pin: "/icons/Texas Counties Served_1.webp",
 };
 
 function formatStatValue(stat: Stat) {
@@ -40,30 +40,30 @@ function StatCard({ stat }: { stat: Stat }) {
 
   return (
     <li
-      className="group flex flex-col items-center gap-2 rounded-card border border-neutral-200 bg-brand-300 p-5 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-300 hover:shadow-card-hover"
+      className="group flex flex-col items-center gap-3 rounded-card border border-neutral-200 bg-brand-700 p-5 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-300 hover:shadow-card-hover sm:p-6"
     >
       <Image
         src={ICON_PATHS[stat.icon]}
         alt=""
-        width={90}
-        height={90}
-        sizes="90px"
-        className="object-contain"
+        width={80}
+        height={80}
+        sizes="72px"
+        className="h-10 w-10 object-contain sm:h-14 sm:w-14 md:h-16 md:w-16"
       />
 
-      <span className="tabular-nums text-2xl font-extrabold tracking-tight text-brand-700 md:text-3xl">
+      <span className="text-stat-strip tabular-nums text-white">
         {stat.prefix}
         {formatted}
         {stat.suffix}
       </span>
-      <span className="text-xs font-semibold text-neutral-600 md:text-sm">{stat.label}</span>
+      <span className="text-sm font-semibold leading-snug text-brand-200">{stat.label}</span>
     </li>
   );
 }
 
 export function StatsStrip({ stats = DEFAULT_STATS }: { stats?: Stat[] }) {
   return (
-    <section className="relative border-b border-neutral-200 bg-brand-50 py-10 md:py-12">
+    <section className="relative border-b border-neutral-200 bg-neutral-100 py-12 md:py-16">
       <Container>
         <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 lg:gap-5">
           {stats.map((stat) => (

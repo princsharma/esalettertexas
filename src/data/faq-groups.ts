@@ -1,15 +1,20 @@
 import type { FaqItem } from "@/components/sections";
+import { PAGE_HERO } from "@/data/page-heroes";
 
 export type FaqGroup = {
   id: string;
   title: string;
   items: FaqItem[];
+  imageSrc: string;
+  imageAlt: string;
 };
 
 export const FAQ_GROUPS: FaqGroup[] = [
   {
     id: "getting-started",
     title: "Getting started",
+    imageSrc: PAGE_HERO.howToGet,
+    imageAlt: "Starting a confidential ESA assessment online",
     items: [
       {
         question: "How long does it take to get an ESA letter?",
@@ -25,6 +30,8 @@ export const FAQ_GROUPS: FaqGroup[] = [
   {
     id: "qualifying",
     title: "Qualifying & evaluation",
+    imageSrc: PAGE_HERO.conditions,
+    imageAlt: "Common conditions that may qualify for an emotional support animal",
     items: [
       {
         question: "What conditions qualify for an ESA in Texas?",
@@ -41,6 +48,8 @@ export const FAQ_GROUPS: FaqGroup[] = [
   {
     id: "housing",
     title: "Housing & landlords",
+    imageSrc: PAGE_HERO.rights,
+    imageAlt: "Texas housing rights and fair housing for ESA letters",
     items: [
       {
         question: "Can my landlord deny my ESA?",
@@ -57,6 +66,8 @@ export const FAQ_GROUPS: FaqGroup[] = [
   {
     id: "letters",
     title: "Letters & renewal",
+    imageSrc: PAGE_HERO.renewal,
+    imageAlt: "Receiving and renewing your ESA letter",
     items: [
       {
         question: "How long is an ESA letter valid?",

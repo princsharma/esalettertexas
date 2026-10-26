@@ -109,8 +109,8 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-white/10 bg-brand-950">
-      <Container className="py-12 md:py-14">
+    <footer className="relative bg-brand-950">
+      <Container className="pt-12 pb-[max(5rem,calc(3rem+env(safe-area-inset-bottom)))] md:py-14">
         {/* Compact brand strip */}
         <div className="flex flex-wrap items-center justify-between gap-4">
           <Link href="/" className="relative -ml-1 flex items-center" aria-label="ESA Letter Texas, home">

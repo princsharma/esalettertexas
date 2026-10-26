@@ -1,79 +1,92 @@
 
-
 :root {
-  /* Brand: deep teal (clinical trust) */
-  --color-brand-50: #f0f9f8;
-  --color-brand-100: #d9efec;
-  --color-brand-200: #b3ded9;
-  --color-brand-300: #82c5bd;
-  --color-brand-400: #4fa79c;
-  --color-brand-500: #2f8a7e;
-  --color-brand-600: #216e65;
-  --color-brand-700: #1c5852;
-  --color-brand-800: #194642;
-  --color-brand-900: #163a37;
-  --color-brand-950: #0a201e;
+  /*
+   * Color system (design tokens)
+   * Orange = primary action (accent scale in Tailwind).
+   * Forest green = trust, heroes, footer (brand scale).
+   * Warm neutrals = page surfaces and type.
+   */
 
-  /* Accent: brand orange #ff914d (logo color), CTAs */
-  --color-accent-50: #fff7ed;
-  --color-accent-100: #ffecd2;
-  --color-accent-200: #ffd6a8;
-  --color-accent-300: #ffb87a;
-  --color-accent-400: #ff9d5c;
-  --color-accent-500: #ff914d;
-  --color-accent-600: #f2711f;
-  --color-accent-700: #c85814;
-  --color-accent-800: #9f4515;
-  --color-accent-900: #803a17;
+  /* Brand: forest green — trust, headings on light, footer, dark heroes */
+  --color-brand-50: #e9f2ec; /* Pale green — success / informational washes */
+  --color-brand-100: #d4e6da;
+  --color-brand-200: #a9cdb5;
+  --color-brand-300: #7ab396;
+  --color-brand-400: #4d9478;
+  --color-brand-500: #357a61;
+  --color-brand-600: #245645; /* Accent / forest — secondary actions */
+  --color-brand-700: #1f4d3a;
+  --color-brand-800: #173e36; /* Deep forest — headings on light */
+  --color-brand-900: #122f28;
+  --color-brand-950: #0c211c;
 
-  /* Neutrals: warm gray. 400-700 are tuned for readable type on white
-     (body, captions, labels) without flattening the heading contrast. */
-  --color-neutral-0: #ffffff;
-  --color-neutral-50: #faf9f7;
-  --color-neutral-100: #f2f0ec;
-  --color-neutral-200: #e5e1d9;
-  --color-neutral-300: #d1cbbf;
-  --color-neutral-400: #787266;
-  --color-neutral-500: #5e584d;
-  --color-neutral-600: #48443b;
-  --color-neutral-700: #3a362e;
-  --color-neutral-800: #332f28;
-  --color-neutral-900: #201d18;
-  --color-neutral-950: #12100d;
+  /* Accent: brand orange — primary CTA, links on dark */
+  --color-accent-50: #fff0e5; /* Pale orange — warm callouts */
+  --color-accent-100: #ffe2cc;
+  --color-accent-200: #ffc499;
+  --color-accent-300: #ffa366;
+  --color-accent-400: #f8833d;
+  --color-accent-500: #f27131; /* Brand orange — primary CTA */
+  --color-accent-600: #d96118;
+  --color-accent-700: #b54f12;
+  --color-accent-800: #8f3d0f;
+  --color-accent-900: #6e300c;
+
+  /* Neutrals */
+  --color-neutral-0: #ffffff; /* Paper — cards, form surfaces */
+  --color-neutral-50: #fff8f1; /* Warm cream — main page background */
+  --color-neutral-100: #f3f7f4; /* Soft neutral — quiet panels, inputs */
+  --color-neutral-200: #e5e8e2; /* Border — dividers, outlines */
+  --color-neutral-300: #d4d8d2;
+  /* Muted text: ≥4.5:1 on paper/cream (WCAG AA body supporting copy) */
+  --color-neutral-400: #6a726c; /* Muted text — supporting copy */
+  --color-neutral-500: #555f59;
+  --color-neutral-600: #3d4540;
+  --color-neutral-700: #323832;
+  --color-neutral-800: #2b302c;
+  --color-neutral-900: #242a26; /* Text / ink — body, high contrast */
+  --color-neutral-950: #141816;
 
   /* Semantic */
-  --color-success-500: #2f9155;
-  --color-success-600: #24763f;
+  --color-success-500: #245a43;
+  --color-success-600: #1f4d3a;
   --color-warning-500: #c98a11;
   --color-warning-600: #a5700c;
-  --color-danger-500: #d5453a;
-  --color-danger-600: #b2352c;
+  --color-danger-500: #b93832; /* Error — validation only */
+  --color-danger-600: #9a2f2a;
 
-  --background: var(--color-neutral-0);
+  --background: var(--color-neutral-50);
   --foreground: var(--color-neutral-900);
 
-  /* Radius */
+  /* Radius + control sizes (core components) */
   --radius-card: 1rem;
-  --radius-control: 0.625rem;
+  --radius-control: 12px;
+  --control-height-button: 56px;
+  --control-height-button-compact: 48px; /* ≥44px touch target */
+  --btn-padding-inline: 24px;
+  --btn-hover-darken: 92%; /* mix with black = ~8% darker */
+  --btn-pressed-darken: 85%;
+  --control-height-field: 54px;
+  --control-height-badge-min: 34px;
+  --control-height-badge-max: 38px;
+  --control-height-badge: 36px;
+  --control-icon-badge: 18px;
+  --control-badge-gap: 8px;
 
-  /* Shadow, layered: a crisp contact shadow, a soft ambient falloff, and a
-     faint long-throw layer for perceived elevation ("premium" depth over a flat blur).
-     Photo / letter shadows tint with brand-950 (#0a201e) so elevated surfaces
-     stay in the teal family instead of generic black. */
-  --shadow-card: 0 1px 1px rgba(18, 16, 13, 0.05), 0 6px 16px -8px rgba(18, 16, 13, 0.14),
-    0 20px 40px -24px rgba(18, 16, 13, 0.1);
-  --shadow-card-hover: 0 2px 3px rgba(18, 16, 13, 0.07), 0 12px 28px -10px rgba(18, 16, 13, 0.18),
-    0 32px 56px -20px rgba(18, 16, 13, 0.16);
-  --shadow-card-brand: 0 25px 45px -15px rgba(28, 88, 82, 0.35);
-  --shadow-photo: 0 25px 60px -15px rgba(10, 32, 30, 0.35);
-  --shadow-photo-deep: 0 25px 60px -15px rgba(10, 32, 30, 0.5);
-  --shadow-photo-dark: 0 20px 50px -15px rgba(10, 32, 30, 0.55);
-  --shadow-photo-dark-hover: 0 30px 65px -15px rgba(10, 32, 30, 0.7);
-  --shadow-letter: 0 25px 50px -12px rgba(10, 32, 30, 0.4);
-  --shadow-letter-hover: 0 35px 65px -12px rgba(10, 32, 30, 0.5);
+  /* Shadow: tinted with deep forest so elevation stays on-brand */
+  --shadow-card: 0 1px 1px rgba(20, 24, 22, 0.05), 0 6px 16px -8px rgba(20, 24, 22, 0.14),
+    0 20px 40px -24px rgba(20, 24, 22, 0.1);
+  --shadow-card-hover: 0 2px 3px rgba(20, 24, 22, 0.07), 0 12px 28px -10px rgba(20, 24, 22, 0.18),
+    0 32px 56px -20px rgba(20, 24, 22, 0.16);
+  --shadow-card-brand: 0 25px 45px -15px rgba(23, 61, 52, 0.35);
+  --shadow-photo: 0 25px 60px -15px rgba(12, 33, 28, 0.35);
+  --shadow-photo-deep: 0 25px 60px -15px rgba(12, 33, 28, 0.5);
+  --shadow-photo-dark: 0 20px 50px -15px rgba(12, 33, 28, 0.55);
+  --shadow-photo-dark-hover: 0 30px 65px -15px rgba(12, 33, 28, 0.7);
+  --shadow-letter: 0 25px 50px -12px rgba(12, 33, 28, 0.4);
+  --shadow-letter-hover: 0 35px 65px -12px rgba(12, 33, 28, 0.5);
 
-  /* Gradients: brand teal is the site's single gradient family;
-     accent terracotta appears only as a warm high-contrast variant (primary CTAs). */
+  /* Gradients: forest for trust surfaces; orange for primary CTAs */
   --gradient-brand: linear-gradient(135deg, var(--color-brand-600) 0%, var(--color-brand-800) 100%);
   --gradient-brand-soft: linear-gradient(135deg, var(--color-brand-500) 0%, var(--color-brand-700) 100%);
   --gradient-accent: linear-gradient(135deg, var(--color-accent-400) 0%, var(--color-accent-600) 100%);
@@ -81,29 +94,78 @@
     radial-gradient(50% 50% at 0% 100%, var(--color-brand-800) 0%, transparent 65%),
     linear-gradient(135deg, var(--color-brand-600) 0%, var(--color-brand-800) 100%);
 
-  /* Hero-only aurora mesh: richer, warmer, and unique to the top-of-page hero so it
-     doesn't read as the same background as the mid-page hero-toned sections. */
   --gradient-hero-mesh: radial-gradient(45% 55% at 85% 10%, var(--color-accent-400) 0%, transparent 60%),
     radial-gradient(55% 60% at 15% 15%, var(--color-brand-300) 0%, transparent 55%),
     radial-gradient(70% 70% at 50% 100%, var(--color-brand-900) 0%, transparent 70%),
     linear-gradient(160deg, var(--color-brand-700) 0%, var(--color-brand-950) 100%);
 
-  /* Article layout wrapper: a light brand-to-accent wash (not the dark hero gradients)
-     since long-form copy sits directly on top and needs to stay readable. */
-  --gradient-article: linear-gradient(160deg, var(--color-brand-100) 0%, var(--color-brand-50) 50%, var(--color-accent-50) 100%);
+  --gradient-article: linear-gradient(
+    160deg,
+    var(--color-brand-50) 0%,
+    var(--color-neutral-50) 50%,
+    var(--color-accent-50) 100%
+  );
 
-  /* Spacing scale: page/section rhythm. Mobile-first, widens at --bp-md. */
-  --space-section-y: 4rem; /* py-16 */
-  --space-section-y-md: 5rem; /* py-20 */
-  --space-container-x: 1.25rem;
-  --space-container-x-md: 2rem;
+  /* 8-point spacing scale (space-4 … space-80) */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-80: 80px;
 
-  /* Breakpoints: mirrors Tailwind's defaults; kept as tokens so
-     JS (matchMedia, resize hooks) can stay in sync with CSS. */
+  /* Type scale (desktop spec — fixed across breakpoints) */
+  --text-h1-size: 3.5rem; /* 56px */
+  --text-h1-line: 1.08;
+  --text-h1-weight: 700;
+  --text-h2-size: 2.5rem; /* 40px */
+  --text-h2-line: 1.15;
+  --text-h2-weight: 700;
+  --text-h3-size: 1.5rem; /* 24px */
+  --text-h3-line: 1.2;
+  --text-h3-weight: 600;
+  --text-h4-size: 1.375rem; /* 22px */
+  --text-h4-line: 1.3;
+  --text-h4-weight: 700;
+  --text-body-lg-size: 1.25rem; /* 20px */
+  --text-body-lg-line: 1.55;
+  --text-body-lg-weight: 400;
+  --text-body-size: 1rem; /* 16px */
+  --text-body-line: 1.6;
+  --text-body-weight: 400;
+  --text-label-size: 0.875rem; /* 14px */
+  --text-label-line: 1.45;
+  --text-label-weight: 600;
+
+  /* Layout: centered container + responsive grid */
+  --layout-max-width: 75rem; /* 1200px content max */
+  --layout-frame-width: 90rem; /* 1440px design frame */
+  --layout-margin-mobile: 20px;
+  --layout-margin-tablet: 32px;
+  --layout-margin-desktop: 80px;
+  --layout-column-gap: 24px;
+  --layout-columns-mobile: 4;
+  --layout-columns-tablet: 8;
+  --layout-columns-desktop: 12;
+
+  /* Section vertical padding: mobile / tablet / desktop */
+  --space-section-y-mobile: var(--space-48);
+  --space-section-y-tablet: var(--space-64);
+  --space-section-y-desktop: var(--space-80);
+
+  /* Breakpoints (spec 08: mobile ≤767, tablet 768–1023, desktop ≥1024) */
+  --bp-mobile-max: 767px;
+  --bp-tablet-min: 768px;
+  --bp-tablet-max: 1023px;
+  --bp-desktop-min: 1024px;
   --bp-sm: 640px;
   --bp-md: 768px;
   --bp-lg: 1024px;
   --bp-xl: 1280px;
+  --bp-frame: 1440px;
 }
 
 @theme inline {
@@ -154,9 +216,9 @@
   --color-danger-500: var(--color-danger-500);
   --color-danger-600: var(--color-danger-600);
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-display: var(--font-geist-sans);
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   --radius-card: var(--radius-card);
   --radius-control: var(--radius-control);
@@ -171,6 +233,21 @@
   --shadow-letter: var(--shadow-letter);
   --shadow-letter-hover: var(--shadow-letter-hover);
 
-  --spacing-section-y: var(--space-section-y);
-  --spacing-section-y-md: var(--space-section-y-md);
+  --spacing-space-4: var(--space-4);
+  --spacing-space-8: var(--space-8);
+  --spacing-space-12: var(--space-12);
+  --spacing-space-16: var(--space-16);
+  --spacing-space-24: var(--space-24);
+  --spacing-space-32: var(--space-32);
+  --spacing-space-48: var(--space-48);
+  --spacing-space-64: var(--space-64);
+  --spacing-space-80: var(--space-80);
+
+  --spacing-section-y-mobile: var(--space-section-y-mobile);
+  --spacing-section-y-tablet: var(--space-section-y-tablet);
+  --spacing-section-y-desktop: var(--space-section-y-desktop);
+
+  --spacing-layout-column-gap: var(--layout-column-gap);
+  --max-width-content: var(--layout-max-width);
+  --max-width-frame: var(--layout-frame-width);
 }

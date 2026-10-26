@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
@@ -20,7 +21,7 @@ export function SiloChildGrid({
   scrollAnchorId = "locations",
 }: {
   eyebrow?: string;
-  title: string;
+  title: ReactNode;
   subhead?: string;
   items: SiloCard[];
   viewAllHref?: string;
@@ -77,7 +78,7 @@ export function SiloChildGrid({
           )}
         </div>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="card-grid mt-10">
           {items.map((item,index) => (
             <Link
               key={index}
@@ -121,20 +122,20 @@ export function SiloChildGrid({
                   )}
                 </span>
                 <div className="min-w-0 flex-1">
-                  <h3 className="inline-block font-bold text-neutral-900 transition-colors group-hover:text-brand-700">
+                  <h3 className="content-card-title inline-block text-neutral-900 transition-colors group-hover:text-brand-700">
                     {item.title}
                     <span
                       aria-hidden="true"
                       className="mt-0.5 block h-0.5 max-w-0 rounded-full bg-brand-500 transition-all duration-300 group-hover:max-w-full"
                     />
                   </h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-neutral-600">
+                  <p className="content-card-body mt-1.5">
                     {item.description}
                   </p>
                 </div>
               </div>
 
-              <span className="mt-4 flex items-center gap-1.5 border-t border-neutral-100 pt-3.5 text-xs font-semibold text-brand-600 transition-colors duration-300 group-hover:border-brand-100">
+              <span className="content-card-link mt-4 flex items-center gap-1.5 border-t border-neutral-100 pt-3.5 transition-colors duration-300 group-hover:border-brand-100">
                 {isLocation ? "View city guide" : "Learn more"}
                 <svg
                   className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-1.5"

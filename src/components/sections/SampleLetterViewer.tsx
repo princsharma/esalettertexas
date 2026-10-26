@@ -17,7 +17,7 @@ export function SampleLetterViewer({
   callouts?: LetterCallout[];
 }) {
   return (
-    <div className="group relative mx-auto max-w-md overflow-hidden rounded-card border border-neutral-200 bg-white shadow-card transition-shadow duration-300 hover:shadow-card-hover">
+    <div className="conversion-card group relative mx-auto max-w-md overflow-hidden shadow-card transition-shadow duration-300 hover:shadow-card-hover">
       <div className="relative aspect-[8.5/11] w-full overflow-hidden">
         <Image
           src={imageSrc}

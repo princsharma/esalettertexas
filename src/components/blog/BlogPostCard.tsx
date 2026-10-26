@@ -44,10 +44,10 @@ export function BlogPostCard({ post }: { post: BlogPost }) {
       </div>
 
       <div className="flex flex-1 flex-col p-5">
-        <h3 className="font-bold text-neutral-900 transition-colors group-hover:text-brand-700">
+        <h3 className="content-card-title text-neutral-900 transition-colors group-hover:text-brand-700">
           {post.title}
         </h3>
-        <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-600">{post.excerpt}</p>
+        <p className="content-card-body mt-2 flex-1">{post.excerpt}</p>
 
         <div className="mt-4 flex items-center justify-between border-t border-neutral-100 pt-3.5">
           <time className="text-xs text-neutral-500">{post.date}</time>

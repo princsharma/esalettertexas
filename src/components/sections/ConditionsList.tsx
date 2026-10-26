@@ -35,7 +35,12 @@ export default function ConditionsList (){
           <div>
             <SectionHeading
               eyebrow="Do you qualify?"
-              title="Common Conditions That Qualify for an ESA"
+              title={
+                <>
+                  Common Conditions That{" "}
+                  <span className="text-accent-600">Qualify for an ESA</span>
+                </>
+              }
               subhead="A wide range of mental health conditions may qualify you for an ESA letter. Explore the most common ones below."
             />
 
@@ -86,7 +91,7 @@ export default function ConditionsList (){
 
             <Link
               href="/conditions/"
-              className="group mt-7 inline-flex items-center gap-1.5 text-md font-semibold text-brand-700 transition-colors hover:text-brand-800"
+              className="text-body group mt-7 inline-flex items-center gap-1.5 font-semibold text-brand-700 transition-colors hover:text-brand-800"
             >
               View all conditions
               <svg
@@ -124,13 +129,13 @@ export default function ConditionsList (){
 
             {/* Floating reassurance card */}
             <div className="absolute -bottom-6 -left-6 flex items-center gap-3 rounded-card bg-white p-4 shadow-card-hover ring-1 ring-brand-950/5">
-              <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full  border-1 bg-white ring-1 ring-neutral-900">
+              <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-white ring-1 ring-brand-100">
                 <Image
-                  src="/icons/Confidential evaluation.webp"
+                  src="/icons/Legally Compliant Documentation.webp"
                   alt=""
-                  width={30}
-                  height={30}
-                  className=" object-contain"
+                  width={40}
+                  height={40}
+                  className="h-8 w-8 object-contain"
                 />
               </span>
               <div>

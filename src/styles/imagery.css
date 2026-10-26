@@ -1,0 +1,51 @@
+
+/*
+ * Imagery direction (spec 07): warm, realistic people + pets;
+ * consistent crop; calm dignified photography — no playful filters.
+ */
+
+.media-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  background-color: var(--color-neutral-100);
+}
+
+/* Next/Image fill wrappers: keep subject scale consistent in cards/heroes */
+.media-photo-frame {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-neutral-100);
+}
+
+/* Decorative icons (not informative): hide from assistive tech when marked */
+.icon-decorative {
+  flex: none;
+  pointer-events: none;
+}
+
+/* Orange/teal marketing icons — render asset colors as-is (no mono treatment). */
+.brand-line-icon {
+  display: block;
+  flex: none;
+  object-fit: contain;
+  opacity: 1;
+}
+
+/* WebP icons on solid black — drop matte, keep orange/green line art. */
+.icon-matte-knockout {
+  display: block;
+  flex: none;
+  object-fit: contain;
+  mix-blend-mode: screen;
+}
+
+/* Verified Client Rating.webp: white strokes on black — invert for dark art on light UI. */
+.icon-rating-knockout {
+  display: block;
+  flex: none;
+  object-fit: contain;
+  filter: invert(1);
+}

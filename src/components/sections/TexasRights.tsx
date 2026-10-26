@@ -67,7 +67,7 @@ export default function TexasRights (){
                 <span className="flex h-14 w-14 items-center justify-center rounded-full  shadow-lg transition-transform duration-300 group-hover:scale-110">
                   <Image src={item.icon} alt="" width={232} height={232} className="object-contain" />
                 </span>
-                <h3 className="text-lg font-bold text-white">{item.label}</h3>
+                <h3 className="content-card-title-light">{item.label}</h3>
                 <p className="text-sm leading-relaxed text-brand-100">{item.description}</p>
                 <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-200">
                   Learn more

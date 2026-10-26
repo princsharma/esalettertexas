@@ -23,7 +23,9 @@ export function RelatedPages({
               <path d="M7.414 15.414a2 2 0 01-2.828-2.828l3-3a2 2 0 012.828 0 1 1 0 001.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 00-1.414-1.414l-1.5 1.5z" />
             </svg>
           </span>
-          <h3 className="text-sm font-bold uppercase tracking-wide text-brand-700">{title}</h3>
+          <h3 className="font-display text-sm font-semibold uppercase tracking-wide text-brand-700">
+            {title}
+          </h3>
         </div>
       </div>
       <ul className="space-y-0.5 p-3">

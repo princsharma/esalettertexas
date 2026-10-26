@@ -11,14 +11,14 @@ export function BlogCategoryNav({ categories }: { categories: BlogCategory[] }) 
           href={categoryArchiveHref(cat.slug)}
           className="group rounded-card border border-neutral-200 bg-white p-5 shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-card-hover"
         >
-          <p className="text-xs font-bold uppercase tracking-wide text-brand-600">Category</p>
-          <h3 className="mt-1 text-lg font-bold text-neutral-900 transition-colors group-hover:text-brand-700">
+          <p className="content-card-eyebrow text-brand-600">Category</p>
+          <h3 className="content-card-title mt-1 text-neutral-900 transition-colors group-hover:text-brand-700">
             {cat.name}
           </h3>
-          <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-neutral-600">
+          <p className="content-card-body mt-2 line-clamp-3">
             {cat.intro.split(".")[0]}.
           </p>
-          <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">
+          <span className="content-card-link mt-4 inline-flex items-center gap-1">
             View archive
             <svg
               className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1"

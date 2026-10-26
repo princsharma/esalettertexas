@@ -15,7 +15,7 @@ export function CityInfoPanel({
 }) {
   return (
     <div className="rounded-card border border-neutral-200 bg-white p-6 shadow-card transition-shadow duration-300 hover:shadow-card-hover">
-      <h3 className="text-lg font-bold text-neutral-900">
+      <h3 className="content-card-title text-neutral-900">
         ESA rules &amp; resources in {cityName}, TX
       </h3>
 
@@ -23,7 +23,7 @@ export function CityInfoPanel({
         {stats.map((stat) => (
           <div key={stat.label}>
             <dt className="text-caption text-neutral-500">{stat.label}</dt>
-            <dd className="mt-1 text-lg font-semibold text-neutral-900">
+            <dd className="content-card-title mt-1 text-neutral-900">
               {stat.value}
             </dd>
           </div>
@@ -31,10 +31,10 @@ export function CityInfoPanel({
       </dl>
 
       <div className="mt-6">
-        <h4 className="text-sm font-semibold text-neutral-900">
+        <h4 className="content-card-eyebrow text-neutral-700">
           Local housing rules
         </h4>
-        <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-neutral-600">
+        <ul className="content-card-body mt-2 list-disc space-y-1 pl-5">
           {localRules.map((rule) => (
             <li key={rule}>{rule}</li>
           ))}
@@ -42,10 +42,10 @@ export function CityInfoPanel({
       </div>
 
       <div className="mt-6">
-        <h4 className="text-sm font-semibold text-neutral-900">
+        <h4 className="content-card-eyebrow text-neutral-700">
           Nearby resources
         </h4>
-        <ul className="mt-2 space-y-1 text-sm">
+        <ul className="content-card-body mt-2 space-y-1">
           {resources.map((r) => (
             <li key={r.href}>
               <a

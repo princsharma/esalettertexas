@@ -72,7 +72,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             <p className="text-sm font-semibold uppercase tracking-wide text-brand-600">
               {getCategoryName(post.categorySlug)}
             </p>
-            <h1 className="mt-2 text-3xl font-bold text-neutral-900 sm:text-4xl">{post.title}</h1>
+            <h1 className="mt-2 text-h1 text-neutral-900">{post.title}</h1>
             <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm text-neutral-500">
               <time dateTime={post.publishedAt}>Published {post.publishedDisplay}</time>
               {post.updatedDisplay && <span>Updated {post.updatedDisplay}</span>}
@@ -137,7 +137,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
           {related.length > 0 && (
             <div className="mt-14">
-              <h2 className="text-xl font-bold text-neutral-900">Related posts</h2>
+              <h2 className="text-h2 text-neutral-900">Related posts</h2>
               <div className="mt-6 grid gap-6 sm:grid-cols-2">
                 {related.map((r) => (
                   <BlogPostCard key={r.slug} post={toBlogCard(r)} />

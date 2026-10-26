@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/sections";
+import { SubmitButton } from "@/components/ui/Button";
+import { FieldLabel, TextInput } from "@/components/ui/Field";
 import { Container } from "@/components/ui/Container";
 import { searchSite } from "@/lib/site-search";
 import { pageMetadata } from "@/lib/seo";
@@ -17,26 +19,19 @@ export default async function SearchPage({ searchParams }: PageProps) {
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Search" }]} pageUrl="/search/" />
       <section className="section-py bg-white">
         <Container className="max-w-2xl">
-          <h1 className="text-2xl font-bold text-neutral-900">Search</h1>
+          <h1 className="text-h1 text-neutral-900">Search</h1>
           <form method="get" action="/search/" className="mt-6">
-            <label className="block text-sm font-semibold text-neutral-800" htmlFor="site-search-q">
-              Search guides and blog posts
-            </label>
-            <div className="mt-2 flex gap-2">
-              <input
+            <FieldLabel htmlFor="site-search-q">Search guides and blog posts</FieldLabel>
+            <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-stretch">
+              <TextInput
                 id="site-search-q"
                 type="search"
                 name="q"
                 defaultValue={q}
-                className="min-w-0 flex-1 rounded-control border border-neutral-200 px-3 py-2.5 text-neutral-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
+                className="min-w-0 flex-1"
                 autoComplete="off"
               />
-              <button
-                type="submit"
-                className="rounded-control bg-gradient-brand px-4 py-2.5 text-sm font-bold text-white"
-              >
-                Search
-              </button>
+              <SubmitButton size="md" className="w-full shrink-0 sm:w-auto">Search</SubmitButton>
             </div>
           </form>
 

@@ -14,7 +14,7 @@ export default function FaqPage() {
       <SupportPageShell
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "FAQ" }]}
         title="Frequently Asked Questions"
-        subhead="Grouped by topic. For in-depth guides, visit our conditions, rights, and city silos—or start your assessment when you are ready."
+        subhead="Use the topic filters to find answers about evaluations, Texas housing rules, and letter renewals."
         narrow={false}
         reviewer={RIGHTS_REVIEWER}
         heroBackgroundImage={PAGE_HERO.faq}

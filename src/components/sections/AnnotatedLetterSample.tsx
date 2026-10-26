@@ -19,62 +19,67 @@ export function AnnotatedLetterSample() {
         aria-hidden="true"
         className="absolute -inset-4 -z-10 rounded-[1.75rem] bg-gradient-to-br from-brand-200/50 via-white/0 to-accent-200/40 blur-2xl"
       />
-      <div className="relative overflow-hidden rounded-card border border-neutral-200 bg-white p-7 shadow-letter sm:p-9">
-        <div className="absolute inset-x-0 top-0 h-2 bg-gradient-accent" />
-
-        <div className="flex flex-wrap items-start justify-between gap-3">
-          <div className="flex items-center">
-            <div>
-              <p className="text-sm font-bold uppercase tracking-wide text-brand-700">
-                Sarah Alvarez, LPC
-              </p>
-              <p className="mt-0.5 text-xs text-neutral-500">
-                Licensed Professional Counselor : Texas License #12345
-              </p>
+      <div className="conversion-letter-shell relative shadow-card">
+        <div className="conversion-letter-preview">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div className="flex items-center">
+              <div>
+                <p className="text-sm font-bold uppercase tracking-wide text-brand-800">
+                  Sarah Alvarez, LPC
+                </p>
+                <p className="content-card-meta mt-0.5">
+                  Licensed Professional Counselor : Texas License #12345
+                </p>
+              </div>
+              <Pin n={1} />
             </div>
-            <Pin n={1} />
+            <span className="trust-badge trust-badge-texas">
+              Sample, not for submission
+            </span>
           </div>
-          <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
-            Sample, not for submission
-          </span>
-        </div>
 
-        <div className="mt-6 flex items-center">
-          <p className="text-xs text-neutral-500">September 18, 2026</p>
-          <Pin n={2} />
-        </div>
+          <div className="mt-6 flex items-center">
+            <p className="content-card-meta">September 18, 2026</p>
+            <Pin n={2} />
+          </div>
 
-        <div className="mt-4 flex items-start">
-          <p className="text-sm leading-relaxed text-neutral-700">
-            <span className="font-semibold text-neutral-900">Re: Jordan T. (client of record)</span>
-            <br />
-            To Whom It May Concern,
-          </p>
-          <Pin n={3} />
-        </div>
-
-        <div className="mt-3 flex items-start">
-          <p className="text-sm leading-relaxed text-neutral-700">
-            I am writing to confirm that the above-named client is currently under my care and
-            has a disability-related need for an emotional support animal. In my professional
-            opinion, this animal's presence is a necessary part of the client's ongoing
-            treatment plan, as recognized under the Fair Housing Act.
-          </p>
-          <Pin n={4} />
-        </div>
-
-        <div className="mt-6 flex items-center gap-3 border-t border-neutral-100 pt-6">
-          <p className="text-xl italic leading-none text-brand-700">S. Alvarez</p>
-          <Pin n={5} />
-          <div className="ml-auto flex items-center">
-            <p className="text-right text-xs leading-relaxed text-neutral-500">
-              (512) 555-0148
+          <div className="mt-4 flex items-start">
+            <p className="content-card-body">
+              <span className="font-semibold text-neutral-900">Re: Jordan T. (client of record)</span>
               <br />
-              licensed@example-clinic.com
+              To Whom It May Concern,
             </p>
-            <Pin n={6} />
+            <Pin n={3} />
           </div>
+
+          <div className="mt-3 flex items-start">
+            <p className="content-card-body">
+              I am writing to confirm that the above-named client is currently under my care and
+              has a disability-related need for an emotional support animal. In my professional
+              opinion, this animal's presence is a necessary part of the client's ongoing
+              treatment plan, as recognized under the Fair Housing Act.
+            </p>
+            <Pin n={4} />
+          </div>
+
+          <div className="mt-6 flex items-center gap-3 border-t border-neutral-200 pt-6">
+            <p className="text-xl italic leading-none text-brand-800">S. Alvarez</p>
+            <Pin n={5} />
+            <div className="ml-auto flex items-center">
+              <p className="content-card-meta text-right">
+                (512) 555-0148
+                <br />
+                licensed@example-clinic.com
+              </p>
+              <Pin n={6} />
+            </div>
+          </div>
+
+          <p className="mt-6 text-center">
+            <span className="conversion-sample-badge">Illustrative sample</span>
+          </p>
         </div>
+
       </div>
     </div>
   );

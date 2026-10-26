@@ -1,0 +1,95 @@
+
+/*
+ * Accessibility (spec 07): WCAG AA targets, keyboard focus, touch targets.
+ * Colors are tuned in tokens (ink on cream, muted supporting text).
+ */
+
+:root {
+  --a11y-touch-min: 44px;
+  --a11y-focus-width: 3px;
+  --a11y-focus-offset: 2px;
+  --a11y-focus-color: var(--color-brand-600);
+  --a11y-focus-color-on-dark: rgb(255 255 255 / 0.92);
+}
+
+/* Skip link: hidden until keyboard focus (no flash on refresh) */
+.skip-link {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  background-color: var(--color-brand-800);
+  color: var(--color-neutral-0);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.skip-link:focus-visible {
+  position: fixed;
+  left: var(--space-16);
+  top: var(--space-16);
+  z-index: 10000;
+  width: auto;
+  height: auto;
+  min-height: var(--a11y-touch-min);
+  margin: 0;
+  padding: var(--space-12) var(--space-16);
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  white-space: normal;
+  border-radius: var(--radius-control);
+  outline: var(--a11y-focus-width) solid var(--a11y-focus-color-on-dark);
+  outline-offset: var(--a11y-focus-offset);
+}
+
+/* Minimum touch target for icon-only controls */
+.touch-target {
+  min-width: var(--a11y-touch-min);
+  min-height: var(--a11y-touch-min);
+}
+
+/* Fallback focus for native controls / links not using component classes */
+:where(
+    a,
+    button,
+    input,
+    textarea,
+    select,
+    summary,
+    [role="button"],
+    [tabindex]:not([tabindex="-1"])
+  ):focus-visible {
+  outline: var(--a11y-focus-width) solid var(--a11y-focus-color);
+  outline-offset: var(--a11y-focus-offset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .flip-card:hover .flip-card-inner,
+  .flip-card:focus-within .flip-card-inner {
+    transform: none;
+  }
+}

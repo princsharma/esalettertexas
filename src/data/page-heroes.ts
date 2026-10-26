@@ -8,7 +8,7 @@ import { RIGHTS_CLUSTERS, type RightsClusterSlug } from "@/data/silos/rights-clu
 
 export const PAGE_HERO = {
   /** Home — full hero; different from inner pages */
-  home: HERO_IMAGES.dog,
+  home: HERO_IMAGES.esaLetterHero,
   rights: "/images/your-rights-esa-bg.webp",
   conditions: "/images/Common Conditions That Qualify for an ESA.webp",
   locations: "/images/cozy_living_room_pets.webp",

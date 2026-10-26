@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { BlogPostCard } from "@/components/blog/BlogPostCard";
 import { resolveViewAllHref } from "@/lib/blog";
@@ -22,17 +23,23 @@ export type BlogPost = {
  */
 export function BlogGrid({
   posts,
-  title = "Latest From the Blog",
+  title,
   subhead,
   viewAllHref,
 }: {
   posts: BlogPost[];
-  title?: string;
+  title?: ReactNode;
   subhead?: string;
   /** Optional override; otherwise resolved from the first post’s category CMS mapping */
   viewAllHref?: string;
 }) {
   const archiveHref = viewAllHref ?? resolveViewAllHref(posts);
+  const resolvedTitle =
+    title ?? (
+      <>
+        Latest From the <span className="text-accent-600">Blog</span>
+      </>
+    );
 
   return (
        <div id="blog" className="scroll-mt-20">
@@ -49,7 +56,7 @@ export function BlogGrid({
 
       <Container className="relative">
         <div className="flex flex-col items-center gap-4 text-center">
-          <SectionHeading eyebrow="Blog" title={title} subhead={subhead} align="center" />
+          <SectionHeading eyebrow="Blog" title={resolvedTitle} subhead={subhead} align="center" />
           <Link
             href={archiveHref}
             className="group inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-brand-200 bg-white px-4 py-2 text-sm font-semibold text-brand-700 transition-all duration-200 hover:border-brand-400 hover:bg-brand-50"
@@ -70,7 +77,7 @@ export function BlogGrid({
           </Link>
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="card-grid mt-10">
           {posts.map((post) => (
             <BlogPostCard key={post.href} post={post} />
           ))}

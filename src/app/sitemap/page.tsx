@@ -26,7 +26,7 @@ export default function SitemapIndexPage() {
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "XML Sitemap" }]} />
 
       <section className="section-py bg-neutral-50">
-        <Container className="max-w-6xl">
+        <Container>
           <div className="overflow-hidden rounded-card border border-neutral-200 bg-white shadow-card">
             {/* Hero band */}
             <div className="relative bg-brand-950 px-6 py-10 sm:px-10 sm:py-12">
@@ -34,7 +34,7 @@ export default function SitemapIndexPage() {
                 className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-accent-400 to-brand-400"
                 aria-hidden="true"
               />
-              <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">XML Sitemap</h1>
+              <h1 className="text-h1 text-white">XML Sitemap</h1>
               <p className="mt-3 max-w-3xl text-base leading-relaxed text-brand-100">
                 This sitemap lists every indexable page on {SITE.name} in build-phase order for search
                 engines and audits. Crawlers should use the machine-readable feed at{" "}

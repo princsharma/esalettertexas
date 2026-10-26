@@ -1,42 +1,61 @@
 import Link from "next/link";
-import { ReactNode } from "react";
+import { ButtonHTMLAttributes, ReactNode } from "react";
+import { buttonClassName, type ButtonSize, type ButtonVariant } from "@/components/ui/buttonStyles";
 
-type Variant = "primary" | "secondary" | "ghost";
-type Size = "md" | "lg";
-
-const variantClasses: Record<Variant, string> = {
-  primary:
-    "bg-gradient-accent text-white hover:brightness-110 focus-visible:outline-accent-600 shadow-sm",
-  secondary:
-    "bg-white text-brand-700 border border-brand-200 hover:bg-brand-50 focus-visible:outline-brand-600",
-  ghost:
-    "bg-transparent text-brand-700 hover:bg-brand-50 focus-visible:outline-brand-600",
-};
-
-const sizeClasses: Record<Size, string> = {
-  md: "px-5 py-2.5 text-sm",
-  lg: "px-7 py-3.5 text-base",
-};
+export type { ButtonSize, ButtonVariant };
 
 export function Button({
   href,
   children,
   variant = "primary",
-  size = "md",
+  size = "lg",
   className = "",
+  disabled = false,
 }: {
   href: string;
   children: ReactNode;
-  variant?: Variant;
-  size?: Size;
+  variant?: ButtonVariant;
+  size?: ButtonSize;
   className?: string;
+  /** Renders a non-interactive disabled style (link still navigates unless href is omitted). */
+  disabled?: boolean;
 }) {
+  const classes = buttonClassName({ variant, size, className, disabled });
+
+  if (disabled) {
+    return (
+      <span className={classes} aria-disabled="true">
+        {children}
+      </span>
+    );
+  }
+
   return (
-    <Link
-      href={href}
-      className={`inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-control font-semibold transition-all duration-200 ease-out outline-offset-2 ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
-    >
+    <Link href={href} className={classes}>
       {children}
     </Link>
+  );
+}
+
+export function SubmitButton({
+  children,
+  variant = "primary",
+  size = "lg",
+  className = "",
+  disabled = false,
+  ...props
+}: ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+}) {
+  return (
+    <button
+      type="submit"
+      disabled={disabled}
+      className={buttonClassName({ variant, size, className, disabled })}
+      {...props}
+    >
+      {children}
+    </button>
   );
 }

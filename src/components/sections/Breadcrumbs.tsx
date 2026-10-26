@@ -15,7 +15,7 @@ export function Breadcrumbs({
   const schema = breadcrumbListSchema(items, pageUrl);
 
   return (
-    <div className="border-b border-neutral-100 bg-neutral-50">
+    <div className="border-b border-neutral-200 bg-neutral-100">
       <div className="container-page">
         <nav aria-label="Breadcrumb" className="py-2.5 sm:py-3">
           <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs text-neutral-500 sm:text-sm">

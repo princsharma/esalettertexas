@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 
+/** Centered content shell: 1200px max width with 20 / 32 / 80px horizontal inset. */
 export function Container({
   children,
   className = "",

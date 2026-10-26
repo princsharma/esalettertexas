@@ -1,0 +1,543 @@
+
+/* —— Buttons: 56px · 12px radius · 24px padding (spec 06) —— */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  min-height: var(--control-height-button);
+  padding-inline: var(--btn-padding-inline);
+  border-radius: var(--radius-control);
+  border: 1px solid transparent;
+  font-family: var(--font-sans);
+  font-size: var(--text-body-size);
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-md {
+  min-height: var(--control-height-button-compact);
+  padding-inline: var(--space-16);
+  font-size: 0.875rem;
+}
+
+.btn:focus-visible {
+  outline: var(--a11y-focus-width) solid var(--a11y-focus-color);
+  outline-offset: var(--a11y-focus-offset);
+}
+
+.btn:active:not(:disabled):not(.btn-disabled) {
+  transform: translateY(1px);
+}
+
+/* Primary — brand orange fill */
+.btn-primary {
+  background-color: var(--color-accent-500);
+  color: var(--color-neutral-0);
+  box-shadow: 0 1px 2px rgb(20 24 22 / 0.08);
+}
+
+.btn-primary:hover:not(:disabled):not(.btn-disabled) {
+  background-color: color-mix(in srgb, var(--color-accent-500) var(--btn-hover-darken), black);
+}
+
+.btn-primary:active:not(:disabled):not(.btn-disabled) {
+  background-color: color-mix(in srgb, var(--color-accent-500) var(--btn-pressed-darken), black);
+}
+
+.btn-primary:focus-visible {
+  outline-color: var(--color-accent-600);
+}
+
+/* Secondary — forest green fill */
+.btn-secondary {
+  background-color: var(--color-brand-600);
+  color: var(--color-neutral-0);
+  box-shadow: 0 1px 2px rgb(20 24 22 / 0.08);
+}
+
+.btn-secondary:hover:not(:disabled):not(.btn-disabled) {
+  background-color: color-mix(in srgb, var(--color-brand-600) var(--btn-hover-darken), black);
+}
+
+.btn-secondary:active:not(:disabled):not(.btn-disabled) {
+  background-color: color-mix(in srgb, var(--color-brand-600) var(--btn-pressed-darken), black);
+}
+
+.btn-secondary:focus-visible {
+  outline-color: var(--color-brand-600);
+}
+
+/* Outline — white fill, green stroke (Learn more) */
+.btn-tertiary {
+  background-color: var(--color-neutral-0);
+  border-color: var(--color-brand-600);
+  color: var(--color-brand-800);
+  box-shadow: none;
+}
+
+.btn-tertiary:hover:not(:disabled):not(.btn-disabled) {
+  background-color: var(--color-brand-50);
+  border-color: color-mix(in srgb, var(--color-brand-600) var(--btn-hover-darken), black);
+}
+
+.btn-tertiary:active:not(:disabled):not(.btn-disabled) {
+  background-color: var(--color-brand-100);
+}
+
+.btn-tertiary:focus-visible {
+  outline-color: var(--color-brand-600);
+}
+
+/* Ghost — on dark heroes */
+.btn-ghost {
+  background-color: transparent;
+  border-color: rgb(255 255 255 / 0.25);
+  color: var(--color-neutral-0);
+}
+
+.btn-ghost:hover:not(:disabled):not(.btn-disabled) {
+  background-color: rgb(255 255 255 / 0.1);
+  border-color: rgb(255 255 255 / 0.4);
+}
+
+.btn-ghost:focus-visible {
+  outline-color: var(--a11y-focus-color-on-dark);
+}
+
+/* Disabled — pale wash, muted label */
+.btn:disabled,
+.btn-disabled {
+  background-color: var(--color-accent-50);
+  border-color: transparent;
+  color: var(--color-accent-300);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+  pointer-events: none;
+}
+
+.btn-tertiary:disabled,
+.btn-tertiary.btn-disabled {
+  background-color: var(--color-neutral-100);
+  border-color: var(--color-neutral-200);
+  color: var(--color-neutral-400);
+}
+
+.btn-secondary:disabled,
+.btn-secondary.btn-disabled {
+  background-color: var(--color-brand-100);
+  color: var(--color-brand-300);
+}
+
+.btn[aria-busy="true"] {
+  cursor: wait;
+  opacity: 0.85;
+}
+
+/* —— Form fields: 54px height · 12px radius · label above —— */
+.field {
+  display: block;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: var(--space-8);
+  font-family: var(--font-sans);
+  font-size: var(--text-label-size);
+  font-weight: 700;
+  line-height: var(--text-label-line);
+  color: var(--color-neutral-900);
+}
+
+.field-label--error {
+  color: var(--color-danger-500);
+  font-weight: 700;
+}
+
+.field-input,
+.field-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: var(--control-height-field);
+  padding-inline: var(--space-16);
+  border-radius: var(--radius-control);
+  border: 1px solid var(--color-neutral-200);
+  background-color: var(--color-neutral-0);
+  color: var(--color-neutral-900);
+  font-family: var(--font-sans);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.field-input {
+  height: var(--control-height-field);
+  padding-block: 0;
+}
+
+.field-textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.field-input::placeholder,
+.field-textarea::placeholder {
+  color: var(--color-neutral-400);
+}
+
+.field-input:hover:not(:disabled):not(:focus-visible),
+.field-textarea:hover:not(:disabled):not(:focus-visible) {
+  border-color: var(--color-neutral-300);
+}
+
+.field-input:focus-visible,
+.field-textarea:focus-visible {
+  outline: 3px solid var(--color-brand-600);
+  outline-offset: 0;
+  border-color: var(--color-brand-600);
+  background-color: var(--color-neutral-0);
+}
+
+.field-input--error,
+.field-textarea--error {
+  border-color: var(--color-danger-500);
+  background-color: rgb(185 56 50 / 0.06);
+}
+
+.field-input--error:focus-visible,
+.field-textarea--error:focus-visible {
+  outline-color: var(--color-danger-500);
+  border-color: var(--color-danger-500);
+}
+
+.field-hint {
+  margin-top: var(--space-8);
+  font-family: var(--font-sans);
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-line);
+  font-weight: 500;
+  color: var(--color-neutral-400);
+}
+
+/* Error copy in rounded panel (spec form controls) */
+.field-error {
+  margin-top: var(--space-8);
+  padding: var(--space-12) var(--space-16);
+  border-radius: var(--radius-control);
+  border: 1px solid var(--color-danger-500);
+  background-color: rgb(185 56 50 / 0.08);
+  font-family: var(--font-sans);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  font-weight: 400;
+  color: var(--color-danger-600);
+}
+
+/* —— Trust badges: 34–38px · 18px icon · 8px gap —— */
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--control-badge-gap);
+  min-height: var(--control-height-badge-min);
+  max-height: var(--control-height-badge-max);
+  padding-block: 7px;
+  padding-inline: var(--space-16);
+  border-radius: 9999px;
+  font-family: var(--font-sans);
+  font-size: var(--text-label-size);
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.trust-badge-icon {
+  width: var(--control-icon-badge);
+  height: var(--control-icon-badge);
+  flex: none;
+}
+
+.trust-badge-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.trust-badge-licensed {
+  background-color: var(--color-brand-50);
+  color: var(--color-brand-800);
+}
+
+.trust-badge-private {
+  background-color: var(--color-neutral-100);
+  color: var(--color-neutral-900);
+}
+
+.trust-badge-texas {
+  background-color: var(--color-accent-50);
+  color: var(--color-neutral-900);
+}
+
+/* Content card typography only (layout/structure unchanged in sections) */
+.content-card-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--color-neutral-400);
+}
+
+/* Card titles — H3 token */
+h3.content-card-title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3-size);
+  font-weight: var(--text-h3-weight);
+  line-height: var(--text-h3-line);
+  letter-spacing: -0.015em;
+  color: var(--color-brand-800);
+}
+
+h4.content-card-title {
+  font-family: var(--font-sans);
+  font-size: var(--text-h4-size);
+  font-weight: var(--text-h4-weight);
+  line-height: var(--text-h4-line);
+  letter-spacing: -0.01em;
+  color: var(--color-brand-800);
+}
+
+h3.content-card-title-light {
+  font-family: var(--font-display);
+  font-size: var(--text-h3-size);
+  font-weight: var(--text-h3-weight);
+  line-height: var(--text-h3-line);
+  letter-spacing: -0.015em;
+  color: var(--color-neutral-0);
+}
+
+.content-card-meta {
+  font-family: var(--font-sans);
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-line);
+  font-weight: 500;
+  color: var(--color-neutral-400);
+}
+
+.content-card-body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  font-weight: var(--text-body-weight);
+  color: var(--color-neutral-600);
+}
+
+.content-card-body-light {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  font-weight: var(--text-body-weight);
+  color: var(--color-brand-100);
+}
+
+.content-card-link {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--color-brand-800);
+  transition: color 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .content-card-link {
+    font-size: 0.9375rem;
+  }
+}
+
+.content-card-link:hover {
+  color: var(--color-brand-600);
+}
+
+/* Inline CTA band (compact card between article sections) */
+.cta-band-inline-title {
+  font-family: var(--font-display);
+  font-size: var(--text-h2-size);
+  line-height: var(--text-h2-line);
+  font-weight: var(--text-h2-weight);
+  letter-spacing: -0.02em;
+}
+
+.cta-band-inline-subhead {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-lg-size);
+  line-height: var(--text-body-lg-line);
+  font-weight: var(--text-body-lg-weight);
+}
+
+/* —— Conversion components (06): pricing, FAQ, sample letter —— */
+.conversion-card {
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-neutral-200);
+  background-color: var(--color-neutral-0);
+}
+
+.conversion-pricing-title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3-size);
+  font-weight: var(--text-h3-weight);
+  line-height: var(--text-h3-line);
+  letter-spacing: -0.015em;
+  color: var(--color-brand-800);
+}
+
+.conversion-price {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--color-brand-800);
+}
+
+.conversion-checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.conversion-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-12);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--color-brand-800);
+}
+
+.conversion-check-icon {
+  display: inline-flex;
+  margin-top: 0.15rem;
+  flex: none;
+  color: var(--color-brand-600);
+}
+
+.conversion-disclaimer {
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--color-neutral-400);
+}
+
+.conversion-faq-item {
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-neutral-200);
+  background-color: var(--color-neutral-0);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.conversion-faq-item[data-open="true"] {
+  border-color: var(--color-neutral-300);
+  box-shadow: var(--shadow-card);
+}
+
+.conversion-faq-trigger {
+  display: flex;
+  width: 100%;
+  min-height: var(--a11y-touch-min);
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+  padding: var(--space-16) var(--space-24);
+  text-align: left;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.conversion-faq-trigger:focus-visible {
+  outline: 3px solid var(--color-brand-600);
+  outline-offset: -3px;
+}
+
+/* FAQ question line — pair with .text-h4 on the element for type scale */
+.conversion-faq-question {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  color: var(--color-brand-800);
+}
+
+.conversion-faq-toggle {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--color-brand-800);
+}
+
+.conversion-faq-answer-wrap {
+  border-top: 1px solid var(--color-neutral-200);
+}
+
+.conversion-faq-answer {
+  padding: var(--space-12) var(--space-24) var(--space-16);
+}
+
+.conversion-letter-shell {
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-neutral-200);
+  background-color: var(--color-neutral-0);
+  padding: var(--space-24);
+}
+
+.conversion-letter-preview {
+  border-radius: 12px;
+  border: 1px solid var(--color-neutral-200);
+  background-color: var(--color-neutral-100);
+  padding: var(--space-24);
+}
+
+.conversion-letter-kicker {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--color-brand-800);
+}
+
+.conversion-sample-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.35rem 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-brand-800);
+  background-color: color-mix(in srgb, var(--color-accent-200) 55%, var(--color-neutral-0));
+  border: 1px solid color-mix(in srgb, var(--color-accent-300) 40%, transparent);
+}

@@ -45,12 +45,18 @@ const WHY_ITEMS: WhyItem[] = [
 
 function WhyCard({ item }: { item: WhyItem }) {
   return (
-    <li className="animate-fade-up group relative flex min-h-[15.5rem] flex-col gap-5 rounded-card border border-brand-100 bg-brand-50/70 p-7 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-300 hover:bg-white hover:shadow-card-hover">
+    <li className="animate-fade-up group relative center flex min-h-[15.5rem] flex-col gap-4 rounded-card border border-brand-100 bg-brand-50/70 p-5 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-300 hover:bg-white hover:shadow-card-hover sm:gap-5 sm:p-7">
 
-        <Image src={item.icon} alt="" width={120} height={120} className="object-contain" />
+        <Image
+          src={item.icon}
+          alt=""
+          width={80}
+          height={80}
+          className="h-10 w-10 object-contain sm:h-14 sm:w-14 md:h-16 md:w-16"
+        />
       <div>
-        <h3 className="text-base font-bold text-neutral-900">{item.title}</h3>
-        <p className="mt-2 text-sm leading-relaxed text-neutral-950">{item.description}</p>
+        <h3 className="text-h3 text-brand-800">{item.title}</h3>
+        <p className="text-body mt-2 text-neutral-600">{item.description}</p>
       </div>
     </li>
   );
@@ -59,7 +65,7 @@ function WhyCard({ item }: { item: WhyItem }) {
 
 export function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden bg-white section-py">
+    <section className="relative overflow-hidden bg-background section-py">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-[0.4] [background-image:radial-gradient(var(--color-neutral-200)_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,black_40%,transparent_100%)]"
@@ -76,7 +82,11 @@ export function WhyChooseUs() {
       <Container className="relative">
         <SectionHeading
           eyebrow="Why Choose Us"
-          title="Why Texans Choose ESA Letter Texas"
+          title={
+            <>
+              Why Texans Choose <span className="text-accent-600">ESA Letter Texas</span>
+            </>
+          }
           subhead="We make online ESA evaluations simple, secure, and fully compliant with Texas law; here's what sets us apart from other providers."
           align="center"
         />

@@ -19,6 +19,7 @@ import { TOP_CONDITIONS, CITIES, FAQS, BLOG_POSTS } from "@/data/home";
 import ESALetterIntro from "@/components/sections/ESALetterIntro";
 import ConditionsList from "@/components/sections/ConditionsList";
 import TexasRights from "@/components/sections/TexasRights";
+import { HERO_IMAGES } from "@/data/hero-images";
 
 /** One distinct icon per city, keyed by title. */
 const CITY_ICONS: Record<string, string> = {
@@ -34,6 +35,7 @@ export default function Home() {
   return (
     <>
     <Hero
+        image={HERO_IMAGES.esaLetterHero}
         eyebrow="Texas · Licensed Therapists"
         title="ESA Letter Texas"
         subhead="Get a legitimate Emotional Support Animal letter, reviewed by a licensed Texas therapist, online, confidential, and ready in as little as 24 hours."
@@ -68,7 +70,11 @@ export default function Home() {
       {/* Cities served grid */}
         <SiloChildGrid
           eyebrow="Where we serve"
-          title="ESA Letters Across Texas"
+          title={
+            <>
+              ESA Letters <span className="text-accent-600">Across Texas</span>
+            </>
+          }
           subhead="Local ESA housing rules and resources for major Texas cities."
           items={CITIES.map((city) => ({ ...city, icon: CITY_ICONS[city.title] }))}
           viewAllHref="/locations/"
@@ -76,7 +82,15 @@ export default function Home() {
           variant="location"
         />
         {/* FAQ Block */}
-        <FaqAccordion items={FAQS} title="Frequently Asked Questions About ESA Letter Texas" />
+        <FaqAccordion
+          items={FAQS}
+          title={
+            <>
+              Frequently Asked Questions{" "}
+              <span className="text-accent-600">About ESA Letter Texas</span>
+            </>
+          }
+        />
         {/* Blog Section */}
         <BlogGrid
           posts={BLOG_POSTS}

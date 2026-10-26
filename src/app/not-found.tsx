@@ -7,7 +7,7 @@ export default function NotFound() {
     <section className="section-py bg-white">
       <Container className="max-w-lg text-center">
         <p className="text-sm font-semibold uppercase tracking-wide text-brand-600">404</p>
-        <h1 className="mt-2 text-3xl font-bold text-neutral-900">Page not found</h1>
+        <h1 className="mt-2 text-h1 text-neutral-900">Page not found</h1>
         <p className="mt-3 text-neutral-600">
           That URL may have moved. Try search, the sitemap, or return home.
         </p>
@@ -15,7 +15,7 @@ export default function NotFound() {
           <Button href="/">Back to home</Button>
           <Link
             href="/search/"
-            className="inline-flex items-center justify-center rounded-control border border-neutral-200 px-5 py-3 text-sm font-semibold text-neutral-800 hover:bg-neutral-50"
+            className="btn btn-tertiary btn-md"
           >
             Search site
           </Link>

@@ -11,7 +11,11 @@ export type TeamMember = {
   credential: string;
   roleTitle: string;
   tagline: string;
+  /** Optional two-line break for card tagline (full phrase stays in `tagline` for SEO/a11y). */
+  taglineLines?: readonly [string, string];
   bio: string;
+  /** Optional four-line break for team card bio (full text stays in `bio` for SEO/a11y). */
+  bioLines?: readonly [string, string, string, string];
   longBio: string[];
   philosophy: string;
   licensedIn: string;
@@ -31,6 +35,7 @@ export const TEAM: TeamMember[] = [
     credential: "LCSW",
     roleTitle: "Licensed Clinical Social Worker & Therapist",
     tagline: "Licensed Clinical Social Worker",
+    taglineLines: ["Licensed Clinical", "Social Worker"],
     bio: "LCSW licensed in 30+ states with extensive psychotherapy experience. Pet owner and advocate for animal-assisted mental health treatment.",
     longBio: [
       "Robert Staaf is a Licensed Clinical Social Worker with broad multi-state licensure and years of experience delivering psychotherapy in telehealth and outpatient settings. He evaluates whether an emotional support animal is a reasonable part of a client’s care plan—without shortcuts, registries, or one-size-fits-all letters.",
@@ -81,7 +86,15 @@ export const TEAM: TeamMember[] = [
     credential: "LCSW",
     roleTitle: "Licensed Independent Clinical Social Worker",
     tagline: "Licensed Independent Clinical Social Worker",
-    bio: "Licensed therapist with 13 years of healthcare experience serving individuals, couples, and families with flexible, goal-focused care.",
+    taglineLines: ["Licensed Independent Clinical", "Social Worker"],
+    bio:
+      "Licensed therapist with 13 years of healthcare experience serving individuals, couples, and families with flexible, goal-focused care.",
+    bioLines: [
+      "Licensed therapist with",
+      "13 years of healthcare experience",
+      "serving individuals, couples, and",
+      "families with flexible, goal-focused care.",
+    ],
     longBio: [
       "Leslie K. Gamble is a Licensed Independent Clinical Social Worker with more than a decade of experience across healthcare settings. She works with adults navigating anxiety, depression, PTSD, and life transitions—often where stable housing and an emotional support animal are part of the conversation.",
       "Leslie’s evaluations focus on functional impact: sleep, relationships, work, and safety at home. She issues letters only when clinical criteria support a disability-related need and explains limitations plainly when they do not.",
@@ -131,6 +144,7 @@ export const TEAM: TeamMember[] = [
     credential: "MD",
     roleTitle: "Family Medicine Physician",
     tagline: "Family Medicine Physician",
+    taglineLines: ["Family Medicine", "Physician"],
     bio: "Board-certified family medicine physician with experience providing evidence-based, patient-focused care across inpatient, urgent care, outpatient, and telemedicine settings.",
     longBio: [
       "Dr. Gaurav Patel is a board-certified family medicine physician who brings primary-care breadth to ESA evaluations when medical context matters alongside mental health needs. He has practiced in inpatient, urgent care, outpatient, and telemedicine environments.",

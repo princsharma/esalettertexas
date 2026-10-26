@@ -19,7 +19,11 @@ export default function ESALetterIntro(){
           <div>
             <SectionHeading
               eyebrow="Get started"
-              title="What Is an ESA Letter?"
+              title={
+                <>
+                  What Is an <span className="text-accent-600">ESA Letter</span>?
+                </>
+              }
               subhead="An ESA letter is a signed document from a licensed mental health professional, confirming your emotional support animal is a necessary part of your treatment. It's the only documentation Texas landlords can legally require for ESA housing accommodations."
             />
 
@@ -73,13 +77,13 @@ export default function ESALetterIntro(){
               aria-hidden="true"
               className="absolute -inset-4 -z-10 rounded-[1.75rem] bg-gradient-to-br from-brand-200/50 via-white/0 to-accent-200/40 blur-2xl"
             />
-            <div className="group relative -rotate-2 rounded-card border border-neutral-200 bg-white p-7 shadow-card-hover transition-transform duration-300 hover:rotate-0 hover:-translate-y-1 sm:p-8">
-              <div className="absolute inset-x-0 -top-px h-2 rounded-t-card bg-gradient-brand" />
+            <div className="conversion-letter-shell letter-preview-adaptive group relative -rotate-2 shadow-card-hover transition-transform duration-300 hover:rotate-0 hover:-translate-y-1">
+              <div className="conversion-letter-preview">
               <div className="flex items-center justify-between">
-                <span className="text-sm font-bold uppercase tracking-wide text-brand-700">
+                <span className="conversion-letter-kicker">
                   ESA Letter
                 </span>
-                <span className="flex items-center gap-1 rounded-full bg-brand-50 px-3 py-1.5 text-xs font-semibold text-brand-700">
+                <span className="trust-badge trust-badge-licensed">
                   <svg className="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path
                       fillRule="evenodd"
@@ -122,6 +126,11 @@ export default function ESALetterIntro(){
                 >
                   <path d="M10.5 3.5c-1.5-2-5-1.5-5 2 0 3 3 5 5 6.5 2-1.5 5-3.5 5-6.5 0-3.5-3.5-4-5-2z" />
                 </svg>
+              </div>
+
+              <p className="mt-6 text-center">
+                <span className="conversion-sample-badge">Illustrative sample</span>
+              </p>
               </div>
             </div>
           </div>

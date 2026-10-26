@@ -61,7 +61,7 @@ export default async function BlogHubPage({ searchParams }: PageProps) {
             </div>
             <div className="flex flex-col justify-center p-6 sm:p-8">
               <time className="text-sm text-neutral-500">{featured.publishedDisplay}</time>
-              <h2 className="mt-2 text-2xl font-bold text-neutral-900">{featured.title}</h2>
+              <h2 className="text-h2 mt-2 text-neutral-900">{featured.title}</h2>
               <p className="mt-3 text-neutral-600">{featured.excerpt}</p>
               <Link
                 href={postHref(featured.slug)}
