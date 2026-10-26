@@ -24,7 +24,7 @@ export function FaqCard({
         aria-expanded={isOpen}
         onClick={onToggle}
       >
-        <span className="conversion-faq-question text-h4">{item.question}</span>
+        <span className="conversion-faq-question">{item.question}</span>
         <span className="conversion-faq-toggle" aria-hidden="true">
           {isOpen ? "−" : "+"}
         </span>
@@ -38,7 +38,7 @@ export function FaqCard({
       >
         <div className="overflow-hidden">
           <div className="conversion-faq-answer-wrap">
-            <p className="conversion-faq-answer text-body text-neutral-600">{item.answer}</p>
+            <p className="conversion-faq-answer">{item.answer}</p>
           </div>
         </div>
       </div>

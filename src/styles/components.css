@@ -475,11 +475,15 @@ h3.content-card-title-light {
   outline-offset: -3px;
 }
 
-/* FAQ question line — pair with .text-h4 on the element for type scale */
+/* FAQ question — body large (20px DM Sans), emphasis via weight/color only */
 .conversion-faq-question {
   flex: 1;
   min-width: 0;
   text-align: left;
+  font-family: var(--font-sans);
+  font-size: var(--text-body-lg-size);
+  line-height: var(--text-body-lg-line);
+  font-weight: var(--text-label-weight);
   color: var(--color-brand-800);
 }
 
@@ -498,10 +502,16 @@ h3.content-card-title-light {
 
 .conversion-faq-answer-wrap {
   border-top: 1px solid var(--color-neutral-200);
+  background-color: var(--color-neutral-100);
 }
 
 .conversion-faq-answer {
-  padding: var(--space-12) var(--space-24) var(--space-16);
+  padding: var(--space-16) var(--space-24);
+  font-family: var(--font-sans);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  font-weight: var(--text-body-weight);
+  color: var(--color-neutral-600);
 }
 
 .conversion-letter-shell {
