@@ -10,7 +10,7 @@ import {
   getConditionCluster,
 } from "@/data/silos/conditions-clusters";
 import { getConditionClusterHeroBackground } from "@/data/page-heroes";
-import { buildPageMetadata } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -22,11 +22,7 @@ export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
   const cluster = getConditionCluster(slug);
   if (!cluster) return {};
-  return buildPageMetadata({
-    metaTitle: cluster.metaTitle,
-    metaDescription: cluster.metaDescription,
-    canonicalPath: `/conditions/${slug}/`,
-  });
+  return pageMetadata(`/conditions/${slug}/`);
 }
 
 export default async function ConditionClusterPage({ params }: PageProps) {

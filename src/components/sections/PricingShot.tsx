@@ -153,7 +153,13 @@ export function PricingShot() {
               className="flex items-center gap-1.5 text-sm font-semibold text-brand-700"
             >
               {feature.icon ? (
-                <Image src={feature.icon} alt="" width={50} height={50} className="flex-none object-contain" />
+                <Image
+                  src={feature.icon}
+                  alt={`${feature.label} icon`}
+                  width={50}
+                  height={50}
+                  className="flex-none object-contain"
+                />
               ) : (
                 <svg
                   className="h-10 w-10 flex-none text-brand-500"
@@ -198,7 +204,7 @@ export function PricingShot() {
           <span className={`${PRICING_ICON_RING} h-7 w-7 shadow-sm ring-white/40`}>
             <Image
               src={PRICING_ICONS.badge}
-              alt=""
+              alt="Most popular plan badge icon"
               width={28}
               height={28}
               unoptimized
@@ -216,7 +222,7 @@ export function PricingShot() {
           <span className="flex h-13 w-13 flex-none items-center justify-center rounded-full bg-white ring-1 ring-brand-100 shadow-sm">
             <Image
               src={PRICING_ICONS.title}
-              alt=""
+              alt="HIPAA-compliant confidential assessment icon"
               width={50}
               height={50}
               className="h-10 w-10 object-contain"
@@ -362,7 +368,7 @@ export function PricingShot() {
       <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-white ring-1 ring-brand-100">
         <Image
           src={PRICING_ICONS.moneyBack}
-          alt=""
+          alt="Money-back guarantee icon"
           width={40}
           height={40}
           className="h-8 w-8 object-contain"
@@ -388,7 +394,7 @@ export function PricingShot() {
       <span className={`${PRICING_ICON_RING} h-11 w-11`}>
         <Image
           src={PRICING_ICONS.rating}
-          alt=""
+          alt="Verified client rating icon"
           width={40}
           height={40}
           unoptimized

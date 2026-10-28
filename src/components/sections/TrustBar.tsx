@@ -16,7 +16,7 @@ function TrustBarIcon({ item }: { item: string }) {
       <Image
         key={src}
         src={src}
-        alt=""
+        alt={`${item} icon`}
         width={50}
         height={50}
         className={ICON_IMG_CLASS}

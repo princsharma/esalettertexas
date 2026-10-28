@@ -112,7 +112,7 @@ export function SiloChildGrid({
                   {isLocation ? (
                     <Image
                       src={item.icon ?? DEFAULT_PIN_ICON}
-                      alt=""
+                      alt="Location icon"
                       width={220}
                       height={220}
                       className="object-contain"

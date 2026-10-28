@@ -1,15 +1,17 @@
 import type { MetadataRoute } from "next";
-import { getSitemapUrls } from "@/lib/sitemap-urls";
+import { SITEMAP_XML_LASTMOD, SITEMAP_XML_PATHS } from "@/data/sitemap-xml-urls";
 import { getSitemapRowMeta } from "@/lib/sitemap-meta";
 import { absoluteUrl } from "@/lib/seo";
 
-/** `/sitemap.xml` — all indexable URLs in build-phase order. */
+/** `/sitemap.xml` — approved indexable URLs only. */
 export default function sitemap(): MetadataRoute.Sitemap {
-  return getSitemapUrls().map((entry) => {
-    const { changeFrequency, priority } = getSitemapRowMeta(entry.path);
+  const lastModified = new Date(`${SITEMAP_XML_LASTMOD}T00:00:00.000Z`);
+
+  return SITEMAP_XML_PATHS.map((path) => {
+    const { changeFrequency, priority } = getSitemapRowMeta(path);
     return {
-      url: absoluteUrl(entry.path),
-      lastModified: entry.lastModified ? new Date(entry.lastModified) : new Date(),
+      url: absoluteUrl(path),
+      lastModified,
       changeFrequency,
       priority,
     };

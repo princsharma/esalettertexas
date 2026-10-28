@@ -44,7 +44,7 @@ function StatCard({ stat }: { stat: Stat }) {
     >
       <Image
         src={ICON_PATHS[stat.icon]}
-        alt=""
+        alt={`${stat.label} icon`}
         width={80}
         height={80}
         sizes="72px"

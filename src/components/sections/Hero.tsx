@@ -10,7 +10,13 @@ export function HeroPhotoBackdrop({ src }: { src: string }) {
   return (
     <>
       <div aria-hidden="true" className="absolute inset-0">
-        <Image src={src} alt="" fill sizes="100vw" className="media-photo" />
+        <Image
+          src={src}
+          alt="Decorative background photo behind the page hero"
+          fill
+          sizes="100vw"
+          className="media-photo"
+        />
       </div>
       <div aria-hidden="true" className="absolute inset-0 bg-hero-mesh opacity-90 mix-blend-multiply" />
       <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-brand-950/70 via-brand-950/20 to-transparent" />
@@ -146,7 +152,7 @@ export function Hero({
                       {b.icon ? (
                         <Image
                           src={b.icon}
-                          alt=""
+                          alt="Woman document rounded"
                           width={32}
                           height={32}
                           className="h-7 w-7 object-contain md:h-8 md:w-8"

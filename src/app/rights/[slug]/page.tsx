@@ -8,7 +8,7 @@ import {
   getRightsCluster,
 } from "@/data/silos/rights-clusters";
 import { getRightsClusterHeroBackground } from "@/data/page-heroes";
-import { buildPageMetadata } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -20,11 +20,7 @@ export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
   const cluster = getRightsCluster(slug);
   if (!cluster) return {};
-  return buildPageMetadata({
-    metaTitle: cluster.metaTitle,
-    metaDescription: cluster.metaDescription,
-    canonicalPath: `/rights/${slug}/`,
-  });
+  return pageMetadata(`/rights/${slug}/`);
 }
 
 export default async function RightsClusterPage({ params }: PageProps) {

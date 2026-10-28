@@ -10,7 +10,7 @@ import {
 } from "@/data/silos/locations-cities";
 import { validateCityWordCount } from "@/lib/content-quality";
 import { PAGE_HERO } from "@/data/page-heroes";
-import { buildPageMetadata } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -22,13 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const city = getLocationCity(slug);
   if (!city) return {};
-  return buildPageMetadata({
-    ...(city.seo ?? {}),
-    metaTitle: city.metaTitle,
-    metaDescription: city.metaDescription,
-    canonicalPath: `/locations/${slug}/`,
-    schemaTypeOverride: "Service",
-  });
+  return pageMetadata(`/locations/${slug}/`);
 }
 
 export default async function LocationCityPage({ params }: PageProps) {

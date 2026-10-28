@@ -6,11 +6,14 @@ export type RobotsSeoOverride = {
   nosnippet?: boolean;
 };
 
+export type OpenGraphType = "website" | "article" | "product";
+
 export type OpenGraphSeoOverride = {
   title?: string;
   description?: string;
   /** Path or absolute URL */
   image?: string;
+  type?: OpenGraphType;
 };
 
 export type PageSeoFields = {

@@ -84,7 +84,7 @@ function TeamCard({ member }: { member: TeamMember }) {
         <div className="mt-4 flex flex-col items-center gap-2 border-t border-neutral-100 pt-4 sm:mt-5 sm:flex-row sm:items-start sm:gap-2.5 sm:text-left">
           <span className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-brand-50 text-brand-600 sm:h-14 sm:w-14">
             <Image
-              alt=""
+              alt={`Licensed in ${member.licensedIn} icon`}
               src="/icons/esa-location-icon.webp"
               width={48}
               height={48}

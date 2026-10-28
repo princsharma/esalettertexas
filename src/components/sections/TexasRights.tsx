@@ -11,7 +11,12 @@ export default function TexasRights (){
           aria-hidden="true"
           className="pointer-events-none absolute inset-y-0 right-0 w-full lg:w-1/2 opacity-40 mix-blend-luminosity [mask-image:linear-gradient(to_right,transparent_0%,black_45%)]"
         >
-          <Image src="/images/your-rights-esa-bg.webp" alt="" fill className="object-cover" />
+          <Image
+            src="/images/your-rights-esa-bg.webp"
+            alt="Texas renter with an emotional support animal at home, decorative background"
+            fill
+            className="object-cover"
+          />
         </div>
         <div
           aria-hidden="true"
@@ -65,7 +70,13 @@ export default function TexasRights (){
                 className={`group relative flex flex-col items-center gap-3 rounded-card border border-white/15 bg-white/10 p-7 text-center shadow-photo-dark backdrop-blur-md transition-all duration-300 hover:z-10 hover:scale-110 hover:border-white/30 hover:bg-white/15 hover:shadow-photo-dark-hover ${item.tilt}`}
               >
                 <span className="flex h-14 w-14 items-center justify-center rounded-full  shadow-lg transition-transform duration-300 group-hover:scale-110">
-                  <Image src={item.icon} alt="" width={232} height={232} className="object-contain" />
+                  <Image
+                    src={item.icon}
+                    alt={`${item.label} icon`}
+                    width={232}
+                    height={232}
+                    className="object-contain"
+                  />
                 </span>
                 <h3 className="content-card-title-light">{item.label}</h3>
                 <p className="text-sm leading-relaxed text-brand-100">{item.description}</p>

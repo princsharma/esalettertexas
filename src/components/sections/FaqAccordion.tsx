@@ -111,7 +111,7 @@ export function FaqAccordion({
             >
               <Image
                 src="/icons/fraquency asked quetion.webp"
-                alt=""
+                alt="Frequently Asked Questions"
                 width={30}
                 height={30}
                 className="icon-decorative h-[30px] w-[30px] object-contain"

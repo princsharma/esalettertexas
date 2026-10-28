@@ -58,7 +58,7 @@ export default function ConditionsList (){
                     <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-white ring-1 ring-neutral-200 transition-transform duration-300 group-hover:scale-110">
                       <Image
                         src={CONDITION_ICONS[item.title]}
-                        alt=""
+                        alt={`${item.title} condition icon`}
                         width={228}
                         height={228}
                         className="object-contain"
@@ -132,7 +132,7 @@ export default function ConditionsList (){
               <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-white ring-1 ring-brand-100">
                 <Image
                   src="/icons/Legally Compliant Documentation.webp"
-                  alt=""
+                  alt="Legally compliant ESA documentation icon"
                   width={40}
                   height={40}
                   className="h-8 w-8 object-contain"

@@ -49,7 +49,7 @@ function WhyCard({ item }: { item: WhyItem }) {
 
         <Image
           src={item.icon}
-          alt=""
+          alt={`${item.title} icon`}
           width={80}
           height={80}
           className="h-10 w-10 object-contain sm:h-14 sm:w-14 md:h-16 md:w-16"
