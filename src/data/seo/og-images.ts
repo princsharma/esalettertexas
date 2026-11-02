@@ -38,6 +38,7 @@ export const PAGE_OG_IMAGES: Record<string, string> = {
   "/locations/austin/": "/og/og-images/location/1x/Austin.webp",
   "/locations/san-antonio/": "/og/og-images/location/1x/San Antonio.webp",
   "/locations/fort-worth/": "/og/og-images/location/1x/Fort Worth.webp",
+  "/rights/": "/og/og-images/your rights/1x/Texas ESA Letter Requirements.webp",
   "/rights/fair-housing-act/":
     "/og/og-images/your rights/1x/The Fair Housing Act and Your ESA.webp",
   "/rights/hb-4164-explained/":
