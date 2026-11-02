@@ -17,7 +17,7 @@ import {
 
 const CONVERSION_NAV = [{ label: "How It Works", href: "/how-it-works/" }];
 
-/** Single-line desktop nav — readable type, scales up on wider viewports. */
+/** Single-line desktop nav  -  readable type, scales up on wider viewports. */
 const NAV_LINK_CLASS =
   "whitespace-nowrap px-1.5 py-2 text-xs font-semibold leading-snug text-neutral-700 transition-colors hover:text-brand-700 lg:px-2 lg:text-sm xl:px-2.5 xl:text-[15px] 2xl:text-base";
 

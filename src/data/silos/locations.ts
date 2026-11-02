@@ -50,7 +50,7 @@ export const LOCATIONS_PILLAR_FAQS: FaqItem[] = [
   {
     question: "Do ESA rules change from city to city in Texas?",
     answer:
-      "Fair housing and HB 4164 apply statewide. Local differences show up in rental markets, landlord practices, and municipal animal ordinances—not in whether a valid ESA letter counts.",
+      "Fair housing and HB 4164 apply statewide. Local differences show up in rental markets, landlord practices, and municipal animal ordinances - not in whether a valid ESA letter counts.",
   },
   {
     question: "Should I use a Texas-licensed therapist for my city?",
@@ -62,7 +62,7 @@ export const LOCATIONS_PILLAR_FAQS: FaqItem[] = [
 export const LOCATIONS_BLOG_POSTS: BlogPost[] = getPostsForPillarM7(LOCATIONS_PILLAR_PATH, 4);
 
 const PILLAR_LINK: RelatedLink = {
-  label: "ESA Letters in Texas — City Guide",
+  label: "ESA Letters in Texas  -  City Guide",
   href: LOCATIONS_PILLAR_PATH,
 };
 

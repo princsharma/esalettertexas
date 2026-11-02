@@ -21,8 +21,8 @@ export function getSitemapRowMeta(path: string): SitemapRowMeta {
 }
 
 export function formatSitemapLastModified(iso?: string): string {
-  if (!iso) return "—";
+  if (!iso) return " - ";
   const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) return "—";
+  if (Number.isNaN(d.getTime())) return " - ";
   return d.toISOString().slice(0, 10);
 }

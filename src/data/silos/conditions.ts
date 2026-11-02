@@ -82,7 +82,7 @@ export const CONDITIONS_PILLAR_FAQS: FaqItem[] = [
   {
     question: "Which conditions are commonly evaluated?",
     answer:
-      "Anxiety, depression, PTSD, bipolar disorder, panic disorder, social anxiety, OCD, ADHD, autism spectrum disorders, and eating disorders are frequently assessed—but eligibility depends on functional impact, not the label alone.",
+      "Anxiety, depression, PTSD, bipolar disorder, panic disorder, social anxiety, OCD, ADHD, autism spectrum disorders, and eating disorders are frequently assessed - but eligibility depends on functional impact, not the label alone.",
   },
   {
     question: "Is an ESA the same as treatment?",

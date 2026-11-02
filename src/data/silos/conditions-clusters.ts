@@ -57,7 +57,7 @@ function tocFromSections(sections: ClusterSection[]): TocItem[] {
 
 const SHARED_QUALIFY = [
   "Federal fair housing law protects renters who need reasonable accommodations for disability-related assistance animals, including emotional support animals, when documentation supports the need.",
-  "Texas does not publish a list of approved diagnoses. HB 4164 focuses on legitimate letters—not on excluding specific conditions. Eligibility turns on whether your symptoms substantially limit major life activities and whether an ESA is part of your care.",
+  "Texas does not publish a list of approved diagnoses. HB 4164 focuses on legitimate letters - not on excluding specific conditions. Eligibility turns on whether your symptoms substantially limit major life activities and whether an ESA is part of your care.",
 ];
 
 const SHARED_THERAPIST = [
@@ -68,7 +68,7 @@ const SHARED_THERAPIST = [
 const LEGAL_CALLOUT = {
   title: "Clinical and legal note",
   tone: "info" as const,
-  body: "Only a licensed professional can determine eligibility after evaluation. Fair Housing Act, 42 U.S.C. § 3604; Texas HB 4164 addresses documentation fraud—not a ban on ESAs. This is general information, not medical or legal advice.",
+  body: "Only a licensed professional can determine eligibility after evaluation. Fair Housing Act, 42 U.S.C. § 3604; Texas HB 4164 addresses documentation fraud - not a ban on ESAs. This is general information, not medical or legal advice.",
 };
 
 function cluster(
@@ -134,8 +134,8 @@ export const CONDITION_CLUSTERS: Record<ConditionClusterSlug, ConditionCluster> 
     "When anxiety limits daily life, a licensed therapist may recommend an emotional support animal as part of your care plan.",
     "Anxiety can qualify for an ESA letter when a licensed clinician finds it substantially limits daily activities and that an emotional support animal provides disability-related support. Texas and federal housing law then may require reasonable accommodation with valid documentation.",
     [
-      "Anxiety disorders—including generalized anxiety, social anxiety, and related conditions—are among the most common reasons Texans seek ESA evaluations.",
-      "Approval depends on symptom severity, functional impact, and whether an animal is clinically appropriate—not on self-diagnosis or online quizzes.",
+      "Anxiety disorders - including generalized anxiety, social anxiety, and related conditions - are among the most common reasons Texans seek ESA evaluations.",
+      "Approval depends on symptom severity, functional impact, and whether an animal is clinically appropriate - not on self-diagnosis or online quizzes.",
     ],
     [
       "Animals can lower arousal through companionship, routine, and grounding during anxious moments at home.",
@@ -162,7 +162,7 @@ export const CONDITION_CLUSTERS: Record<ConditionClusterSlug, ConditionCluster> 
     "Depression may support an ESA letter when a licensed provider determines it limits major life activities and that an emotional support animal helps your treatment plan. Valid letters unlock FHA reasonable accommodation in most Texas rentals.",
     [
       "Major depressive disorder and persistent depressive symptoms are frequently evaluated for ESA suitability.",
-      "Therapists look for functional impact—motivation, sleep, isolation—not just a diagnosis on paper.",
+      "Therapists look for functional impact - motivation, sleep, isolation - not just a diagnosis on paper.",
     ],
     [
       "Companionship and routine care of an animal can counter isolation and support daily structure.",
@@ -208,7 +208,7 @@ export const CONDITION_CLUSTERS: Record<ConditionClusterSlug, ConditionCluster> 
     "Panic disorder may qualify for an ESA letter if a licensed therapist finds it substantially limits daily life and that an emotional support animal supports your treatment. Texas renters can use valid letters to request FHA housing accommodations.",
     [
       "Panic attacks and anticipatory fear about attacks can restrict work, travel, and leaving home.",
-      "An evaluation explores frequency, triggers, and coping strategies—not whether you can 'tough it out' without support.",
+      "An evaluation explores frequency, triggers, and coping strategies - not whether you can 'tough it out' without support.",
     ],
     [
       "A trusted animal at home can ease recovery after attacks and reduce loneliness tied to avoidance.",
@@ -231,7 +231,7 @@ export const CONDITION_CLUSTERS: Record<ConditionClusterSlug, ConditionCluster> 
     "Social anxiety disorder can support an ESA letter when a licensed provider confirms disability-related need and that an emotional support animal aids your care plan. Valid documentation triggers reasonable accommodation rights in most Texas rental housing.",
     [
       "Fear of judgment, avoidance of gatherings, and isolation at home are common themes in evaluations.",
-      "The focus is whether an animal helps you function at home—not whether it fixes every social situation.",
+      "The focus is whether an animal helps you function at home - not whether it fixes every social situation.",
     ],
     [
       "Nonjudgmental companionship at home can ease loneliness when social avoidance is severe.",
@@ -292,7 +292,7 @@ export const CONDITION_CLUSTERS: Record<ConditionClusterSlug, ConditionCluster> 
     ["depression", "anxiety", "ptsd"],
     [
       "Mood disorders fall under FHA disability analysis when symptoms limit major life activities.",
-      "Texas HB 4164 regulates documentation quality—it does not exclude bipolar disorder from evaluation.",
+      "Texas HB 4164 regulates documentation quality - it does not exclude bipolar disorder from evaluation.",
     ],
     [
       "Be ready to discuss hospitalization history, current prescribers, and how an animal fits your wellness plan.",
@@ -307,7 +307,7 @@ export const CONDITION_CLUSTERS: Record<ConditionClusterSlug, ConditionCluster> 
     "OCD symptoms affecting home life may be evaluated for emotional support animal recommendations.",
     "OCD may qualify for an ESA letter if a licensed clinician documents disability-related need and that an animal supports treatment. Valid letters enable reasonable accommodation requests in most Texas rentals.",
     [
-      "Contamination fears and checking rituals sometimes center on the home environment—therapists explore whether an ESA calms or complicates rituals.",
+      "Contamination fears and checking rituals sometimes center on the home environment - therapists explore whether an ESA calms or complicates rituals.",
       "Exposure work with a treating therapist takes priority; ESAs are considered as part of the whole plan.",
     ],
     [
@@ -324,7 +324,7 @@ export const CONDITION_CLUSTERS: Record<ConditionClusterSlug, ConditionCluster> 
     SHARED_QUALIFY,
     [
       "Clinicians often ask which compulsions dominate daily life and whether pet care triggers contamination fears.",
-      "Share how an animal has already helped or what you hope to gain—without minimizing safety planning with your therapist.",
+      "Share how an animal has already helped or what you hope to gain - without minimizing safety planning with your therapist.",
     ],
   ),
 
@@ -335,7 +335,7 @@ export const CONDITION_CLUSTERS: Record<ConditionClusterSlug, ConditionCluster> 
     "Sensory and social support at home may be evaluated for ESA documentation.",
     "Autism spectrum disorder may support an ESA letter when a licensed provider confirms disability-related need and that an emotional support animal helps your care plan. Texas landlords must review reasonable accommodation requests with reliable documentation.",
     [
-      "Adults and youth evaluations consider sensory overload, communication needs, and meltdown recovery—not stereotypes.",
+      "Adults and youth evaluations consider sensory overload, communication needs, and meltdown recovery - not stereotypes.",
       "Service dogs and ESAs differ; many autistic adults seek ESAs primarily for housing with a provider letter.",
     ],
     [
@@ -345,7 +345,7 @@ export const CONDITION_CLUSTERS: Record<ConditionClusterSlug, ConditionCluster> 
     [
       {
         question: "Is autism automatically approved?",
-        answer: "No—functional impact and clinical judgment determine eligibility.",
+        answer: "No - functional impact and clinical judgment determine eligibility.",
       },
     ],
     ["adhd", "anxiety", "social-anxiety"],

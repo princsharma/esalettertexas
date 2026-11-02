@@ -18,7 +18,7 @@ export default function DisclaimerPage() {
           facts, documentation, and property policies.
         </p>
         <p>
-          Blog posts, city guides, and FAQ answers summarize general principles—they are not a
+          Blog posts, city guides, and FAQ answers summarize general principles - they are not a
           substitute for individualized legal counsel or emergency mental health care. If you are in
           crisis, call 988 or local emergency services.
         </p>

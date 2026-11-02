@@ -214,7 +214,7 @@ export function Footer() {
         <div className="mt-10 flex flex-col items-center gap-3 border-t border-white/10 pt-6 text-center text-sm text-brand-300 md:flex-row md:justify-between md:text-left">
           <p className="max-w-2xl leading-relaxed">
             <strong className="font-semibold text-brand-200">Medical &amp; legal disclaimer:</strong>{" "}
-            Content is educational only—not medical, psychiatric, or legal advice. ESA Letter Texas
+            Content is educational only - not medical, psychiatric, or legal advice. ESA Letter Texas
             does not provide legal counsel. Eligibility and letter validity are determined solely by
             a licensed evaluating therapist after an individualized assessment. We do not sell ESA
             “registration,” certification, or instant approval. See{" "}

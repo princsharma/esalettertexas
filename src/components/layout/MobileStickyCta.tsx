@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { HEADER_CTA_HREF, HEADER_CTA_LABEL } from "@/data/nav";
 
-/** Mobile-first sticky CTA — hidden on large screens and on the conversion route. */
+/** Mobile-first sticky CTA  -  hidden on large screens and on the conversion route. */
 export function MobileStickyCta() {
   const pathname = usePathname();
   if (pathname === "/apply-now" || pathname === "/apply-now/") return null;

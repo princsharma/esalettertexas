@@ -1,4 +1,5 @@
 import type { PageSeoFields } from "./types";
+import { PAGE_OG_IMAGES } from "./og-images";
 import { PAGE_SEO_REGISTRY } from "./seo-registry";
 
 /** Utility routes not listed in the 51-URL SEO spreadsheet. */
@@ -18,8 +19,28 @@ const UTILITY_PAGE_SEO: Record<string, PageSeoFields> = {
   },
 };
 
+function withPageOgImages(
+  pages: Record<string, PageSeoFields>,
+): Record<string, PageSeoFields> {
+  const next: Record<string, PageSeoFields> = { ...pages };
+  for (const [canonicalPath, image] of Object.entries(PAGE_OG_IMAGES)) {
+    const fields = next[canonicalPath];
+    if (!fields) {
+      throw new Error(`OG image mapped to unknown page ${canonicalPath}`);
+    }
+    next[canonicalPath] = {
+      ...fields,
+      openGraph: {
+        ...fields.openGraph,
+        image,
+      },
+    };
+  }
+  return next;
+}
+
 /** CMS registry for static routes — spreadsheet URLs + utility pages. */
-export const STATIC_PAGE_SEO: Record<string, PageSeoFields> = {
+export const STATIC_PAGE_SEO: Record<string, PageSeoFields> = withPageOgImages({
   ...PAGE_SEO_REGISTRY,
   ...UTILITY_PAGE_SEO,
-};
+});

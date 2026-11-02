@@ -9,7 +9,7 @@ declare global {
   }
 }
 
-/** Fires a single page-level conversion view on /apply-now/ — no PHI. */
+/** Fires a single page-level conversion view on /apply-now/  -  no PHI. */
 export function ApplyConversionTracking() {
   useEffect(() => {
     if (!GA_MEASUREMENT_ID || typeof window.gtag !== "function") return;

@@ -20,7 +20,7 @@ export const BLOG_POSTS: BlogPostRecord[] = [
         title: "Definitions that matter in housing",
         paragraphs: [
           "Emotional support animals provide comfort through their presence. They are not required to perform trained tasks. Service animals, by contrast, are individually trained to do work or perform tasks for a person with a disability.",
-          "That distinction drives where each animal is protected. Fair housing law can cover both assistance animals in rental housing when documentation supports the need—but public access rules for businesses and transit generally favor task-trained service dogs.",
+          "That distinction drives where each animal is protected. Fair housing law can cover both assistance animals in rental housing when documentation supports the need - but public access rules for businesses and transit generally favor task-trained service dogs.",
           ...LONG(
             "Texas renters often receive pushback when landlords confuse ESAs with pets. A valid ESA letter from a licensed clinician explains disability-related need without turning the animal into a service dog.",
             3,
@@ -63,7 +63,7 @@ export const BLOG_POSTS: BlogPostRecord[] = [
         id: "what-changed",
         title: "What HB 4164 changed",
         paragraphs: [
-          "Texas HB 4164 targets fraudulent ESA documentation and registry scams—not the underlying right to request a reasonable accommodation with a legitimate letter.",
+          "Texas HB 4164 targets fraudulent ESA documentation and registry scams - not the underlying right to request a reasonable accommodation with a legitimate letter.",
           "Renters with valid letters from licensed clinicians should still be able to pursue fair housing protections when they have a disability-related need for an animal.",
         ],
       },
@@ -72,7 +72,7 @@ export const BLOG_POSTS: BlogPostRecord[] = [
         title: "What landlords may verify",
         paragraphs: [
           "Property managers may confirm that documentation comes from a licensed provider and relates to a disability-related need. They cannot demand unlimited medical records as a precondition.",
-          "Keep letters current—most clinicians recommend annual renewal—and store PDFs on letterhead with license details visible.",
+          "Keep letters current - most clinicians recommend annual renewal - and store PDFs on letterhead with license details visible.",
         ],
       },
     ],
@@ -112,7 +112,7 @@ export const BLOG_POSTS: BlogPostRecord[] = [
         title: "Reasonable accommodation basics",
         paragraphs: [
           "The FHA prohibits discrimination in housing based on disability and requires landlords to make reasonable accommodations, which can include waiving no-pet policies for assistance animals.",
-          "You are not required to disclose your diagnosis—only that a licensed provider supports your need.",
+          "You are not required to disclose your diagnosis - only that a licensed provider supports your need.",
         ],
       },
     ],
@@ -211,7 +211,7 @@ export const BLOG_POSTS: BlogPostRecord[] = [
         id: "houston-market",
         title: "Houston rental context",
         paragraphs: [
-          "Large apartment portfolios and HOA-managed communities are common in Houston—keep copies of every accommodation request.",
+          "Large apartment portfolios and HOA-managed communities are common in Houston - keep copies of every accommodation request.",
           "Texas-licensed letters reduce back-and-forth during leasing season.",
         ],
       },
@@ -252,7 +252,7 @@ export const BLOG_POSTS: BlogPostRecord[] = [
         title: "Why routine helps",
         paragraphs: [
           "Consistent feeding, walks, and quiet time with your animal can anchor your day when anxiety or depression disrupts schedules.",
-          "An ESA complements therapy—it does not replace it.",
+          "An ESA complements therapy - it does not replace it.",
         ],
       },
     ],

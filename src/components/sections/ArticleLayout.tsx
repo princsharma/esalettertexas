@@ -32,7 +32,7 @@ export function ArticleLayout({
   children: ReactNode;
   /** Element the sticky rail stops above (extended mode only). Default `#faq`. */
   sidebarBoundarySelector?: string;
-  /** When true (default), sidebar scrolls away with the article—never over FAQ or sections below. */
+  /** When true (default), sidebar scrolls away with the article - never over FAQ or sections below. */
   sidebarStickToColumn?: boolean;
   /** T4 cluster: featured-snippet answer placed before the table of contents. */
   quickAnswer?: string;

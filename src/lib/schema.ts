@@ -138,7 +138,7 @@ export function cityServiceSchema(cityName: string, pageUrl: string) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: `ESA letter evaluation — ${cityName}, Texas`,
+    name: `ESA letter evaluation  -  ${cityName}, Texas`,
     serviceType: "Emotional support animal letter clinical evaluation",
     provider: { "@id": ORG_ID },
     areaServed: {

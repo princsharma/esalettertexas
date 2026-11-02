@@ -1,4 +1,4 @@
-/** GA4 / GTM IDs — only loaded when set in env (no PHI in events). */
+/** GA4 / GTM IDs  -  only loaded when set in env (no PHI in events). */
 export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || "";
 export const GTM_CONTAINER_ID = process.env.NEXT_PUBLIC_GTM_CONTAINER_ID?.trim() || "";
 

@@ -1,6 +1,6 @@
 /**
  * Internal linking rules (build / publish-time).
- * See editorial checklist in project docs — failures block production builds.
+ * See editorial checklist in project docs  -  failures block production builds.
  */
 import { BLOG_CATEGORIES } from "@/data/blog/categories";
 import { BLOG_POSTS } from "@/data/blog/posts";
@@ -55,7 +55,7 @@ export function validateInternalLinks(): ValidationResult {
 
     if (!post.siloLink) {
       warnings.push(
-        `[blog] "${post.slug}": no explicit siloLink — using pillar fallback (editorial checklist)`,
+        `[blog] "${post.slug}": no explicit siloLink  -  using pillar fallback (editorial checklist)`,
       );
     }
 

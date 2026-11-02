@@ -1,4 +1,4 @@
-/** Dev/content-team helpers — city pages must not ship as name-swapped duplicates. */
+/** Dev/content-team helpers  -  city pages must not ship as name-swapped duplicates. */
 
 export function countWords(...texts: string[]): number {
   return texts

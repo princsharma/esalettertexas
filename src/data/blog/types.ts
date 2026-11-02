@@ -6,7 +6,7 @@ export type BlogPostSection = {
   paragraphs: string[];
 };
 
-/** CMS-shaped post — flat URL `/blog/{slug}/` regardless of category. */
+/** CMS-shaped post  -  flat URL `/blog/{slug}/` regardless of category. */
 export type BlogPostRecord = {
   slug: string;
   title: string;

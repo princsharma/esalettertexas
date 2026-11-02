@@ -8,7 +8,7 @@ const variantClass: Record<BadgeVariant, string> = {
   texas: "trust-badge-texas",
 };
 
-/** Trust / metadata pill — use verifiable claims only; prefer licensed or private over texas. */
+/** Trust / metadata pill  -  use verifiable claims only; prefer licensed or private over texas. */
 export function Badge({
   children,
   variant = "licensed",

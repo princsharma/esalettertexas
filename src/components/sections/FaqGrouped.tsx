@@ -18,7 +18,7 @@ function firstItemKey(groupId: string) {
   return `${groupId}-0`;
 }
 
-/** /faq/ — image column + topic-filtered accordion. */
+/** /faq/  -  image column + topic-filtered accordion. */
 export function FaqGrouped({ groups }: { groups: FaqTopicGroup[] }) {
   const [activeGroupId, setActiveGroupId] = useState(() => groups[0]?.id ?? "");
   const [openKeys, setOpenKeys] = useState<Set<string>>(() => {
@@ -65,7 +65,7 @@ export function FaqGrouped({ groups }: { groups: FaqTopicGroup[] }) {
 
   return (
     <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-14 xl:gap-16">
-      {/* Left — photo (updates with active category) */}
+      {/* Left  -  photo (updates with active category) */}
       <div className="relative mx-auto w-full max-w-md lg:sticky lg:top-24 lg:mx-0 lg:max-w-none">
         <div
           aria-hidden="true"
@@ -93,7 +93,7 @@ export function FaqGrouped({ groups }: { groups: FaqTopicGroup[] }) {
         </div>
       </div>
 
-      {/* Right — filters + accordion */}
+      {/* Right  -  filters + accordion */}
       <div className="min-w-0">
         <p className="text-label text-brand-600">Browse by topic</p>
         <h2 className="text-h2 mt-2 text-neutral-900 [text-wrap:balance]">

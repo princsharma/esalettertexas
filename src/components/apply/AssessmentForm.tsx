@@ -13,7 +13,7 @@ declare global {
 }
 
 /**
- * Placeholder intake — production should POST over HTTPS to your assessment provider.
+ * Placeholder intake  -  production should POST over HTTPS to your assessment provider.
  * No query-string PHI; do not attach field values to analytics events.
  */
 export function AssessmentForm() {

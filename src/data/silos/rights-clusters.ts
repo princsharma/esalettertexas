@@ -80,7 +80,7 @@ export const RIGHTS_CLUSTERS: Record<RightsClusterSlug, RightsCluster> = {
         title: "What the FHA Covers",
         paragraphs: [
           "The Fair Housing Act (FHA) prohibits discrimination in housing based on disability, among other protected classes. For ESA owners, the practical protection is the duty to provide reasonable accommodations that allow equal use and enjoyment of a dwelling.",
-          "Assistance animals—including emotional support animals—are not treated as pets under the FHA. That distinction matters for fees, breed rules, and no-pet clauses in leases.",
+          "Assistance animals - including emotional support animals - are not treated as pets under the FHA. That distinction matters for fees, breed rules, and no-pet clauses in leases.",
         ],
       },
       {
@@ -175,7 +175,7 @@ export const RIGHTS_CLUSTERS: Record<RightsClusterSlug, RightsCluster> = {
         title: "Compliance Checklist",
         paragraphs: [
           "Use a licensed provider with an active Texas license when possible. Keep your letter dated within the last year. Submit a written accommodation request with the letter attached.",
-          "Do not purchase registry IDs, vests, or certificates as proof—they are not required and often signal a scam.",
+          "Do not purchase registry IDs, vests, or certificates as proof - they are not required and often signal a scam.",
         ],
       },
     ],
@@ -244,7 +244,7 @@ export const RIGHTS_CLUSTERS: Record<RightsClusterSlug, RightsCluster> = {
         title: "Common Confusion",
         paragraphs: [
           "Registry websites often blur these categories by selling ID cards for both. Neither federal housing nor ADA law requires a registry ID.",
-          "Landlords sometimes wrongly demand service-animal training for an ESA. For FHA purposes, training is not the test—disability-related need and reliable documentation are.",
+          "Landlords sometimes wrongly demand service-animal training for an ESA. For FHA purposes, training is not the test - disability-related need and reliable documentation are.",
         ],
       },
     ],
@@ -287,7 +287,7 @@ export const RIGHTS_CLUSTERS: Record<RightsClusterSlug, RightsCluster> = {
         title: "Why No-Pet Policies Don't Apply",
         paragraphs: [
           "Pet policies govern optional companions. Assistance animals are not pets under fair housing rules when tied to a disability-related need.",
-          "That means breed bans, pet counts, and no-animal rules must yield unless the landlord has a valid, individualized reason to deny—such as a direct threat or substantial property damage that cannot be reduced another way.",
+          "That means breed bans, pet counts, and no-animal rules must yield unless the landlord has a valid, individualized reason to deny - such as a direct threat or substantial property damage that cannot be reduced another way.",
         ],
       },
       {
@@ -303,7 +303,7 @@ export const RIGHTS_CLUSTERS: Record<RightsClusterSlug, RightsCluster> = {
         title: "Documentation to Provide",
         paragraphs: [
           "Provide a letter from a licensed healthcare provider confirming disability-related need. You do not need to share your full diagnosis or medical file.",
-          "Optional: vaccination records or local licensing if required for all animals in the city—but not as a precondition to approve the accommodation itself.",
+          "Optional: vaccination records or local licensing if required for all animals in the city - but not as a precondition to approve the accommodation itself.",
         ],
       },
     ],
@@ -315,7 +315,7 @@ export const RIGHTS_CLUSTERS: Record<RightsClusterSlug, RightsCluster> = {
     faqs: [
       {
         question: "Should I tell my landlord before I move in?",
-        answer: "Request accommodation as early as possible—before signing if you can—so move-in is smooth. You may also request after move-in when need arises.",
+        answer: "Request accommodation as early as possible - before signing if you can - so move-in is smooth. You may also request after move-in when need arises.",
       },
       {
         question: "Can they meet me in person to 'verify' the ESA?",
@@ -415,7 +415,7 @@ export const RIGHTS_CLUSTERS: Record<RightsClusterSlug, RightsCluster> = {
         title: "Handling Pushback",
         paragraphs: [
           "If denied based on breed, reply in writing requesting the specific, individualized reason and citing HUD guidance on breed restrictions.",
-          "Offer references, training records, or a meet-and-greet if you choose—but you are not required to prove breed innocence beyond normal pet behavior expectations.",
+          "Offer references, training records, or a meet-and-greet if you choose - but you are not required to prove breed innocence beyond normal pet behavior expectations.",
         ],
       },
     ],
@@ -442,7 +442,7 @@ export const RIGHTS_CLUSTERS: Record<RightsClusterSlug, RightsCluster> = {
     heroTitle: "What to Do If a Landlord Denies Your ESA",
     heroSubhead: "Push back with clear records when a denial ignores fair housing rules.",
     quickAnswer:
-      "If a landlord denies your ESA without an individualized reason—such as direct threat, undue burden, or unreliable documentation—respond in writing, cite the FHA, and consider a HUD or Texas Workforce Commission complaint while keeping all correspondence.",
+      "If a landlord denies your ESA without an individualized reason - such as direct threat, undue burden, or unreliable documentation - respond in writing, cite the FHA, and consider a HUD or Texas Workforce Commission complaint while keeping all correspondence.",
     toc: [
       { id: "valid-invalid-denials", label: "Valid vs invalid denial reasons" },
       { id: "response-steps", label: "Response steps" },
@@ -486,7 +486,7 @@ export const RIGHTS_CLUSTERS: Record<RightsClusterSlug, RightsCluster> = {
     legalCallout: {
       title: "Enforcement",
       tone: "info",
-      body: "HUD complaint portal: hud.gov/fairhousing. Texas Workforce Commission Civil Rights Division accepts housing discrimination filings. Deadlines apply—act promptly.",
+      body: "HUD complaint portal: hud.gov/fairhousing. Texas Workforce Commission Civil Rights Division accepts housing discrimination filings. Deadlines apply - act promptly.",
     },
     faqs: [
       {
@@ -546,7 +546,7 @@ export const RIGHTS_CLUSTERS: Record<RightsClusterSlug, RightsCluster> = {
     faqs: [
       {
         question: "Can they charge a one-time sanitation fee?",
-        answer: "Flat pet sanitation fees tied to animal status—not proven damage—are generally inconsistent with FHA treatment of assistance animals.",
+        answer: "Flat pet sanitation fees tied to animal status - not proven damage - are generally inconsistent with FHA treatment of assistance animals.",
       },
     ],
     relatedSlugs: ["no-pet-apartments", "landlord-denials", "moving-with-an-esa"],
@@ -558,7 +558,7 @@ export const RIGHTS_CLUSTERS: Record<RightsClusterSlug, RightsCluster> = {
     metaDescription:
       "Transferring ESA housing rights, new lease paperwork, and a timing checklist for Texas moves.",
     heroTitle: "Moving With an ESA",
-    heroSubhead: "Your accommodation rights travel with you—plan paperwork before boxes ship.",
+    heroSubhead: "Your accommodation rights travel with you - plan paperwork before boxes ship.",
     quickAnswer:
       "When you move, submit a new reasonable accommodation request and current ESA letter to the next landlord before move-in. Federal protections follow you to covered housing; timing and documentation prevent last-minute denials.",
     toc: [
@@ -633,7 +633,7 @@ export const RIGHTS_CLUSTERS: Record<RightsClusterSlug, RightsCluster> = {
         id: "request-process",
         title: "Request Process",
         paragraphs: [
-          "Contact disability services early—ideally after admission and before housing assignments lock. Provide your provider letter and complete any housing forms the school requires.",
+          "Contact disability services early - ideally after admission and before housing assignments lock. Provide your provider letter and complete any housing forms the school requires.",
           "Schools may consider roommates' allergies in balancing accommodations, but they cannot deny without an interactive process.",
         ],
       },
@@ -641,7 +641,7 @@ export const RIGHTS_CLUSTERS: Record<RightsClusterSlug, RightsCluster> = {
         id: "major-tx-universities",
         title: "Major Texas Universities",
         paragraphs: [
-          "Large public universities—including UT Austin, Texas A&M, Texas State, University of Houston, and Texas Tech—maintain disability services offices with published assistance-animal policies. Always use the official portal for your campus.",
+          "Large public universities - including UT Austin, Texas A&M, Texas State, University of Houston, and Texas Tech - maintain disability services offices with published assistance-animal policies. Always use the official portal for your campus.",
           "Policies change each academic year; verify deadlines for housing appeals and documentation updates.",
         ],
       },
@@ -668,7 +668,7 @@ export const RIGHTS_CLUSTERS: Record<RightsClusterSlug, RightsCluster> = {
     heroTitle: "Why ESA Registries Aren't Valid",
     heroSubhead: "Certificates and ID cards from registry websites are not proof of housing rights.",
     quickAnswer:
-      "No federal or Texas housing law recognizes online ESA registries, ID cards, or vests as proof of status. Landlords need a letter from a licensed healthcare provider who has evaluated you—not a paid registry entry.",
+      "No federal or Texas housing law recognizes online ESA registries, ID cards, or vests as proof of status. Landlords need a letter from a licensed healthcare provider who has evaluated you - not a paid registry entry.",
     toc: [
       { id: "scam-warning", label: "Scam warning" },
       { id: "how-registries-mislead", label: "How registries mislead" },
@@ -690,7 +690,7 @@ export const RIGHTS_CLUSTERS: Record<RightsClusterSlug, RightsCluster> = {
         title: "How Registries Mislead",
         paragraphs: [
           "They claim 'registration' satisfies landlords or airlines. In housing, only reliable provider letters matter. In public places, ESAs have no ADA access rights regardless of registry.",
-          "Some sites also sell instant letters from unnamed clinicians—another red flag for property managers trained on HB 4164.",
+          "Some sites also sell instant letters from unnamed clinicians - another red flag for property managers trained on HB 4164.",
         ],
       },
       {
@@ -717,7 +717,7 @@ export const RIGHTS_CLUSTERS: Record<RightsClusterSlug, RightsCluster> = {
     },
     faqs: [
       {
-        question: "My landlord asked for registry proof—what do I send?",
+        question: "My landlord asked for registry proof - what do I send?",
         answer: "Send your compliant provider letter and cite HUD guidance that registries are not required. Offer license verification instead.",
       },
     ],

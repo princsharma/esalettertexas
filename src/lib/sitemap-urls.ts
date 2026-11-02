@@ -1,5 +1,5 @@
 /**
- * Sitemap URL registry — mirrors IA build phases (51 templated URLs + blog posts).
+ * Sitemap URL registry  -  mirrors IA build phases (51 templated URLs + blog posts).
  * Used by `/sitemap.xml` and the human-readable `/sitemap/` index.
  */
 import { BLOG_CATEGORIES } from "@/data/blog/categories";
@@ -33,7 +33,7 @@ const CORE_PATHS: SitemapUrl[] = [
 
 const THERAPIST_PROFILE_PATHS: SitemapUrl[] = TEAM.map((m) => ({
   path: `/about-our-therapists/${m.slug}/`,
-  label: `${m.name} — therapist profile`,
+  label: `${m.name}  -  therapist profile`,
 }));
 
 const SUPPORT_PATHS: SitemapUrl[] = [
@@ -107,7 +107,7 @@ export function getSitemapSections(): SitemapSection[] {
     },
     {
       phase: 2,
-      title: "/rights/ silo — pillar + 11 clusters",
+      title: "/rights/ silo  -  pillar + 11 clusters",
       urls: [{ path: "/rights/", label: "Texas ESA Laws & Housing Rights (pillar)" }, ...rightsClusters],
     },
     {
@@ -120,7 +120,7 @@ export function getSitemapSections(): SitemapSection[] {
     },
     {
       phase: 3,
-      title: "/conditions/ silo — pillar + 10 condition pages",
+      title: "/conditions/ silo  -  pillar + 10 condition pages",
       urls: [
         { path: "/conditions/", label: "Who Qualifies (pillar)" },
         ...conditionClusters,
@@ -133,7 +133,7 @@ export function getSitemapSections(): SitemapSection[] {
     },
     {
       phase: 4,
-      title: "/locations/ silo — pillar + 5 city pages",
+      title: "/locations/ silo  -  pillar + 5 city pages",
       urls: [{ path: "/locations/", label: "ESA Letters by Texas City (pillar)" }, ...cityPages],
     },
     {

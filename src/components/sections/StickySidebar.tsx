@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 
 
 /** Keeps sidebar content in view while scrolling.
  *  - `extended`: fixed rail until `boundarySelector` (default `#faq` on ArticleLayout).
- *  - `column`: plain sticky within the aside column only—scrolls away before sections below the article. */
+ *  - `column`: plain sticky within the aside column only - scrolls away before sections below the article. */
 export function StickySidebar({
   children,
   boundarySelector,

@@ -3,6 +3,7 @@ import type { BlogPostRecord } from "@/data/blog/types";
 import type { BlogCategory } from "@/data/blog/categories";
 import { SITE, ogImageOrigin, siteOrigin } from "@/data/site";
 import type { PageSeoFields, BlogPostSeoFields } from "@/data/seo/types";
+import { BLOG_OG_IMAGE } from "@/data/seo/og-images";
 import { STATIC_PAGE_SEO } from "@/data/seo/static-pages";
 
 export function absoluteUrl(
@@ -16,7 +17,13 @@ export function absoluteUrl(
     /\/$/,
     "",
   );
-  const path = pathOrUrl.startsWith("/") ? pathOrUrl : `/${pathOrUrl}`;
+  const rawPath = pathOrUrl.startsWith("/") ? pathOrUrl : `/${pathOrUrl}`;
+  const path = options?.forOgImage
+    ? rawPath
+        .split("/")
+        .map((segment) => encodeURIComponent(segment))
+        .join("/")
+    : rawPath;
   return `${base}${path}`;
 }
 
@@ -24,14 +31,21 @@ function isDefaultOgImage(image?: string): boolean {
   return (
     !image ||
     image === SITE.defaultOgImage ||
-    image === SITE.defaultOgImageFallback
+    image === SITE.defaultOgImageFallback ||
+    image === SITE.defaultOgImageSocial
   );
 }
 
-/** Site-wide default share image (WebP). Used for every page unless `openGraph.image` is set explicitly. */
-function resolveOgImage(image?: string): string {
-  const src = image ?? SITE.defaultOgImage;
-  return absoluteUrl(src, { forOgImage: true });
+/** Relative path resolved with layout `metadataBase` (works in dev + production). */
+function defaultSocialOgImage(): string {
+  return SITE.defaultOgImageSocial;
+}
+
+function resolveOgImage(image?: string): string | URL {
+  if (!isDefaultOgImage(image)) {
+    return absoluteUrl(image!, { forOgImage: true });
+  }
+  return defaultSocialOgImage();
 }
 
 function buildOgImages(
@@ -39,15 +53,21 @@ function buildOgImages(
   alt?: string,
 ): NonNullable<Metadata["openGraph"]>["images"] {
   const altText = alt ?? SITE.defaultOgImageAlt;
-  const url = isDefaultOgImage(image)
-    ? absoluteUrl(SITE.defaultOgImage, { forOgImage: true })
-    : absoluteUrl(image!, { forOgImage: true });
-
+  if (!isDefaultOgImage(image)) {
+    const url = absoluteUrl(image!, { forOgImage: true });
+    return [
+      {
+        url,
+        alt: altText,
+        type: url.toLowerCase().includes(".webp") ? "image/webp" : undefined,
+      },
+    ];
+  }
   return [
     {
-      url,
+      url: defaultSocialOgImage(),
       alt: altText,
-      type: isDefaultOgImage(image) ? "image/webp" : undefined,
+      type: "image/jpeg",
       width: SITE.defaultOgImageWidth,
       height: SITE.defaultOgImageHeight,
     },
@@ -122,8 +142,8 @@ export function buildBlogPostMetadata(post: BlogPostRecord): Metadata {
     robots: seo?.robots,
     openGraph: {
       ...seo?.openGraph,
-      /** One site-wide OG card; featured images stay on the article body only. */
-      image: seo?.openGraph?.image,
+      /** Existing blog card. A post-specific image wins when one is set. */
+      image: seo?.openGraph?.image ?? BLOG_OG_IMAGE,
     },
     schemaTypeOverride: seo?.schemaTypeOverride ?? "Article",
   };

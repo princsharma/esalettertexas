@@ -19,7 +19,7 @@ function topFive(cards: { title: string; href: string }[]): NavLink[] {
   return cards.slice(0, 5).map((c) => ({ label: c.title, href: c.href }));
 }
 
-/** Primary header navigation — keep in sync with IA spec. */
+/** Primary header navigation  -  keep in sync with IA spec. */
 export const MAIN_NAV: NavItem[] = [
   { type: "link", label: "How It Works", href: "/how-it-works/" },
   { type: "link", label: "Requirements", href: "/requirements/" },
@@ -51,7 +51,7 @@ export const MAIN_NAV: NavItem[] = [
   { type: "link", label: "FAQ", href: "/faq/" },
 ];
 
-/** Resources dropdown (guide pages) — unchanged from original header. */
+/** Resources dropdown (guide pages)  -  unchanged from original header. */
 export const RESOURCE_LINKS: NavLink[] = [
   { label: "What Is an ESA Letter?", href: "/what-is-an-esa-letter/" },
   { label: "How to Get One in Texas", href: "/how-to-get-an-esa-letter-in-texas/" },

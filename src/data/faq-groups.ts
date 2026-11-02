@@ -59,7 +59,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       {
         question: "Can landlords charge pet rent for an ESA?",
         answer:
-          "Generally no—pet fees and breed restrictions tied to pets should not apply to a documented assistance animal.",
+          "Generally no - pet fees and breed restrictions tied to pets should not apply to a documented assistance animal.",
       },
     ],
   },

@@ -7,7 +7,7 @@
  * one of the alternates.
  */
 export const HERO_IMAGES = {
-  /** Home hero — local brand photography */
+  /** Home hero  -  local brand photography */
   esaLetterHero: "/hero/ESALetterHero.webp",
   /** Smiling beagle, close up outdoors */
   dog: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1920&q=80",

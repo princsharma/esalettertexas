@@ -1,5 +1,5 @@
 /**
- * City page content — intended for CMS migration.
+ * City page content  -  intended for CMS migration.
  * Each record's `cityInfoPanel` (M14) and `sections` must stay city-specific;
  * do not publish copy that only swaps the city name.
  */
@@ -64,12 +64,12 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
       localRules: [
         "City of Houston requires annual registration for dogs and cats four months and older (separate from ESA housing status).",
         "Harris County rabies vaccination rules apply; keep records available if a landlord requests routine pet compliance after accommodation is granted.",
-        "Breed-specific insurance lists appear in some suburban HOA communities—FHA still requires individualized ESA review.",
+        "Breed-specific insurance lists appear in some suburban HOA communities - FHA still requires individualized ESA review.",
       ],
       resources: [
-        { label: "HUD Fair Housing — file a complaint", href: "https://www.hud.gov/fairhousing" },
-        { label: "Texas Workforce Commission — housing discrimination", href: "https://www.twc.texas.gov/" },
-        { label: "City of Houston — Animal Shelter & Adoption", href: "https://www.houstontx.gov/health/Animal-Regulations/" },
+        { label: "HUD Fair Housing  -  file a complaint", href: "https://www.hud.gov/fairhousing" },
+        { label: "Texas Workforce Commission  -  housing discrimination", href: "https://www.twc.texas.gov/" },
+        { label: "City of Houston  -  Animal Shelter & Adoption", href: "https://www.houstontx.gov/health/Animal-Regulations/" },
       ],
     },
     sections: [
@@ -78,7 +78,7 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
         title: "Local Housing & Rental Market",
         paragraphs: [
           "Houston’s sprawl means renters often deal with national REITs, mid-size management firms, and individual landlords across Harris, Fort Bend, and Montgomery counties. High turnover in mid-rise complexes near the Medical Center and Galleria correlates with repeated pet-policy screening at lease renewal.",
-          "Expect online portals to flag ‘pet’ questions even for ESAs—submit your accommodation request and letter before move-in or at renewal so fees are not auto-assessed.",
+          "Expect online portals to flag ‘pet’ questions even for ESAs - submit your accommodation request and letter before move-in or at renewal so fees are not auto-assessed.",
         ],
       },
       {
@@ -93,14 +93,14 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
         id: "local-ordinances",
         title: "Local Ordinances",
         paragraphs: [
-          "Municipal animal control rules cover vaccination and registration—they are not a substitute for fair housing accommodation. After approval, comply with leash and waste ordinances to avoid conduct-based disputes.",
+          "Municipal animal control rules cover vaccination and registration - they are not a substitute for fair housing accommodation. After approval, comply with leash and waste ordinances to avoid conduct-based disputes.",
         ],
       },
       {
         id: "esa-friendly-resources",
         title: "ESA-Friendly Areas & Resources",
         paragraphs: [
-          "Inner-loop neighborhoods mix older duplex stock (often private landlords) with newer no-pet high-rises. Mid-county suburbs see more HOA oversight—pair your letter with our HB 4164 guide if a master association gets involved.",
+          "Inner-loop neighborhoods mix older duplex stock (often private landlords) with newer no-pet high-rises. Mid-county suburbs see more HOA oversight - pair your letter with our HB 4164 guide if a master association gets involved.",
           "Veterans and medical workers near the Texas Medical Center frequently request ESAs for shift-related anxiety; keep employer relocation timelines in mind when scheduling your therapist evaluation.",
         ],
       },
@@ -108,7 +108,7 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
     faqs: [
       {
         question: "Do Houston landlords always accept ESAs?",
-        answer: "Covered housing must consider reasonable requests; denial requires specific, individualized reasons—not a blanket no-pets rule.",
+        answer: "Covered housing must consider reasonable requests; denial requires specific, individualized reasons - not a blanket no-pets rule.",
       },
       {
         question: "Does Harris County charge pet fees for ESAs?",
@@ -131,7 +131,7 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
     cityName: "Dallas",
     heroTitle: "ESA Letters in Dallas, Texas",
     heroSubhead:
-      "DFW’s competitive lease market and corporate landlords—how to document your ESA correctly.",
+      "DFW’s competitive lease market and corporate landlords - how to document your ESA correctly.",
     quickAnswer:
       "Dallas renters can use a compliant ESA letter to request waiver of pet restrictions in most covered apartments. Texas and federal law apply equally in Dallas County; local pet limits do not automatically block accommodation.",
     cityInfoPanel: {
@@ -141,9 +141,9 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
         { label: "Common PM software", value: "Yardi / RealPage" },
       ],
       localRules: [
-        "Dallas city code requires restraint and sanitation for animals in public; registration rules vary by suburb—Dallas, Garland, and Plano differ.",
+        "Dallas city code requires restraint and sanitation for animals in public; registration rules vary by suburb - Dallas, Garland, and Plano differ.",
         "Dallas Animal Services handles city licensing and lost-pet reporting.",
-        "Some Uptown and Deep Ellum leases include explicit breed schedules—FHA still requires case-by-case ESA review.",
+        "Some Uptown and Deep Ellum leases include explicit breed schedules - FHA still requires case-by-case ESA review.",
       ],
       resources: [
         { label: "Dallas Fair Housing Office (city)", href: "https://dallascityhall.com/" },
@@ -156,7 +156,7 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
         id: "local-housing-market",
         title: "Local Housing & Rental Market",
         paragraphs: [
-          "North Dallas and Las Colinas attract corporate transferees signing 12–15 month leases with mandatory pet addenda. Budget for time to negotiate ESA language before countersigning—portals may auto-charge pet rent until accommodation is recorded.",
+          "North Dallas and Las Colinas attract corporate transferees signing 12–15 month leases with mandatory pet addenda. Budget for time to negotiate ESA language before countersigning - portals may auto-charge pet rent until accommodation is recorded.",
           "Older Lakewood and Bishop Arts inventory often means individual owners who may be less familiar with HB 4164; polite education plus a compliant letter resolves many cases.",
         ],
       },
@@ -172,7 +172,7 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
         id: "local-ordinances",
         title: "Local Ordinances",
         paragraphs: [
-          "Dallas noise and tethering ordinances apply to all dogs; they are separate from whether your ESA may live in covered housing. Collar tags and city registration do not prove ESA status—your provider letter does.",
+          "Dallas noise and tethering ordinances apply to all dogs; they are separate from whether your ESA may live in covered housing. Collar tags and city registration do not prove ESA status - your provider letter does.",
         ],
       },
       {
@@ -180,7 +180,7 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
         title: "ESA-Friendly Areas & Resources",
         paragraphs: [
           "Transit-oriented rentals near DART lines see younger renters with ESAs for anxiety; ask about elevator weight limits only for actual safety issues, not breed stereotypes.",
-          "Irving and Farmers Branch additions to DFW jobs base mean cross-city commuting—choose a Texas-licensed evaluator to reduce landlord pushback.",
+          "Irving and Farmers Branch additions to DFW jobs base mean cross-city commuting - choose a Texas-licensed evaluator to reduce landlord pushback.",
         ],
       },
     ],
@@ -217,7 +217,7 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
       localRules: [
         "City of Austin requires dogs and cats over four months to be licensed and vaccinated for rabies.",
         "Austin’s leash ordinance applies in parks and trails; ESAs do not receive off-leash public access by default.",
-        "Some East Austin and Mueller developments use HOA overlays—check both landlord and association rules.",
+        "Some East Austin and Mueller developments use HOA overlays - check both landlord and association rules.",
       ],
       resources: [
         { label: "Austin Animal Services", href: "https://www.austintexas.gov/department/animal-services" },
@@ -230,7 +230,7 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
         id: "local-housing-market",
         title: "Local Housing & Rental Market",
         paragraphs: [
-          "Austin’s post-2020 supply wave added thousands of uniform pet policies in Mueller, Domain, and Riverside corridors. Automated lease systems may flag animals until you upload accommodation paperwork—do it during application, not after move-in.",
+          "Austin’s post-2020 supply wave added thousands of uniform pet policies in Mueller, Domain, and Riverside corridors. Automated lease systems may flag animals until you upload accommodation paperwork - do it during application, not after move-in.",
           "Short-term corporate housing near the Capitol rarely qualifies as long-term tenancy; get clarity on duration before relying on an ESA letter.",
         ],
       },
@@ -238,7 +238,7 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
         id: "landlord-practices",
         title: "Local Landlord Practices",
         paragraphs: [
-          "Local owners marketing on social media sometimes ask for ‘ESA registration’—redirect them to your provider letter and our registry warning guide.",
+          "Local owners marketing on social media sometimes ask for ‘ESA registration’ - redirect them to your provider letter and our registry warning guide.",
           "Co-living and roommate-matching houses need written approval from the master lease holder, not just one roommate’s consent.",
         ],
       },
@@ -246,14 +246,14 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
         id: "local-ordinances",
         title: "Local Ordinances",
         paragraphs: [
-          "Austin prohibits leaving dogs tethered unsafely and enforces heat-related welfare checks—unrelated to ESA approval but important for compliance once your animal resides there.",
+          "Austin prohibits leaving dogs tethered unsafely and enforces heat-related welfare checks - unrelated to ESA approval but important for compliance once your animal resides there.",
         ],
       },
       {
         id: "esa-friendly-resources",
         title: "ESA-Friendly Areas & Resources",
         paragraphs: [
-          "West Campus and Riverside see high ESA demand; university housing follows FHA separately from private apartments—use our dorm guide if Texas State or UT housing is involved.",
+          "West Campus and Riverside see high ESA demand; university housing follows FHA separately from private apartments - use our dorm guide if Texas State or UT housing is involved.",
           "Trail-oriented renters in Circle C and Steiner Ranch should confirm HOA pet caps in writing after accommodation approval.",
         ],
       },
@@ -279,9 +279,9 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
     cityName: "San Antonio",
     heroTitle: "ESA Letters in San Antonio, Texas",
     heroSubhead:
-      "Bexar County’s mix of military, historic, and suburban rentals—and how to submit your ESA letter.",
+      "Bexar County’s mix of military, historic, and suburban rentals - and how to submit your ESA letter.",
     quickAnswer:
-      "San Antonio renters can request ESA reasonable accommodation under the FHA with a licensed provider letter. Military housing and privatized on-base family housing follow separate federal rules—civilian Bexar County leases use standard Texas documentation expectations.",
+      "San Antonio renters can request ESA reasonable accommodation under the FHA with a licensed provider letter. Military housing and privatized on-base family housing follow separate federal rules - civilian Bexar County leases use standard Texas documentation expectations.",
     cityInfoPanel: {
       stats: [
         { label: "Metro population rank (TX)", value: "#2" },
@@ -290,7 +290,7 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
       ],
       localRules: [
         "San Antonio requires pet microchip/registration for dogs and cats through Animal Care Services.",
-        "Historic districts (King William, Monte Vista) often have tight parking and fence rules—conduct standards still apply post-approval.",
+        "Historic districts (King William, Monte Vista) often have tight parking and fence rules - conduct standards still apply post-approval.",
         "Short-term STR bans in some zones do not change long-term lease FHA analysis.",
       ],
       resources: [
@@ -303,7 +303,7 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
         id: "local-housing-market",
         title: "Local Housing & Rental Market",
         paragraphs: [
-          "Medical Center and downtown loft conversions attract travel nurses needing quick ESA approvals—timestamp your request emails before rotation ends.",
+          "Medical Center and downtown loft conversions attract travel nurses needing quick ESA approvals - timestamp your request emails before rotation ends.",
           "Far West and Alamo Ranch subdivisions often include HOA pet limits; your landlord and association may both need copies of the letter.",
         ],
       },
@@ -311,7 +311,7 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
         id: "landlord-practices",
         title: "Local Landlord Practices",
         paragraphs: [
-          "Privatized military housing partners near JBSA may use their own forms—still rooted in federal disability accommodation principles for qualifying residents.",
+          "Privatized military housing partners near JBSA may use their own forms - still rooted in federal disability accommodation principles for qualifying residents.",
           "Bilingual leasing offices are common; you may provide English-language provider letters with optional translated cover summaries you prepare yourself.",
         ],
       },
@@ -319,7 +319,7 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
         id: "local-ordinances",
         title: "Local Ordinances",
         paragraphs: [
-          "San Antonio enforces dangerous-dog procedures separately from ESA housing status—keep animals well-socialized to avoid conduct-based disputes.",
+          "San Antonio enforces dangerous-dog procedures separately from ESA housing status - keep animals well-socialized to avoid conduct-based disputes.",
         ],
       },
       {
@@ -334,7 +334,7 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
     faqs: [
       {
         question: "Does Lackland housing use ESA letters?",
-        answer: "On-base and privatized military housing have distinct offices—ask housing services; civilian San Antonio leases use standard ESA letters.",
+        answer: "On-base and privatized military housing have distinct offices - ask housing services; civilian San Antonio leases use standard ESA letters.",
       },
     ],
     relatedRights: [
@@ -376,7 +376,7 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
         id: "local-housing-market",
         title: "Local Housing & Rental Market",
         paragraphs: [
-          "Alliance and Walsh Ranch attract family relocations from DFW—leases often bundle pet DNA testing for dogs; ESAs are not subject to pet rent but may still need conduct compliance.",
+          "Alliance and Walsh Ranch attract family relocations from DFW - leases often bundle pet DNA testing for dogs; ESAs are not subject to pet rent but may still need conduct compliance.",
           "Near TCU, shared houses require explicit written approval from property managers, not just roommates.",
         ],
       },
@@ -384,7 +384,7 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
         id: "landlord-practices",
         title: "Local Landlord Practices",
         paragraphs: [
-          "Tarrant County judges see occasional deposit disputes—itemize communications if landlords retain pet fees after ESA approval.",
+          "Tarrant County judges see occasional deposit disputes - itemize communications if landlords retain pet fees after ESA approval.",
           "Cross-county commuters to Dallas should use Texas-licensed providers to avoid ‘out-of-state letter’ delays.",
         ],
       },
@@ -392,7 +392,7 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
         id: "local-ordinances",
         title: "Local Ordinances",
         paragraphs: [
-          "Fort Worth limits continuous tethering and addresses noise complaints—resolve neighbor issues quickly to prevent retaliation claims tied to your animal.",
+          "Fort Worth limits continuous tethering and addresses noise complaints - resolve neighbor issues quickly to prevent retaliation claims tied to your animal.",
         ],
       },
       {
@@ -400,14 +400,14 @@ export const LOCATION_CITIES: Record<LocationCitySlug, CityCmsRecord> = {
         title: "ESA-Friendly Areas & Resources",
         paragraphs: [
           "Trinity Trails users should remember ESAs lack general public access rights; housing protection remains the core benefit of your letter.",
-          "Historic Fairmount districts feature smaller yards—landlords citing ‘insufficient space’ need objective evidence tied to your specific animal.",
+          "Historic Fairmount districts feature smaller yards - landlords citing ‘insufficient space’ need objective evidence tied to your specific animal.",
         ],
       },
     ],
     faqs: [
       {
         question: "Is Fort Worth different from Dallas for ESAs?",
-        answer: "State and federal rules align; rental markets and municipal animal codes differ—use city-specific accommodation records.",
+        answer: "State and federal rules align; rental markets and municipal animal codes differ - use city-specific accommodation records.",
       },
     ],
     relatedRights: [

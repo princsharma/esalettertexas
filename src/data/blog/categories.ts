@@ -1,6 +1,6 @@
 import type { PageSeoFields } from "@/data/seo/types";
 
-/** CMS-shaped category record — pillar mapping lives here for M7 + T8. */
+/** CMS-shaped category record  -  pillar mapping lives here for M7 + T8. */
 export type BlogCategory = {
   slug: string;
   name: string;
@@ -30,7 +30,7 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
     pillarHref: "/conditions/",
     pillarLabel: "Who Qualifies for an ESA in Texas",
     intro:
-      "Eligibility for an ESA letter depends on a licensed clinician’s evaluation—not a fixed diagnosis list. These posts walk through how common mental health conditions are assessed in Texas, what therapists look for during interviews, and how housing law interacts with valid documentation. Use the who-qualifies pillar for evaluation criteria and condition-specific cluster guides, then explore recent articles for practical answers.",
+      "Eligibility for an ESA letter depends on a licensed clinician’s evaluation - not a fixed diagnosis list. These posts walk through how common mental health conditions are assessed in Texas, what therapists look for during interviews, and how housing law interacts with valid documentation. Use the who-qualifies pillar for evaluation criteria and condition-specific cluster guides, then explore recent articles for practical answers.",
   },
   {
     slug: "texas-cities",
@@ -38,7 +38,7 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
     pillarHref: "/locations/",
     pillarLabel: "ESA Letters by Texas City",
     intro:
-      "Major Texas metros each have different rental markets, student housing, and local resources—but fair housing protections apply statewide when you have legitimate documentation. City guides cover what to expect when you rent in Houston, Austin, Dallas, and beyond, including how to present your letter and where to get help if a landlord pushes back. Visit the locations pillar for every city page, then read local tips here.",
+      "Major Texas metros each have different rental markets, student housing, and local resources - but fair housing protections apply statewide when you have legitimate documentation. City guides cover what to expect when you rent in Houston, Austin, Dallas, and beyond, including how to present your letter and where to get help if a landlord pushes back. Visit the locations pillar for every city page, then read local tips here.",
   },
   {
     slug: "esa-lifestyle-care",
@@ -49,7 +49,7 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
       { label: "Texas ESA Laws & Housing Rights", href: "/rights/" },
     ],
     intro:
-      "Daily life with an emotional support animal touches wellness, routines, travel planning, and honest conversations with landlords or roommates. Lifestyle and care articles focus on practical support—not shortcuts around clinical or legal requirements. For medical eligibility, see the who-qualifies pillar; for housing disputes or letter validity, see your rights resources as supporting context.",
+      "Daily life with an emotional support animal touches wellness, routines, travel planning, and honest conversations with landlords or roommates. Lifestyle and care articles focus on practical support - not shortcuts around clinical or legal requirements. For medical eligibility, see the who-qualifies pillar; for housing disputes or letter validity, see your rights resources as supporting context.",
   },
   {
     slug: "landlord-tenant-guides",
@@ -65,7 +65,7 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
     pillarHref: "/rights/",
     pillarLabel: "Texas ESA Laws & Housing Rights",
     intro:
-      "Legislative changes, HUD guidance, and Texas enforcement trends can affect how ESA letters are reviewed in housing. We summarize policy updates in plain language and link back to the rights pillar for full legal context. Articles here are informational—not legal advice—and pair best with a current letter from a licensed evaluating therapist.",
+      "Legislative changes, HUD guidance, and Texas enforcement trends can affect how ESA letters are reviewed in housing. We summarize policy updates in plain language and link back to the rights pillar for full legal context. Articles here are informational - not legal advice - and pair best with a current letter from a licensed evaluating therapist.",
   },
 ];
 

@@ -11,7 +11,7 @@ export default function AboutTherapistsPage() {
       <SupportPageShell
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About Our Therapists" }]}
         title="About Our Therapists"
-        subhead="Every letter is reviewed by a licensed clinician—not a registry bot. Meet the providers behind ESA Letter Texas."
+        subhead="Every letter is reviewed by a licensed clinician - not a registry bot. Meet the providers behind ESA Letter Texas."
         narrow={false}
         heroBackgroundImage={PAGE_HERO.aboutTherapists}
       >

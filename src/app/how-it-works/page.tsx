@@ -13,7 +13,7 @@ export default function HowItWorksPage() {
       <SupportPageShell
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "How It Works" }]}
         title="How Our ESA Evaluation Works"
-        subhead="Expanded timeline from first click to signed letter—and what to expect after you submit."
+        subhead="Expanded timeline from first click to signed letter - and what to expect after you submit."
         narrow={false}
         reviewer={RIGHTS_REVIEWER}
         heroBackgroundImage={PAGE_HERO.howItWorks}
@@ -37,7 +37,7 @@ export default function HowItWorksPage() {
             </li>
             <li>
               <strong>When approved:</strong> You receive a signed PDF on letterhead with license
-              details—ready to send to your landlord or property manager.
+              details - ready to send to your landlord or property manager.
             </li>
           </ul>
           <h2>What to have ready</h2>
