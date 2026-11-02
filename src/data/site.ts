@@ -11,16 +11,35 @@ function developmentOrigin(): string | undefined {
   return "http://localhost:3000";
 }
 
+function httpsOrigin(host: string): string {
+  return `https://${host.replace(/^https?:\/\//, "").replace(/\/$/, "")}`;
+}
+
+/**
+ * Public Vercel host. `VERCEL_URL` is the unique deployment host, and Vercel
+ * Authentication blocks it, so social previews cannot load images from there.
+ */
+function hostedOrigin(): string | undefined {
+  if (process.env.VERCEL_ENV === "production") {
+    const production = process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim();
+    if (production) return httpsOrigin(production);
+  }
+  if (process.env.VERCEL_ENV === "preview") {
+    const branch = process.env.VERCEL_BRANCH_URL?.trim();
+    if (branch) return httpsOrigin(branch);
+  }
+  const deployment = process.env.VERCEL_URL?.trim();
+  if (deployment) return httpsOrigin(deployment);
+  return undefined;
+}
+
 /** Canonical site origin (sitemap, schema, canonical links). */
 export function siteOrigin(): string {
   const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim();
   if (fromEnv) {
     return fromEnv.replace(/\/$/, "");
   }
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL.replace(/^https?:\/\//, "")}`;
-  }
-  return developmentOrigin() ?? "https://esalettertexas.com";
+  return hostedOrigin() ?? developmentOrigin() ?? "https://esalettertexas.com";
 }
 
 /**
